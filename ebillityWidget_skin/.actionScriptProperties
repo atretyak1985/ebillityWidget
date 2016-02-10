@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <actionScriptProperties analytics="false" mainApplicationPath="ebillityWidget_skin.as" projectUUID="55339614-3fcd-47b9-b21d-199f207fdf35" version="11">
   <compiler additionalCompilerArguments="-locale en_US" autoRSLOrdering="true" copyDependentFiles="false" fteInMXComponents="false" generateAccessible="false" htmlExpressInstall="true" htmlGenerate="false" htmlHistoryManagement="false" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderPath="bin" removeUnusedRSL="true" sourceFolderPath="src" strict="true" targetPlayerVersion="0.0.0" useApolloConfig="true" useDebugRSLSwfs="true" useFlashSDK="false" verifyDigests="true" warn="true">
-    <compilerSourcePath/>
+    <compilerSourcePath>
+      <compilerSourcePathEntry kind="1" linkType="1" path="${DOCUMENTS}/assets"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="${DOCUMENTS}/ebillityWidget_core/src"/>
+    </compilerSourcePath>
     <libraryPath defaultLinkType="0">
       <libraryPathEntry kind="4" path="">
         <modifiedEntries>
@@ -13,6 +16,7 @@
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/core.swc" useDefaultLinkType="false"/>
         </excludedEntries>
       </libraryPathEntry>
+      <libraryPathEntry kind="1" linkType="1" path="${DOCUMENTS}/libs"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>

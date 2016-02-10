@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <actionScriptProperties analytics="false" mainApplicationPath="ebillityWidget_air.mxml" projectUUID="d9d81ac1-58c1-4d67-b953-2661f0a1638f" version="11">
   <compiler additionalCompilerArguments="-locale en_US" autoRSLOrdering="true" copyDependentFiles="true" fteInMXComponents="false" generateAccessible="true" htmlExpressInstall="true" htmlGenerate="false" htmlHistoryManagement="false" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderPath="bin-debug" removeUnusedRSL="true" sourceFolderPath="src" strict="true" targetPlayerVersion="0.0.0" useApolloConfig="true" useDebugRSLSwfs="true" useFlashSDK="false" verifyDigests="true" warn="true">
-    <compilerSourcePath/>
+    <compilerSourcePath>
+      <compilerSourcePathEntry kind="1" linkType="1" path="${DOCUMENTS}/ebillityWidget_core/src"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="${DOCUMENTS}/assets"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="${DOCUMENTS}/ebillityWidget_skin/src"/>
+    </compilerSourcePath>
     <libraryPath defaultLinkType="0">
       <libraryPathEntry kind="4" path="">
         <excludedEntries>
@@ -10,6 +14,7 @@
         </excludedEntries>
       </libraryPathEntry>
       <libraryPathEntry kind="1" linkType="1" path="libs"/>
+      <libraryPathEntry kind="1" linkType="1" path="${DOCUMENTS}/libs"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>

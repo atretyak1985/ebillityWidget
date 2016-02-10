@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		xmlns:mx="library://ns.adobe.com/flex/mx"
+		xmlns:login="com.ebillity.core.view.ui.login.*"
+		xmlns:core="com.ebillity.core.view.ui.core.*"
+		xmlns:admin="com.ebillity.core.view.ui.admin.*"
+		xmlns:employee="com.ebillity.core.view.ui.employee.*">
+	<!-- host component -->
+	<fx:Metadata>
+		[HostComponent("com.ebillity.core.view.ui.main.MainView")]
+	</fx:Metadata>
+
+	<s:states>
+		<s:State name="login"/>
+		<s:State name="admin"/>
+		<s:State name="employee"/>
+	</s:states>
+
+	<login:LoginView width="100%"
+					 height="100%"
+					 includeIn="login"/>
+
+	<s:HGroup height="100%"
+			  width="100%"
+			  excludeFrom="login">
+		<s:VGroup height="100%"
+				  width="100%">
+			<core:MenuPanel height="50"
+							width="100%"/>
+			<admin:AdminView includeIn="admin"
+							 height="100%"
+							 width="100%"/>
+			<employee:EmployeeView includeIn="employee"
+								   height="100%"
+								   width="100%"/>
+			<core:StatusPanel height="40"
+							  width="100%"/>
+		</s:VGroup>
+		<core:TimePanel height="100%"
+						width="100"/>
+	</s:HGroup>
+</s:Skin>

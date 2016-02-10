@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
-  <includeClasses/>
+  <includeClasses>
+    <classEntry path="com.ebillity.core.view.ui.admin.AdminViewMediator"/>
+    <classEntry path="com.ebillity.core.view.ui.components.DashboardMediator"/>
+    <classEntry path="com.ebillity.core.view.ui.components.ExpenseEntryMediator"/>
+    <classEntry path="com.ebillity.core.view.ui.components.ManageEntriesMediator"/>
+    <classEntry path="com.ebillity.core.view.ui.components.SettingsMediator"/>
+    <classEntry path="com.ebillity.core.view.ui.components.TimeEntryMediator"/>
+    <classEntry path="com.ebillity.core.view.ui.employee.EmployeeViewMediator"/>
+    <classEntry path="com.ebillity.core.view.ui.login.LoginViewMediator"/>
+    <classEntry path="com.ebillity.core.view.ui.components.MyEntriesMediator"/>
+    <classEntry path="com.ebillity.core.view.ui.main.MainViewMediator"/>
+    <classEntry path="com.ebillity.core.controler.commands.CommandLogin"/>
+    <classEntry path="com.ebillity.core.services.LoginService"/>
+    <classEntry path="com.ebillity.core.services.interfaces.ILoginService"/>
+    <classEntry path="com.ebillity.core.model.common.IObjectPool"/>
+    <classEntry path="com.ebillity.core.model.common.ObjectMap"/>
+    <classEntry path="com.ebillity.core.model.common.ObjectPool"/>
+    <classEntry path="com.ebillity.core.model.dto.UserDTO"/>
+    <classEntry path="com.ebillity.core.controler.commands.signals.SignalLogin"/>
+    <classEntry path="com.ebillity.core.model.VOSignalProperty"/>
+    <classEntry path="com.ebillity.core.model.IBroadcastable"/>
+    <classEntry path="com.ebillity.core.view.ui.core.MenuPanel"/>
+    <classEntry path="com.ebillity.core.view.ui.core.TomePanel"/>
+    <classEntry path="com.ebillity.core.view.ui.core.StatusPanel"/>
+    <classEntry path="com.ebillity.core.view.ui.core.TimePanel"/>
+    <classEntry path="com.ebillity.core.model.modelinfo.BaseInfoModelLocator"/>
+    <classEntry path="com.ebillity.core.model.modelinfo.UserInfoModelLocator"/>
+  </includeClasses>
   <includeResources/>
   <namespaceManifests/>
 </flexLibProperties>

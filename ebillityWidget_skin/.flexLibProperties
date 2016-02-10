@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
-  <includeClasses/>
+  <includeClasses>
+    <classEntry path="com.ebillity.skin.ui.components.DashboardSkin"/>
+    <classEntry path="com.ebillity.skin.ui.components.ExpenseEntrySkin"/>
+    <classEntry path="com.ebillity.skin.ui.components.ManageEntriesSkin"/>
+    <classEntry path="com.ebillity.skin.ui.components.MyEntriesSkin"/>
+    <classEntry path="com.ebillity.skin.ui.components.SettingsSkin"/>
+    <classEntry path="com.ebillity.skin.ui.components.TimeEntrySkin"/>
+    <classEntry path="com.ebillity.skin.ui.core.MenuPanelSkin"/>
+    <classEntry path="com.ebillity.skin.ui.core.TimePanelSkin"/>
+    <classEntry path="com.ebillity.skin.ui.core.StatusPanelSkin"/>
+  </includeClasses>
   <includeResources/>
   <namespaceManifests/>
 </flexLibProperties>

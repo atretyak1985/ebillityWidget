@@ -1,0 +1,223 @@
+package com.newscast24.air.services
+{
+	import com.newscast24.air.model.ImageViewerModel;
+	import com.newscast24.air.model.NewsModel;
+	import com.newscast24.air.model.vo.flv.ImageItem;
+	import com.newscast24.air.model.vo.flv.MediaModel;
+	import com.newscast24.air.model.vo.flv.VideoItem;
+	import com.newscast24.air.model.vo.imagetext.ImageTextItem;
+	import com.newscast24.air.model.vo.imagetext.ImageTextModel;
+	import com.newscast24.air.model.vo.rss.RssModel;
+	import com.newscast24.air.model.vo.stock.StockItem;
+	import com.newscast24.air.model.vo.stock.StockModel;
+	import com.newscast24.air.model.vo.usersettings.UserSettings;
+	import com.newscast24.air.model.vo.weather.WeatherModel;
+	import com.newscast24.air.view.controls.player.FlvPlayer;
+
+	import org.osflash.signals.ISignal;
+	import org.osflash.signals.Signal;
+
+	public class SettingsService extends AbstractXmlLoaderService
+	{
+		[Inject]
+		public var model:NewsModel;
+
+		public function SettingsService( url:String )
+		{
+			super( url );
+			_loaded = new Signal( NewsModel );
+
+		}
+
+		private var _loaded:Signal;
+
+		public function load():void
+		{
+			makeRequest();
+		}
+
+		override public function get loaded():ISignal
+		{
+			return _loaded;
+		}
+
+		override protected function parse( xml:XML ):void
+		{
+			model = new NewsModel();
+			for each ( var context:XML in xml.children())
+			{
+				var contextName:Object = context.name().localName;
+
+				switch ( contextName )
+				{
+					case "Zone1":
+					{
+						model.mediaModel = createMediaModel( context );
+						break;
+					}
+					case "Zone3":
+					{
+						model.imageModel = createImageViewerModel( context );
+						break;
+					}
+					case "Zone4":
+					{
+						model.weatherModel = createWeatherSettings( context );
+						break;
+					}
+					case "Zone5":
+					{
+						model.stockModel = createStockModel( context );
+						break;
+					}
+					case "Zone6":
+					{
+						model.rssModel = createRssTiket( context );
+						break;
+					}
+
+					case "usersettings":
+					{
+						model.userSettings = createuserSettings( context );
+						break;
+					}
+
+					/*case "weathersettings":
+					{
+						model.weatherModel = createWeatherSettings( context );
+						break;
+					}*/
+
+					/*case "rss":
+					{
+						model.rssModel = createRssTiket( context );
+						break;
+					}*/
+
+					/*case "medialist":
+					{
+						model.mediaModel = createMediaModel( context );
+						break;
+					}
+					
+					case "imageviewer":
+					{
+						model.imageModel = createImageViewerModel( context );
+						break;
+					}*/
+					case "imageandtext":
+					{
+						model.imageTextModel = createImageTextViewerModel( context );
+						break;
+					}
+					default:
+					{
+						break;
+					}
+				}
+			}
+
+			_loaded.dispatch( model );
+		}
+
+		private function createWeatherSettings( context:XML ):WeatherModel
+		{
+			var weather:WeatherModel = new WeatherModel();
+
+			weather.city = context.City;
+			weather.temperature = context.temperature;
+			weather.wind = context.wind;
+
+			return weather;
+		}
+
+		private function createuserSettings( context:XML ):UserSettings
+		{
+			var userSettings:UserSettings = new UserSettings();
+
+			if ( context.attribute( "timereload" ).length() > 0 )
+			{
+				userSettings.timeReload = context.attribute( "timereload" );
+			}
+
+			if ( context.attribute( "userid" ).length() > 0 )
+			{
+				userSettings.userid = context.attribute( "userid" );
+			}
+
+
+			return userSettings;
+		}
+
+		private function createImageTextViewerModel( context:XML ):ImageTextModel
+		{
+			var imageTextModel:ImageTextModel = new ImageTextModel();
+			imageTextModel.imageTextItems = new Vector.<ImageTextItem>;
+
+			imageTextModel.delay = context.@delay;
+
+			for each ( var item:XML in context..item )
+			{
+				var imageTextItem:ImageTextItem = new ImageTextItem();
+
+				imageTextItem.imageUrl = item.image.@url;
+				imageTextItem.description = item.description;
+
+				imageTextModel.imageTextItems.push( imageTextItem );
+			}
+
+			return imageTextModel;
+		}
+
+		private function createStockModel( context:XML ):StockModel
+		{
+			var stockModel:StockModel = new StockModel();
+			stockModel.stockItems = new Vector.<StockItem>;
+
+			stockModel.delay = context.@delay;
+
+			for each ( var item:XML in context..item )
+			{
+				var stockItem:StockItem = new StockItem();
+
+				stockItem.title = item.title;
+				stockItem.last = item.last;
+				stockItem.change = item.change;
+
+				stockModel.stockItems.push( stockItem );
+			}
+
+			return stockModel;
+		}
+
+		private function createImageViewerModel( context:XML ):ImageViewerModel
+		{
+			var imageModel:ImageViewerModel = new ImageViewerModel();
+
+			imageModel.mediaList = context;
+
+			return imageModel;
+		}
+
+		private function createMediaModel( context:XML ):MediaModel
+		{
+			var mediaModel:MediaModel = new MediaModel();
+
+			mediaModel.mediaList = context;
+
+			return mediaModel;
+		}
+
+		private function createRssTiket( context:XML ):RssModel
+		{
+			var rssTiket:RssModel = new RssModel();
+
+			var weather:WeatherModel = new WeatherModel();
+			
+			rssTiket.url = context.feed.@url;
+			rssTiket.direction = context.feed.@direction;
+
+			return rssTiket;
+		}
+	}
+}

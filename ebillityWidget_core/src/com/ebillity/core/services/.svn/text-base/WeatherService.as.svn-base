@@ -1,0 +1,199 @@
+package com.newscast24.air.services
+{
+	import com.newscast24.air.model.NewsModel;
+	import com.newscast24.air.model.vo.weather.HourlyItem;
+	import com.newscast24.air.model.vo.weather.WeatherCurrentItem;
+	import com.newscast24.air.model.vo.weather.WeatherItem;
+	import com.newscast24.air.model.vo.weather.WeatherModel;
+	
+	import mx.states.OverrideBase;
+	
+	import org.osflash.signals.ISignal;
+	import org.osflash.signals.Signal;
+
+	public class WeatherService extends AbstractXmlLoaderService
+	{
+
+		public function WeatherService( url:String )
+		{
+			super( url );
+			_loaded = new Signal( WeatherModel );
+		}
+
+		[Inject]
+		public var model:NewsModel;
+
+		private var _loaded:Signal;
+
+		private var parameters:Vector.<UrlParameter>;
+
+		private var weatherModel:WeatherModel;
+
+		public function clearParameters():void
+		{
+			parameters = new Vector.<UrlParameter>;
+		}
+
+		public function load( value:WeatherModel ):void
+		{
+			weatherModel = value;
+			makeRequest( null, parameters );
+		}
+
+		override public function get loaded():ISignal
+		{
+			return _loaded;
+		}
+
+		public function setParameters( name:String, value:String ):void
+		{
+			if ( !parameters )
+				parameters = new Vector.<UrlParameter>;
+
+			parameters.push( new UrlParameter( name, value ));
+		}
+
+		override protected function parse( xml:XML ):void
+		{
+			parsePremWeather( xml );
+		}
+
+		private function createCity( context:XML ):String
+		{
+			var city:String;
+
+			city = String( context.query ).split( "," )[ 0 ];
+
+			return city;
+		}
+
+		private function createCurrentWeather( context:XML ):WeatherCurrentItem
+		{
+			var currentWeather:WeatherCurrentItem = new WeatherCurrentItem();
+
+			currentWeather.observation_time = context.observation_time;
+			currentWeather.temp_C = context.temp_C;
+			currentWeather.temp_F = context.temp_F;
+			currentWeather.weatherCode = context.weatherCode;
+			currentWeather.weatherIconUrl = context.weatherIconUrl;
+			currentWeather.weatherDesc = context.weatherDesc;
+			currentWeather.windspeedMiles = context.windspeedMiles;
+			currentWeather.windspeedKmph = context.windspeedKmph;
+			currentWeather.winddirDegree = context.winddirDegree;
+			currentWeather.winddir16Point = context.winddir16Point;
+			currentWeather.precipMM = context.precipMM;
+			currentWeather.humidity = context.humidity;
+			currentWeather.visibility = context.visibility;
+			currentWeather.pressure = context.pressure;
+			currentWeather.cloudcover = context.cloudcover;
+
+			currentWeather.tempS = weatherModel.temperature;
+			currentWeather.windS = weatherModel.wind;
+
+			return currentWeather;
+		}
+
+		private function createWeather( xml:XML ):WeatherItem
+		{
+			var weather:WeatherItem = new WeatherItem();
+
+			var dateArray:Array;
+			dateArray = String( xml.date ).split( "-" );
+
+			weather.date = new Date();
+			weather.date.fullYear = dateArray[ 0 ];
+			weather.date.month = dateArray[ 1 ] - 1;
+			weather.date.date = dateArray[ 2 ];
+
+			for each ( var context:XML in xml.children())
+			{
+				var contextName:Object = context.name().localName;
+
+				if ( contextName == "hourly" )
+				{
+					var hourlyItem:HourlyItem = createHourlyItem( context );
+					hourlyItem.temp = weatherModel.temperature;
+					hourlyItem.wind = weatherModel.wind;
+
+					weather.hourlyItems.push( hourlyItem );
+				}
+			}
+
+			return weather;
+		}
+
+		private function createHourlyItem( context:XML ):HourlyItem
+		{
+			var hourly:HourlyItem = new HourlyItem();
+
+			
+			hourly.isdaytime = context.isdaytime;
+			hourly.time = context.time;
+			hourly.tempC = context.tempC;
+			hourly.tempF = context.tempF;
+			hourly.windspeedMiles = context.windspeedMiles;
+			hourly.windspeedKmph = context.windspeedKmph;
+			hourly.windspeedKnots = context.windspeedKnots;
+			hourly.windspeedMeterSec = context.windspeedMeterSec;
+			hourly.winddirDegree = context.winddirDegree;
+			hourly.winddir16Point = context.winddir16Point;
+			hourly.weatherCode = context.weatherCode;
+			hourly.weatherIconUrl = context.weatherIconUrl;
+			hourly.weatherDesc = context.weatherDesc;
+			hourly.precipMM = context.precipMM;
+			hourly.precipInches = context.precipInches;
+			hourly.humidity = context.humidity;
+			hourly.visibility = context.visibility;
+			hourly.visibilityMiles = context.visibilityMiles;
+			hourly.pressure = context.pressure;
+			hourly.pressureInches = context.pressureInches;
+			hourly.cloudcover = context.cloudcover;
+			hourly.chanceofrain = context.chanceofrain;
+			hourly.chanceofwindy = context.chanceofwindy;
+			hourly.chanceofovercast = context.chanceofovercast;
+			hourly.chanceofsunny = context.chanceofsunny;
+			hourly.chanceoffrost = context.chanceoffrost;
+			hourly.chanceoffog = context.chanceoffog;
+			hourly.chanceofsnow = context.chanceofsnow;
+			hourly.chanceofthunder = context.chanceofthunder;
+
+			return hourly;
+		}
+
+		private function parsePremWeather( xml:XML ):void
+		{
+			for each ( var context:XML in xml.children())
+			{
+				var contextName:Object = context.name().localName;
+
+				switch ( contextName )
+				{
+					case "current_condition":
+					{
+						weatherModel.currentWeather = createCurrentWeather( context );
+						break;
+					}
+
+					case "weather":
+					{
+						weatherModel.weatherItems.push( createWeather( context ));
+						break;
+					}
+
+					case "request":
+					{
+						weatherModel.city = createCity( context );
+						break;
+					}
+
+					default:
+					{
+						break;
+					}
+				}
+			}
+
+			_loaded.dispatch( weatherModel );
+		}
+	}
+}

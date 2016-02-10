@@ -21,4 +21,21 @@
 		<nature>com.adobe.flexbuilder.project.flexnature</nature>
 		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>[source path] assets</name>
+			<type>2</type>
+			<locationURI>DOCUMENTS/assets</locationURI>
+		</link>
+		<link>
+			<name>[source path] ebillityWidget_core-src</name>
+			<type>2</type>
+			<locationURI>DOCUMENTS/ebillityWidget_core/src</locationURI>
+		</link>
+		<link>
+			<name>[source path] ebillityWidget_skin-src</name>
+			<type>2</type>
+			<locationURI>DOCUMENTS/ebillityWidget_skin/src</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

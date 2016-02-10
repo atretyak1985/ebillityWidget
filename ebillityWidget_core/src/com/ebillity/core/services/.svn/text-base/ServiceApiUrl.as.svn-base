@@ -1,0 +1,9 @@
+package com.newscast24.air.services
+{
+	public class ServiceApiUrl
+	{
+		public static const WEATHER_URL_FREE:String = "http://free.worldweatheronline.com/feed/weather.ashx";
+		public static const WEATHER_URL_PREM:String = "http://www.worldweatheronline.com/feed/premium-weather-V2.ashx";		
+		public static const SETTINGS_URL:String = "settings.xml";	
+	}
+}
