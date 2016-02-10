@@ -26,6 +26,10 @@
     <classEntry path="com.ebillity.core.view.ui.core.TimePanel"/>
     <classEntry path="com.ebillity.core.model.modelinfo.BaseInfoModelLocator"/>
     <classEntry path="com.ebillity.core.model.modelinfo.UserInfoModelLocator"/>
+    <classEntry path="com.ebillity.core.model.modelinfo.MenuInfoModelLocator"/>
+    <classEntry path="com.ebillity.core.constants.MenuConstants"/>
+    <classEntry path="com.ebillity.core.view.ui.base.BaseView"/>
+    <classEntry path="com.ebillity.core.view.mediator.core.MenuPanelMediator"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

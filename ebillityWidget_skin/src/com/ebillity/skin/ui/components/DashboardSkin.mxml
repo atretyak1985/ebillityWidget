@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" 
-		xmlns:s="library://ns.adobe.com/flex/spark" 
-		xmlns:mx="library://ns.adobe.com/flex/mx">
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		xmlns:mx="library://ns.adobe.com/flex/mx"
+		xmlns:layout="org.osmf.layout.*">
 	<!-- host component -->
 	<fx:Metadata>
 		[HostComponent("com.ebillity.core.view.ui.components.Dashboard")]
 	</fx:Metadata>
+
+	<s:states>
+		<s:State name="admin"/>
+		<s:State name="employee"/>
+	</s:states>
+
+	<s:layout>
+		<s:VerticalLayout horizontalAlign="center"
+						  paddingLeft="10"
+						  paddingRight="10"
+						  paddingTop="10"
+						  paddingBottom="10"/>
+	</s:layout>
+
+	<s:TileGroup id="mainGroup"
+				 width="100%"
+				 height="100%">
+		<s:Button id="trackTimeButton"
+				  label="Track Time"
+				  width="220"
+				  height="160"/>
+		<s:Button id="addExpenseButton"
+				  label="Add Expense"
+				  width="220"
+				  height="160"/>
+		<s:Button id="myEntriesButton"
+				  label="My Entries"
+				  width="220"
+				  height="160"/>
+		<s:Button id="teamEntriesButton"
+				  label="Team Entries"
+				  width="220"
+				  height="160"
+				  includeIn="admin"/>
+		<s:Button id="settingsButton"
+				  label="Settings"
+				  width="220"
+				  height="160"/>
+	</s:TileGroup>
 </s:Skin>

@@ -1,17 +1,16 @@
-
-package com.ebillity.core.view.mediator.components
+package com.ebillity.core.view.mediator.core
 {
 	import com.ebillity.core.controler.commands.base.signal.SignalParams;
 	import com.ebillity.core.model.modelinfo.MenuInfoModelLocator;
-	import com.ebillity.core.view.ui.components.Dashboard;
+	import com.ebillity.core.view.ui.core.MenuPanel;
 
 	import org.robotlegs.mvcs.Mediator;
 
-	public class DashboardMediator extends Mediator
+	public class MenuPanelMediator extends Mediator
 	{
 
 		[Inject]
-		public var view:Dashboard;
+		public var view:MenuPanel;
 
 		[Inject]
 		public var menuInfo:MenuInfoModelLocator;
@@ -19,7 +18,15 @@ package com.ebillity.core.view.mediator.components
 		override public function onRegister():void
 		{
 			super.onRegister();
+
+			menuInfo.selectedMenuSignal.add( menuInfo_selectedMenuHandler );
+
 			view.selectMenuSignal.add( selectMenuSignal_viewHandler );
+		}
+
+		private function menuInfo_selectedMenuHandler( selectedMenu:String ):void
+		{
+			view.selectMenu( selectedMenu );
 		}
 
 		private function selectMenuSignal_viewHandler( params:SignalParams ):void

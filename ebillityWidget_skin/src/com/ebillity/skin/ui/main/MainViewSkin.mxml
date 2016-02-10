@@ -26,18 +26,23 @@
 			  excludeFrom="login">
 		<s:VGroup height="100%"
 				  width="100%">
-			<core:MenuPanel height="50"
+			<core:MenuPanel id="menuPanel"
+							height="50"
 							width="100%"/>
-			<admin:AdminView includeIn="admin"
+			<admin:AdminView id="adminView"
+							 includeIn="admin"
 							 height="100%"
 							 width="100%"/>
-			<employee:EmployeeView includeIn="employee"
+			<employee:EmployeeView id="employeeView"
+								   includeIn="employee"
 								   height="100%"
 								   width="100%"/>
-			<core:StatusPanel height="40"
+			<core:StatusPanel id="statusPanel"
+							  height="40"
 							  width="100%"/>
 		</s:VGroup>
-		<core:TimePanel height="100%"
+		<core:TimePanel id="timePanel"
+						height="100%"
 						width="100"/>
 	</s:HGroup>
 </s:Skin>

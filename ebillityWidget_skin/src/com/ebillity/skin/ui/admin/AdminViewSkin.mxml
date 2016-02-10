@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
 		xmlns:s="library://ns.adobe.com/flex/spark"
-		xmlns:mx="library://ns.adobe.com/flex/mx">
+		xmlns:mx="library://ns.adobe.com/flex/mx"
+		xmlns:components="com.ebillity.core.view.ui.components.*">
 	<!-- host component -->
 	<fx:Metadata>
 		[HostComponent("com.ebillity.core.view.ui.admin.AdminView")]
 	</fx:Metadata>
-	<s:Label text="Admin View"/>
+	<s:states>
+		<s:State name="dashboard"/>
+		<s:State name="expense"/>
+		<s:State name="manage"/>
+		<s:State name="settings"/>
+		<s:State name="time"/>
+	</s:states>
+
+	<components:Dashboard id="dashboard"
+						  height="100%"
+						  width="100%"
+						  includeIn="dashboard"/>
+	<components:ExpenseEntry id="expenseEntry"
+							 height="100%"
+							 width="100%"
+							 includeIn="expense"/>
+	<components:ManageEntries id="manageEntries"
+							  height="100%"
+							  width="100%"
+							  includeIn="manage"/>
+	<components:Settings id="settings"
+						 height="100%"
+						 width="100%"
+						 includeIn="settings"/>
+	<components:TimeEntry id="timeEntry"
+						  height="100%"
+						  width="100%"
+						  includeIn="time"/>
 </s:Skin>

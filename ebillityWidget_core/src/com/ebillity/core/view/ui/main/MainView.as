@@ -1,5 +1,11 @@
 package com.ebillity.core.view.ui.main
 {
+	import com.ebillity.core.view.ui.admin.AdminView;
+	import com.ebillity.core.view.ui.core.MenuPanel;
+	import com.ebillity.core.view.ui.core.StatusPanel;
+	import com.ebillity.core.view.ui.core.TimePanel;
+	import com.ebillity.core.view.ui.employee.EmployeeView;
+
 	import spark.components.supportClasses.SkinnableComponent;
 
 	public class MainView extends SkinnableComponent
@@ -9,6 +15,21 @@ package com.ebillity.core.view.ui.main
 		public static const STATE_ADMIN:String = "admin";
 
 		public static const STATE_EMPLOYEE:String = "employee";
+
+		[SkinPart( required = "true" )]
+		public var menuPanel:MenuPanel;
+
+		[SkinPart( required = "true" )]
+		public var adminView:AdminView;
+
+		[SkinPart( required = "true" )]
+		public var employeeView:EmployeeView;
+
+		[SkinPart( required = "true" )]
+		public var statusPanel:StatusPanel;
+
+		[SkinPart( required = "true" )]
+		public var timePanel:TimePanel;
 
 		public function MainView()
 		{

@@ -4,7 +4,10 @@ package com.ebillity.core.core
 	import com.ebillity.core.view.mediator.components.DashboardMediator;
 	import com.ebillity.core.view.mediator.components.ExpenseEntryMediator;
 	import com.ebillity.core.view.mediator.components.ManageEntriesMediator;
+	import com.ebillity.core.view.mediator.components.MyEntriesMediator;
+	import com.ebillity.core.view.mediator.components.SettingsMediator;
 	import com.ebillity.core.view.mediator.components.TimeEntryMediator;
+	import com.ebillity.core.view.mediator.core.MenuPanelMediator;
 	import com.ebillity.core.view.mediator.employee.EmployeeViewMediator;
 	import com.ebillity.core.view.mediator.login.LoginViewMediator;
 	import com.ebillity.core.view.mediator.main.MainViewMediator;
@@ -15,6 +18,7 @@ package com.ebillity.core.core
 	import com.ebillity.core.view.ui.components.MyEntries;
 	import com.ebillity.core.view.ui.components.Settings;
 	import com.ebillity.core.view.ui.components.TimeEntry;
+	import com.ebillity.core.view.ui.core.MenuPanel;
 	import com.ebillity.core.view.ui.employee.EmployeeView;
 	import com.ebillity.core.view.ui.login.LoginView;
 	import com.ebillity.core.view.ui.main.MainView;
@@ -35,12 +39,13 @@ package com.ebillity.core.core
 			mediatorMap.mapView( Dashboard, DashboardMediator );
 			mediatorMap.mapView( ExpenseEntry, ExpenseEntryMediator );
 			mediatorMap.mapView( ManageEntries, ManageEntriesMediator );
-			mediatorMap.mapView( MyEntries, ManageEntriesMediator );
-			mediatorMap.mapView( Settings, ManageEntriesMediator );
+			mediatorMap.mapView( MyEntries, MyEntriesMediator );
+			mediatorMap.mapView( Settings, SettingsMediator );
 			mediatorMap.mapView( TimeEntry, TimeEntryMediator );
 			mediatorMap.mapView( EmployeeView, EmployeeViewMediator );
 			mediatorMap.mapView( LoginView, LoginViewMediator );
 			mediatorMap.mapView( MainView, MainViewMediator );
+			mediatorMap.mapView( MenuPanel, MenuPanelMediator );
 		}
 
 

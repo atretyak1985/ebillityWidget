@@ -20,7 +20,7 @@ package com.ebillity.core.view.mediator.login
 		[Inject]
 		public var userModelLocator:UserInfoModelLocator;
 
-		private function submitSignal_handler( params:SignalParams ):void
+		private function submitSignal_viewHandler( params:SignalParams ):void
 		{
 			loginSignal.dispatch( params, null );
 		}
@@ -31,7 +31,7 @@ package com.ebillity.core.view.mediator.login
 			userModelLocator.userDTOSignal.add( userDTOChanged_signalHandler );
 
 
-			view.submitSignal.add( submitSignal_handler );
+			view.submitSignal.add( submitSignal_viewHandler );
 		}
 
 		private function userDTOChanged_signalHandler( userDTO:UserDTO ):void
@@ -42,6 +42,8 @@ package com.ebillity.core.view.mediator.login
 		{
 			super.onRemove();
 			userModelLocator.userDTOSignal.remove( userDTOChanged_signalHandler );
+
+			view.submitSignal.remove( submitSignal_viewHandler );
 		}
 	}
 }
