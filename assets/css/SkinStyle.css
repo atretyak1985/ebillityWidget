@@ -1,0 +1,806 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+@namespace component "com.inspird.air.view.ui.component.*";
+@namespace local "*";
+@namespace control "com.inspird.air.view.ui.control.*";
+@namespace legend "com.inspird.air.view.ui.control.legend.*";
+@namespace roadmap "com.inspird.air.view.ui.component.roadmap.*";
+@namespace investment "com.inspird.air.view.ui.component.investment.*";
+@namespace execute "com.inspird.air.view.ui.component.execute.*";
+@namespace master "com.inspird.air.view.ui.component.master.*";
+@namespace skills "com.inspird.air.view.ui.component.skills.*";
+@namespace portfolio "com.inspird.air.view.ui.component.portfolio.*";
+@namespace projects "com.inspird.air.view.ui.component.roadmap.projects.*";
+@namespace platform "com.inspird.air.view.ui.component.roadmap.platform.*";
+@namespace tabNavigator "com.inspird.air.view.ui.control.tabNavigator.*";
+@namespace projects1 "com.inspird.skin.view.ui.component.roadmap.projects.*";
+@namespace platform1 "com.inspird.air.view.ui.poup.roadmap.platform.*";
+@namespace common "com.inspird.air.view.ui.poup.common.*";
+@namespace bulk "com.inspird.air.view.ui.poup.bulk.*";
+@namespace project "com.inspird.air.view.ui.poup.roadmap.project.*";
+@namespace poup "com.inspird.air.view.ui.poup.*";
+@namespace skillset "com.inspird.air.view.ui.poup.skill.skillset.*";
+@namespace skillsetteam "com.inspird.air.view.ui.poup.skill.skillsetteam.*";
+@namespace chkdropdawn "com.inspird.air.view.ui.control.chkdropdawn.*";
+@namespace continued "com.inspird.air.view.ui.poup.roadmap.project.continued.*";
+@namespace link "com.inspird.air.view.ui.poup.roadmap.platform.link.*";
+@namespace toolbar "com.inspird.air.view.ui.control.toolbar.*";
+@namespace group "com.inspird.air.view.ui.poup.skill.group.*";
+@namespace diagram "com.inspird.air.view.ui.component.diagram.*";
+@namespace spark "org.openzet.orgchart.cube.skins.spark.*";
+@namespace ganttsheet "com.inspird.gant.ganttsheet.*";
+@namespace link1 "com.inspird.air.view.ui.poup.roadmap.project.link.*";
+@namespace statusbar "com.inspird.air.view.ui.component.statusbar.*";
+@namespace requirements "com.inspird.air.view.ui.component.requirements.*";
+@namespace requirements1 "com.inspird.air.view.ui.poup.requirements.*";
+@namespace configpopups "com.inspird.air.view.ui.poup.configpopups.*";
+@namespace link2 "com.inspird.air.view.ui.poup.requirements.link.*";
+@namespace continued1 "com.inspird.air.view.ui.poup.requirements.continued.*";
+@namespace risks "com.inspird.air.view.ui.component.risks.*";
+@namespace tests "com.inspird.air.view.ui.component.tests.*";
+@namespace tasks "com.inspird.air.view.ui.component.tasks.*";
+@namespace tasks1 "com.inspird.air.view.ui.poup.tasks.*";
+@namespace requirements2 "com.inspird.air.view.ui.component.execute.requirements.*";
+@namespace risks1 "com.inspird.air.view.ui.component.execute.risks.*";
+@namespace tasks2 "com.inspird.air.view.ui.component.execute.tasks.*";
+@namespace tests1 "com.inspird.air.view.ui.component.execute.tests.*";
+@namespace dashboards "com.inspird.air.view.ui.component.dashboards.*";
+@namespace components "com.inspird.pod.components.*";
+@namespace popup "com.inspird.pod.popup.*";
+@namespace dashboard "com.inspird.air.view.ui.poup.dashboard.*";
+@namespace cell "com.inspird.pod.cell.*";
+@namespace cell1 "com.inspird.air.view.ui.component.dashboards.cell.*";
+@namespace dashboards1 "com.inspird.air.view.mediator.component.dashboards.*";
+@namespace legendnew "com.inspird.air.view.ui.control.legendnew.*";
+@namespace component1 "com.inspird.gant.component.*";
+@namespace conductTests "com.inspird.air.view.ui.component.portfolio.conductTests.*";
+@namespace conductTest "com.inspird.air.view.ui.poup.conductTest.*";
+@namespace components1 "com.inspird.air.view.ui.component.investment.components.*";
+@namespace progressbar "com.inspird.air.view.ui.control.progressbar.*";
+@namespace control1 "com.inspird.core.control.*";
+
+component|ComponentHome
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.ComponentHomeSkin");
+}
+
+component|ComponentCustomTitleBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.ComponentCustomTitleBarSkin");
+}
+
+investment|ComponentInvestmentPivot
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.investment.ComponentInvestmentPivotSkin");
+}
+
+component|ComponentLogin
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.ComponentLoginSkin");
+}
+
+component|ComponentBrowser
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.ComponentBrowserSkin");
+}
+
+component|ComponentFilterToolBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.ComponentFilterToolBarSkin");
+}
+
+component|ComponentFilterReviewToolbar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.ComponentFilterReviewToolBarSkin");
+}
+
+requirements2|ComponentRequirementFilterToolBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.ComponentFilterToolBarSkin");
+}
+
+tasks2|ComponentTasksFilterToolBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.ComponentFilterToolBarSkin");
+}
+
+tasks2|ComponentTasksViewToolBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.execute.tasks.ComponentTasksViewToolBarSkin");
+}
+
+risks1|ComponentRisksFilterToolBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.ComponentFilterToolBarSkin");
+}
+
+risks1|ComponentRisksViewToolBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.execute.risks.ComponentRisksViewToolBarSkin");
+}
+
+chkdropdawn|DropDownCheck
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.chkdropdawn.DropDownCheckSkin");
+}
+
+component1|LinkButton
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.LinkButtonSkin");
+}
+
+control|TitleWindow
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.TitleWindowSkin");
+}
+
+tabNavigator|TabNavigator
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.tabNavigator.DataNavigatorSkin")
+}
+
+investment|ComponentInvestment
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.investment.ComponentInvestmentSkin");
+}
+
+components1|ComponentInvestPlan
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.investment.components.ComponentInvestPlanSkin");
+}
+
+components1|ComponentInvestStrategic
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.investment.components.ComponentInvestStrategicSkin");
+}
+
+components1|ComponentInvestPortfolio
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.investment.components.ComponentInvestPortfolioSkin");
+}
+
+components1|ComponentInvestPipeline
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.investment.components.ComponentInvestPipelineSkin");
+}
+
+components1|ComponentInvestRevenue
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.investment.components.ComponentInvestRevenueSkin");
+}
+
+investment|ComponentInvestmentAdvancedDataGrid
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.investment.ComponentInvestmentAdvancedDataGridSkin");
+}
+
+investment|ComponentInvestmentTopPanel
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.investment.ComponentInvestmentTopPanelSkin");
+}    
+
+portfolio|ComponentPortfolioChart
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.portfolio.ComponentPortfolioChartSkin");
+}
+
+portfolio|ComponentPortfolioTopPanel
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.portfolio.ComponentPortfolioTopPanelSkin");
+}
+
+portfolio|ComponentPortfolioAdvancedDataGrid
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.portfolio.ComponentPortfolioAdvancedDataGridSkin");
+}
+
+roadmap|ComponentRoadmap
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.roadmap.ComponentRoadmapSkin");
+}
+
+projects|ComponentRoadmapProjectsView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.roadmap.projects.ComponentRoadmapProjectsViewSkin");
+}
+
+projects|ComponentRoadmapProjects_GantChart
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.roadmap.projects.ComponentRoadmapProjects_GantChartSkin");
+}
+
+projects|ComponentRoadmapProjects_MarketGantChart
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.roadmap.projects.ComponentRoadmapProjects_MarketGantChartSkin");
+}
+
+projects|ComponentRoadmapProjects_ContinueGantChart
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.roadmap.projects.ComponentRoadmapProjects_ContinueGantChartSkin");
+}
+
+
+roadmap|ComponentRoadmapTabBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.roadmap.ComponentRoadmapTabBarSkin");
+}
+
+platform|ComponentRoadmapPlatformView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.roadmap.platform.ComponentRoadmapPlatformViewSkin");
+}
+
+projects|ComponentRoadmapPlatformViewToolBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.roadmap.platform.ComponentRoadmapPlatformViewToolBarSkin");
+}
+
+projects|ComponentRoadmapProjectViewToolBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.roadmap.projects.ComponentRoadmapProjectViewToolBarSkin");
+}
+
+dashboards|ComponentManageReports
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.dashboards.ComponentManageReportsSkin")
+}
+
+dashboards|ComponentManageReviews
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.dashboards.ComponentManageReviewsSkin")
+}
+
+platform|ComponentProductRoadmapView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.roadmap.platform.ComponentProductRoadmapViewSkin")
+}
+
+platform|ComponentRoadmapPlatform_TechGanntChart
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.roadmap.platform.ComponentRoadmapPlatform_TechGanntChartSkin");
+}
+
+platform|ComponentRoadmapPlatform_MarketGanntChart
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.roadmap.platform.ComponentRoadmapPlatform_MarketGanntChartSkin");
+}
+
+platform|ComponentRoadmapPlatform_SysGanntChart
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.roadmap.platform.ComponentRoadmapPlatform_SysGanntChartSkin");
+}
+
+skills|ComponentSkillSets
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.skills.ComponentSkillSetsSkin");
+}
+
+skills|ComponentSkillSetsTeam
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.skills.ComponentSkillSetsTeamSkin");
+}
+
+skills|ComponentSkills
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.skills.ComponentSkillsSkin");
+}
+
+skills|ComponentSkillsTabBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.skills.ComponentSkillsTabBarSkin");
+}
+
+portfolio|ComponentPortfolio
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.portfolio.ComponentPortfolioSkin");
+}
+
+diagram|ComponentBlockDiagram
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.ComponentBlockDiagramSkin");
+}
+
+
+/*poupviews*/
+
+poup|TabsTitleWindow
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.TabsTitleWindowSkin");
+}
+common|AssignOwnerView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.common.AssignOwnerViewSkin");
+}
+
+configpopups|CustomFieldsView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.common.CustomFieldsViewSkin");
+}
+
+common|DescriptionView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.common.DescriptionViewSkin");
+}
+
+common|UploadView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.common.UploadViewSkin");
+}
+
+common|NotificationsView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.common.NotificationsViewSkin");
+}
+
+link|PlatformDetailTechView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.roadmap.platform.link.PlatformDetailTechViewSkin");
+}
+
+platform1|PlatformTypeView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.roadmap.platform.PlatformTypeViewSkin");
+}
+
+project|ProjectTypeView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.roadmap.project.ProjectTypeViewSkin");
+}
+
+requirements1|RequirementTypeView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.execute.requirements.RequirementTypeViewSkin");
+}
+
+requirements1|LinkTypeView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.execute.requirements.LinkTypeViewSkin");
+}
+
+tasks1|TasksTypeView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.execute.tasks.TasksTypeViewSkin");
+}
+
+skillset|SkillsetTypeView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.skill.skillset.SkillsetTypeViewSkin");
+}
+
+skillsetteam|AddNewUserView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.skill.skillsetteam.AddNewUserViewSkin");
+}
+
+skillsetteam|SearchUserView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.skill.skillsetteam.SearchUserViewSkin");
+}
+
+skillsetteam|SkillsetTeamTypeView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.skill.skillsetteam.SkillsetTeamTypeViewSkin");
+}
+
+common|EssentialsView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.common.EssentialsViewSkin");
+}
+
+skillsetteam|TeamDescriptionView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.skill.skillsetteam.TeamDescriptionViewSkin");
+}
+
+skillsetteam|TeamDetailsView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.skill.skillsetteam.TeamDetailsViewSkin");
+}
+
+legendnew|LegendContainerNew
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.LegendContainerNewSkin");
+}
+
+legend|LegendContainer
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.LegendComponentSkin");
+}
+
+legend|LegendButton
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.LegendButtonSkin")
+}
+
+platform|ComponentProductRoadmapView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.roadmap.platform.ComponentProductRoadmapViewSkin");
+}
+
+/*legend|LegendDataGrid
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.LegendDataGridSkin");
+}*/
+
+legendnew|LegendDataGridNew
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.LegendDataGridNewSkin");
+}
+
+continued|ContinueProjectDetailsView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.roadmap.project.continued.ContinueProjectDetailsViewSkin");
+}
+
+link|LinkPlatformTypeView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.roadmap.platform.link.LinkPlatformTypeSkin");
+}
+
+link|PlatformDetailSysView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.roadmap.platform.link.PlatformDetailSysViewSkin");
+}
+
+link|PlatformDetailMarketView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.roadmap.platform.link.PlatformDetailMarketViewSkin");
+}
+
+s|ToggleButton
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.ToolbarToggleButtonBlackLabelSkin");
+}
+
+toolbar|ToggleButtonToolTip
+{
+/*	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.ToolbarToggleButtonBlackLabelSkin");*/
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.ToolbarToggleButtonWhiteLabelSkin");
+}
+
+.toolBarToggleButtonTooltipWhiteLabelStyle
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.ToolbarToggleButtonWhiteLabelSkin");
+}
+
+.domainMenuToggleButtonWhiteText
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.DomainMenuToggleButtonWhiteTextSkin");
+}
+
+.domainMenuToggleButtonBlackText
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.DomainMenuToggleButtonBlackTextSkin");
+}
+
+.domainMenuAnchorToggleButtonWhiteText
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.DomainMenuAnchorToggleButtonWhiteTextSkin");
+}
+
+.domainMenuAnchorToggleButtonBlackText
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.DomainMenuAnchorToggleButtonBlackTextSkin");
+}
+
+toolbar|ToolBarButton
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.ToolBarButtonWhiteLabelSkin"); /*skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.ToolBarButtonBlackLabelSkin");*/
+}
+
+control1|DashboardToolBarButton
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.ToolBarButtonWhiteLabelSkin"); /*skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.ToolBarButtonBlackLabelSkin");*/
+}
+
+.toolBarButtonWhiteLabelStyle
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.ToolBarButtonWhiteLabelSkin");
+}
+
+components|ToolBarButton
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.ToolBarButtonWhiteLabelSkin");
+}
+
+toolbar|ViewToolBarButton
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.ViewToolBarButtonSkin");
+}
+
+control|FilterDropDownList
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.FilterDropDownListSkin")
+}
+
+s|DropDownList
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.DropDownListSkin")
+}
+
+s|Button
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.GeneralButtonSkin")
+}
+
+control|PopupTitleWindow
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.PopupTitleWindowSkin")
+}
+
+control|PushMessageTitleWindow
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.PushMessageTitleWindowSkin")
+}
+
+.loginPageButtonStyle
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.LoginPageButton")
+}
+
+.viewButton
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.ViewToolbarToggleButtonSkin");
+}
+
+.investToolBarButtonStyle
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.InvestToolBarButtonSkin");
+}
+
+.investToggleButtonStyle
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.InvestToolbarToggleButtonSkin");
+}
+
+.viewDropDownStyle
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.ViewChangeDropDownSkin")
+}
+
+toolbar|InvestViewToolBarButton
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.toolbar.InvestViewToolBarButtonSkin");
+}
+
+skills|ComponentSkillsGroup
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.skills.ComponentSkillsGroupSkin");
+}
+
+skills|ComponentSkillsTimeSheet
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.skills.ComponentSkillsTimeSheetSkin");
+}
+
+skills|ComponentSkillsetViewToolBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.skills.ComponentSkillsetViewToolBarSkin");
+}
+
+skills|ComponentSkillTeamViewToolBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.skills.ComponentSkillTeamViewToolBarSkin");
+}
+
+skills|ComponentSkillGroupViewToolBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.skills.ComponentSkillGroupViewToolBarSkin");
+}
+
+group|GroupDetailView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.skill.group.GroupDetailViewSkin");
+}
+
+group|UserDetailView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.skill.group.UserDetailViewSkin");
+}
+
+group|PossibleUserDetails
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.skill.group.PossibleUserDetailsSkin");
+}
+
+common|PermissionView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.common.PermissionViewSkin");
+}
+
+
+ganttsheet|OrganizationChart
+{
+	skinClass:ClassReference("com.inspird.gant.ganttsheet.OrganizationChartSkin")
+}
+
+link1|LinkProjectView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.roadmap.project.link.LinkProjectViewSkin")
+}
+
+link1|LinkTypeView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.roadmap.project.link.LinkTypeViewSkin")
+}
+
+tasks1|DependView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.task.DependViewSkin")
+}
+
+tasks1|DeleyView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.task.DeleyViewSkin")
+}
+
+link2|LinkRequirementView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.execute.requirements.link.LinkRequirementViewSkin")
+}
+
+statusbar|ComponentStatusbar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.statusbar.ComponentStatusbarSkin")
+}
+
+common|TimeOutPopup
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.common.TimeOutPopupSkin")
+}
+
+requirements2|ComponentRequirements
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.execute.requirements.ComponentRequirementsSkin")
+}
+
+tasks2|ComponentTasksView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.execute.tasks.ComponentTasksViewSkin")
+}
+
+tests1|ComponentTestsView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.execute.tests.ComponentTestsViewSkin")
+}
+
+risks1|ComponentRisksView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.execute.risks.ComponentRisksViewSkin")
+}
+
+requirements2|ComponentRequirementsViewToolBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.execute.requirements.ComponentRequirementsViewToolBarSkin")
+}
+
+tests1|ComponentTestsViewToolBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.execute.tests.ComponentTestsViewToolBarSkin")
+}
+
+tests1|ComponentTestsFilterToolBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.ComponentFilterToolBarSkin")
+}
+
+requirements2|ComponentRequirements_GantChart
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.execute.requirements.ComponentRequirements_GantChartSkin")
+}
+
+tasks2|ComponentTasks_GantChart
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.execute.tasks.ComponentTasks_GantChartSkin")
+}
+
+tests1|ComponentTests_GantChart
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.execute.tests.ComponentTests_GantChartSkin")
+}
+
+risks1|ComponentRisks_GantChart
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.execute.risks.ComponentRisks_GantChartSkin")
+}
+
+common|EssentialsRequirementsView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.common.EssentialsRequirementsViewSkin")
+}
+
+dashboards|ComponentManageReports
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.dashboards.ComponentManageReportsSkin")
+}
+
+components|Dashboards
+{
+	skinClass:ClassReference("com.inspird.pod.skins.DashboardsSkin");
+}
+
+components|PodWindow
+{
+	skinClass:ClassReference("com.inspird.pod.skins.PodWindowSkin");
+}
+
+popup|AddNewGadgetPopup
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.dashboard.AddNewGadgetPopupSkin")
+}
+
+popup|SelectDesignPopup
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.dashboard.SelectDesignPopupSkin")
+}
+
+portfolio|SelectReviewPopup
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.portfolio.SelectReviewPopupSkin")
+}
+
+popup|BrowserPopup
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.portfolio.BrowserPopupSkin")
+}
+
+popup|SelectDesignPopup
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.dashboard.SelectDesignPopupSkin")
+}
+
+cell1|LayoutGadget
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.dashboards.cell.LayoutGadgetSkin")
+}
+
+dashboards|ComponentReportFilter
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.dashboards.ComponentReportFilterSkin")	
+}
+
+cell1|ComponentFieldView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.dashboards.cell.ComponentFieldViewSkin")	
+}
+
+dashboards|ComponentInvestDashboard
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.dashboards.ComponentInvestDashboardSkin")
+}
+
+components|DashboardsInvest
+{
+	skinClass:ClassReference("com.inspird.pod.skins.DashboardsInvestSkin")
+}
+
+popup|EditLayoutPopup
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.component.dashboards.EditLayoutPopupSkin")
+}
+
+conductTest|StartTestSessionView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.conductTest.StartTestSessionViewSkin")
+}
+
+bulk|EditingView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.bulk.EditingViewSkin");
+}
+
+bulk|ItemsListView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.bulk.ItemsListViewSkin");
+}
+
+progressbar|ProgressBar
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.control.progressbar.ProgressBarSkin");
+}
+
+requirements1|EditLinkTypeView
+{
+	skinClass:ClassReference("com.inspird.skin.view.ui.popup.execute.requirements.EditLinkTypeViewSkin");
+}
