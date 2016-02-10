@@ -12,8 +12,7 @@
     <classEntry path="com.ebillity.core.view.ui.components.MyEntriesMediator"/>
     <classEntry path="com.ebillity.core.view.ui.main.MainViewMediator"/>
     <classEntry path="com.ebillity.core.controler.commands.CommandLogin"/>
-    <classEntry path="com.ebillity.core.services.LoginService"/>
-    <classEntry path="com.ebillity.core.services.interfaces.ILoginService"/>
+    <classEntry path="com.ebillity.core.controler.services.LoginService"/>
     <classEntry path="com.ebillity.core.model.common.IObjectPool"/>
     <classEntry path="com.ebillity.core.model.common.ObjectMap"/>
     <classEntry path="com.ebillity.core.model.common.ObjectPool"/>

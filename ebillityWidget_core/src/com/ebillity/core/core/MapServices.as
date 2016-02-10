@@ -1,10 +1,10 @@
 package com.ebillity.core.core
 {
 
-	import com.ebillity.core.services.LoginService;
-	import com.ebillity.core.services.factories.RemoteObjectFactory;
-	import com.ebillity.core.services.interfaces.ILoginService;
-
+	import com.ebillity.core.controler.services.LoginService;
+	import com.ebillity.core.controler.services.factories.RemoteObjectFactory;
+	import com.ebillity.core.controler.services.interfaces.ILoginService;
+	
 	import mx.rpc.remoting.RemoteObject;
 
 	public class MapServices extends MappingCommand

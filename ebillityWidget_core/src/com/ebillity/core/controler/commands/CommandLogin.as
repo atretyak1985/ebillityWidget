@@ -4,10 +4,10 @@ package com.ebillity.core.controler.commands
 	import com.ebillity.core.controler.commands.base.CommandWebServiceBase;
 	import com.ebillity.core.controler.commands.base.signal.SignalParams;
 	import com.ebillity.core.controler.net.async.IPromise;
+	import com.ebillity.core.controler.services.interfaces.ILoginService;
 	import com.ebillity.core.model.dto.UserDTO;
 	import com.ebillity.core.model.modelinfo.BaseInfoModelLocator;
 	import com.ebillity.core.model.modelinfo.UserInfoModelLocator;
-	import com.ebillity.core.services.interfaces.ILoginService;
 
 	public class CommandLogin extends CommandWebServiceBase
 	{
