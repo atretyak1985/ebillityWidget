@@ -30,6 +30,8 @@
     <classEntry path="com.ebillity.core.constants.MenuConstants"/>
     <classEntry path="com.ebillity.core.view.ui.base.BaseView"/>
     <classEntry path="com.ebillity.core.view.mediator.core.MenuPanelMediator"/>
+    <classEntry path="com.ebillity.core.view.ui.core.ApprovePanel"/>
+    <classEntry path="com.ebillity.core.view.ui.controls.StatusLabel"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

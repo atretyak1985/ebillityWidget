@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		xmlns:mx="library://ns.adobe.com/flex/mx">
+	<!-- host component -->
+	<fx:Metadata>
+		[HostComponent("com.ebillity.core.view.ui.controls.StatusLabel")]
+	</fx:Metadata>
+	<s:states>
+		<!-- use these stategroups for setting values in components -->
+		<s:State name="editOn" stateGroups="editIsOn" />
+		<s:State name="editOff" stateGroups="editIsOff" />
+		<s:State name="one" stateGroups="lowDPI" />
+		<s:State name="two" stateGroups="medDPI" />
+		<s:State name="three"  stateGroups="highDPI" />
+		 
+		<!-- These are the useful states -->
+		<s:State name="editOn120" stateGroups="editIsOn,lowDPI" />
+		<s:State name="editOn240" stateGroups="editIsOn,medDPI" />
+		<s:State name="editOn360" stateGroups="editIsOn,highDPI" />
+		<s:State name="editOff120" stateGroups="editIsOff,lowDPI" />
+		<s:State name="editOff240" stateGroups="editIsOff,medDPI" />
+		<s:State name="editOff360" stateGroups="editIsOff,highDPI" />
+	</s:states>
+	
+	<s:HGroup id="approvedGroup">
+		<s:Image/>
+		<s:Label/>
+	</s:HGroup>
+	<s:HGroup id="queueGroup">
+		<s:Image/>
+		<s:Label/>
+	</s:HGroup>
+	<s:HGroup id="billedGroup">
+		<s:Image/>
+		<s:Label/>
+	</s:HGroup>
+</s:Skin>

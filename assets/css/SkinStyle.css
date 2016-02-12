@@ -7,6 +7,7 @@
 @namespace main "com.ebillity.core.view.ui.main.*";
 @namespace core "com.ebillity.core.view.ui.core.*";
 @namespace s "library://ns.adobe.com/flex/spark";
+controls "com.ebillity.core.view.ui.controls.*";
 
 admin|AdminView
 {
@@ -122,8 +123,15 @@ s|TextInput
 
 
 
+core|ApprovePanel
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.core.ApprovePanelSkin");
+}
 
-
+controls|StatusLabel
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.StatusLabelSkin");
+}
 
 
 
