@@ -6,8 +6,8 @@
 @namespace login "com.ebillity.core.view.ui.login.*";
 @namespace main "com.ebillity.core.view.ui.main.*";
 @namespace core "com.ebillity.core.view.ui.core.*";
-@namespace controls "com.ebillity.core.view.ui.controls.*";
 @namespace s "library://ns.adobe.com/flex/spark";
+controls "com.ebillity.core.view.ui.controls.*";
 
 admin|AdminView
 {
@@ -101,12 +101,8 @@ s|FormHeading
 s|FormItem
 {
 	skinClass: ClassReference("spark.skins.spark.StackedFormItemSkin");
-	fontFamily: "Arial";
-	color: #888453;
-	fontSize: 14;
-	
+	fontFamily: "OpenSansRegular";
 }
-
 
  s|Label
 {
@@ -134,7 +130,7 @@ core|ApprovePanel
 
 controls|StatusLabel
 {
-	skinClass:ClassReference("com.ebillity.skin.ui.core.StatusLabelSkin");
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.StatusLabelSkin");
 }
 
 

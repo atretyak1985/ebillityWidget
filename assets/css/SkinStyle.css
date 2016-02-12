@@ -7,7 +7,7 @@
 @namespace main "com.ebillity.core.view.ui.main.*";
 @namespace core "com.ebillity.core.view.ui.core.*";
 @namespace s "library://ns.adobe.com/flex/spark";
-controls "com.ebillity.core.view.ui.controls.*";
+@namespace controls "com.ebillity.core.view.ui.controls.*";
 
 admin|AdminView
 {
@@ -104,7 +104,7 @@ s|FormItem
 	fontFamily: "OpenSansRegular";
 }
 
- s|Label
+ s|Label 
 {
 	fontFamily:  "OpenSansRegular";
 }
@@ -117,11 +117,6 @@ s|TextInput
 {
 	fontFamily:  "OpenSansRegular";
 }
-
-
-
-
-
 
 core|ApprovePanel
 {
