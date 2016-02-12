@@ -2,23 +2,80 @@
 <s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
 		xmlns:s="library://ns.adobe.com/flex/spark"
 		xmlns:mx="library://ns.adobe.com/flex/mx">
+	
 	<!-- host component -->
 	<fx:Metadata>
 		[HostComponent("com.ebillity.core.view.ui.login.LoginView")]
 	</fx:Metadata>
-
-	<s:Form>
-		<s:FormItem label="E-mail">
-			<s:TextInput id="email"
-						 width="200"/>
-		</s:FormItem>
-		<s:FormItem label="password">
-			<s:TextInput id="password"
-						 width="200"/>
-		</s:FormItem>
-		<s:FormItem label="password">
-			<s:Button id="submit"
-					  width="200"/>
-		</s:FormItem>
-	</s:Form>
+	
+	<fx:Script>
+		<![CDATA[
+			/////////	Code for Logo image	////////////////////
+			[Embed(source="/Images/TimeTrackerLogo.png")]
+			[Bindable]
+			public var image_logo:Class;
+		]]>
+	</fx:Script>
+	
+	<!-- Properties of the states~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<s:states>
+		<s:State name="normal"/>
+		<s:State name="disable"/>
+	</s:states>
+	
+	<!-- background ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<s:Rect width="100%" height="100%">
+		<s:fill>
+			<s:SolidColor color="#f1f1f2"/>
+		</s:fill>
+	</s:Rect>
+	
+	<s:Group width="100%" height="100%" >
+		
+		<s:layout >
+				<s:VerticalLayout/>
+			</s:layout>
+		
+		<s:HGroup width="100%" height="30%" horizontalAlign="center" verticalAlign="bottom">
+			<s:Image bottom="0" source="{image_logo}"/>
+		</s:HGroup>
+		
+		
+		<s:HGroup width="100%" height="40%"  horizontalAlign="center" verticalAlign="middle">
+			<s:Form width="100%" >
+	
+					<s:layout>
+						<s:FormLayout gap="5" horizontalAlign="center"/>
+					</s:layout>
+				
+				<s:FormItem width="428" label="Email" >
+					<s:TextInput id="email" 
+								 width="400" height="30" borderColor="#b8b6b6" borderVisible="true"
+								 skinClass="com.ebillity.skin.ui.login.LoginTextInputSkin"/>
+				</s:FormItem>
+				
+				<s:FormItem top="2" width="428" label="Password">
+					<s:TextInput id="password" displayAsPassword="true"
+								 width="400" height="30" borderColor="#b8b6b6" borderVisible="true"
+								 skinClass="com.ebillity.skin.ui.login.LoginTextInputSkin"/>
+				</s:FormItem>
+				
+				<s:FormItem width="168" fontSize="18">
+					<s:Button id="submit" 
+							  width="140" height="40" label="Login" color="white" fontSize="18" 
+							  skinClass="com.ebillity.skin.ui.login.LoginButtonSkin" />
+				</s:FormItem>
+				
+			</s:Form>
+			
+		</s:HGroup>
+		
+		<s:HGroup width="100%" height="20%" horizontalAlign="center" verticalAlign="top">
+			<s:Label  text="Forgot your password?" fontSize="14" color="#4e93cf"  textDecoration="underline" />
+		</s:HGroup>
+		
+		
+	</s:Group>
+	
+	
 </s:Skin>
