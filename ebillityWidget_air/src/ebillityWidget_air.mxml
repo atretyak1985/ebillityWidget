@@ -6,7 +6,8 @@
 					   height="800"
 					   initialize="app_preinitializeHandler()"
 					   applicationComplete="app_completeHandler()"
-					   xmlns:main="com.ebillity.core.view.ui.main.*">
+					   xmlns:main="com.ebillity.core.view.ui.main.*"
+					   showStatusBar="false">
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
