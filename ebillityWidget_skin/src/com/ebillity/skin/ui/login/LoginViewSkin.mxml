@@ -43,7 +43,6 @@
 				  horizontalAlign="center"
 				  verticalAlign="bottom">
 			<s:Image bottom="0"
-					 height="30%"
 					 source="{image_logo}"/>
 		</s:HGroup>
 
