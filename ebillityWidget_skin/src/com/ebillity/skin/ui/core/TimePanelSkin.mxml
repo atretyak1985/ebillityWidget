@@ -7,6 +7,7 @@
 		[HostComponent("com.ebillity.core.view.ui.core.TimePanel")]
 	</fx:Metadata>
 	<s:BorderContainer color="0xff0000"
+					   backgroundColor="#414142"
 					   width="100%"
 					   height="100%"/>
 </s:Skin>
