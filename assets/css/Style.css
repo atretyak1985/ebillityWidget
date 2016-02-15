@@ -12,8 +12,11 @@
 	fontFamily: "OpenSansBold"; 
 	embedAsCFF: true; 
 }
-
-
+@font-face { 
+	src: url("fonts/OpenSans-Semibold.ttf"); 
+	fontFamily: "OpenSansSemibold"; 
+	embedAsCFF: true; 
+}
 
 
 s|Label 
@@ -29,4 +32,17 @@ s|Label
 s|TextInput
 {
 	fontFamily:  "OpenSansRegular";
+}
+.OpenSans_Semibold
+{
+	fontFamily:"OpenSansSemibold";
+}
+.mainMenu{
+	fontSize:14;
+	textAlign:left;
+	borderVisible:false;
+	color:#BBBBBB;
+	backgroundColor:#414042;
+	contentBackgroundColor:#414042;
+	rollOverColor:#BBBBBB;
 }
