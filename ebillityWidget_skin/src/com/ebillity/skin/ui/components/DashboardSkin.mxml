@@ -8,42 +8,104 @@
 		[HostComponent("com.ebillity.core.view.ui.components.Dashboard")]
 	</fx:Metadata>
 
+	<fx:Script>
+		<![CDATA[
+			/////////	Code for  images	////////////////////
+			[Embed(source="/Images/AddExpenseIcon.png")]
+			[Bindable]
+			public var AddExpenseIcon:Class;
+			
+			[Embed(source="/Images/MyEntriesIcon.png")]
+			[Bindable]
+			public var MyEntriesIcon:Class;
+			
+			[Embed(source="/Images/SettingsIcon.png")]
+			[Bindable]
+			public var SettingsIcon:Class;
+			
+			[Embed(source="/Images/TrackTimeIcon.png")]
+			[Bindable]
+			public var TrackTimeIcon:Class;
+			
+			[Embed(source="/Images/TeamEntries.png")]
+			[Bindable]
+			public var TeamEntries:Class;
+		]]>
+	</fx:Script>
+	
+	
+	
 	<s:states>
 		<s:State name="admin"/>
 		<s:State name="employee"/>
 	</s:states>
 
-	<s:layout>
-		<s:VerticalLayout horizontalAlign="center"
-						  paddingLeft="10"
-						  paddingRight="10"
-						  paddingTop="10"
-						  paddingBottom="10"/>
-	</s:layout>
-
-	<s:TileGroup id="mainGroup"
-				 width="100%"
-				 height="100%">
-		<s:Button id="trackTimeButton"
-				  label="Track Time"
-				  width="220"
-				  height="160"/>
-		<s:Button id="addExpenseButton"
-				  label="Add Expense"
-				  width="220"
-				  height="160"/>
-		<s:Button id="myEntriesButton"
-				  label="My Entries"
-				  width="220"
-				  height="160"/>
-		<s:Button id="teamEntriesButton"
-				  label="Team Entries"
-				  width="220"
-				  height="160"
-				  includeIn="admin"/>
-		<s:Button id="settingsButton"
-				  label="Settings"
-				  width="220"
-				  height="160"/>
-	</s:TileGroup>
+	
+	<!-- background ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	<s:Rect width="100%" height="100%">
+		<s:fill>
+			<s:SolidColor color="#f1f1f2"/>
+		</s:fill>
+	</s:Rect>
+	
+	<s:Group>
+		<s:layout>
+			<s:VerticalLayout horizontalAlign="left" verticalAlign="middle"
+			paddingLeft="20" gap="20"
+			paddingRight="20"
+			paddingTop="20"
+			paddingBottom="20"/>
+		</s:layout>
+			
+		<s:Label paddingLeft="0" bottom="0" text="Setember 22 2014"
+				 fontSize="18" color="#58585b"/>
+		<s:TileGroup id="mainGroup"
+					 width="100%"
+					 height="100%"
+					 paddingBottom="0" paddingLeft="0" 
+					 paddingTop="0" paddingRight="0" 
+					 horizontalGap="20"
+					 verticalGap="20"> 
+			
+			<s:Button id="trackTimeButton"
+					  label="Track Time"
+					  width="220" height="160"
+					  icon="{TrackTimeIcon}"
+					  iconPlacement="top"
+					  skinClass="com.ebillity.skin.ui.components.DashboardButtonSkin"/>
+			<s:Button id="addExpenseButton"
+					  label="Add Expense"
+					  width="220" height="160"
+					  icon="{AddExpenseIcon}"
+					  iconPlacement="top"
+					  skinClass="com.ebillity.skin.ui.components.DashboardButtonSkin"
+					  />
+			<s:Button id="myEntriesButton"
+					  label="My Entries"
+					  width="220" height="160"
+					  icon="{MyEntriesIcon}"
+					  iconPlacement="top"
+					  skinClass="com.ebillity.skin.ui.components.DashboardButtonSkin"
+					  />
+			<s:Button id="teamEntriesButton"
+					  label="Team Entries"
+					  width="220" height="160"
+					  icon="{TeamEntries}"
+					  iconPlacement="top"
+					  skinClass="com.ebillity.skin.ui.components.DashboardButtonSkin"
+					  includeIn="admin"/>
+			
+			<s:Button id="settingsButton"
+					  label="Settings"
+					  width="220" height="160"
+					  icon="{SettingsIcon}"
+					  iconPlacement="top"
+					  skinClass="com.ebillity.skin.ui.components.DashboardButtonSkin"
+					  />
+		</s:TileGroup>
+			
+	
+		
+	</s:Group>
 </s:Skin>
