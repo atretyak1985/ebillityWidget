@@ -79,6 +79,7 @@ core|StatusPanel
 {
 	skinClass:ClassReference("com.ebillity.skin.ui.core.StatusPanelSkin");
 }
+
 @font-face { 
 	src: url("fonts/OpenSans-Regular.ttf"); 
 	fontFamily: "OpenSansRegular"; 
@@ -89,6 +90,12 @@ core|StatusPanel
 	fontFamily: "OpenSansBold"; 
 	embedAsCFF: true; 
 }
+@font-face { 
+	src: url("fonts/OpenSans-Semibold.ttf"); 
+	fontFamily: "OpenSansSemibold"; 
+	embedAsCFF: true; 
+}
+
 s|Form
 {
 	skinClass:ClassReference("spark.skins.spark.StackedFormSkin");
@@ -101,7 +108,12 @@ s|FormHeading
 s|FormItem
 {
 	skinClass: ClassReference("spark.skins.spark.StackedFormItemSkin");
-	fontFamily: "OpenSansRegular";
+	
+}
+s|Form s|FormItem #labelDisplay
+{
+	fontFamily:  "Arial";
+	fontSize: 14;
 }
 
  s|Label 
@@ -117,7 +129,16 @@ s|TextInput
 {
 	fontFamily:  "OpenSansRegular";
 }
+.OpenSans_Semibold
+{
+	fontFamily: "OpenSansSemibold";
+}
+#menuButton 
+{
+	skin: Embed("/images/PopUpButtonMenuModified.png");
+}
 
+<<<<<<< Updated upstream
 core|ApprovePanel
 {
 	skinClass:ClassReference("com.ebillity.skin.ui.core.ApprovePanelSkin");
@@ -127,6 +148,21 @@ controls|StatusLabel
 {
 	skinClass:ClassReference("com.ebillity.skin.ui.controls.StatusLabelSkin");
 }
+=======
+.mainMenu{
+fontSize: 14;
+textAlign: left;
+borderVisible:false;
+color:#BBBBBB;
+backgroundColor:#414042;
+contentBackgroundColor:#414042;
+rollOverColor:#BBBBBB;
+}
+
+
+
+
+>>>>>>> Stashed changes
 
 
 
