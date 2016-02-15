@@ -138,7 +138,7 @@ s|TextInput
 	skin: Embed("/images/PopUpButtonMenuModified.png");
 }
 
-<<<<<<< Updated upstream
+
 core|ApprovePanel
 {
 	skinClass:ClassReference("com.ebillity.skin.ui.core.ApprovePanelSkin");
@@ -148,7 +148,7 @@ controls|StatusLabel
 {
 	skinClass:ClassReference("com.ebillity.skin.ui.controls.StatusLabelSkin");
 }
-=======
+
 .mainMenu{
 fontSize: 14;
 textAlign: left;
@@ -161,8 +161,6 @@ rollOverColor:#BBBBBB;
 
 
 
-
->>>>>>> Stashed changes
 
 
 
