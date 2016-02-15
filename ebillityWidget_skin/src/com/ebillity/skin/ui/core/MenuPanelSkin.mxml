@@ -35,12 +35,14 @@
 			{
 				Menu(menuButton.popUp).width=170;
 				Menu(menuButton.popUp).rowHeight=40;
+				Menu(menuButton.popUp).variableRowHeight=true;
 				
 				//dificultis with adding separator 
 				//var mySeparator:Array = [{ "type": "separator" }];
 				//Menu(menuButton.popUp).addChildAt(new Button(),1);
 				//var mySeparator:NativeMenuItem = new NativeMenuItem("",true);
-				//Menu(menuButton.popUp).addChild(DisplayObject(mySeparator));
+				Menu(menuButton.popUp).setStyle("separator",MySeparatorskin);
+				//Menu(menuButton.popUp).setStyle("menuItem",MySeparatorskin);
 			}
 			
 			protected function menuButton_preinitializeHandler(event:FlexEvent):void
