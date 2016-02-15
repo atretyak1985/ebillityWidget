@@ -4,7 +4,7 @@ package com.ebillity.core.view.ui.base
 	import com.ebillity.core.constants.MenuConstants;
 	import com.ebillity.core.view.ui.components.Dashboard;
 	import com.ebillity.core.view.ui.components.ExpenseEntry;
-	import com.ebillity.core.view.ui.components.ManageEntries;
+	import com.ebillity.core.view.ui.components.TeamEntries;
 	import com.ebillity.core.view.ui.components.MyEntries;
 	import com.ebillity.core.view.ui.components.Settings;
 	import com.ebillity.core.view.ui.components.TimeEntry;
@@ -17,7 +17,7 @@ package com.ebillity.core.view.ui.base
 
 		public static const STATE_EXPENSE:String = "expense";
 
-		public static const STATE_MANAGE:String = "manage";
+		public static const STATE_TEAMENTRIES:String = "teamentries";
 
 		public static const STATE_SETTINGS:String = "settings";
 
@@ -38,10 +38,10 @@ package com.ebillity.core.view.ui.base
 		public var timeEntry:TimeEntry;
 
 		[SkinPart( required = "false" )]
-		public var manageEntries:ManageEntries;
+		public var myEntries:MyEntries;
 
 		[SkinPart( required = "false" )]
-		public var myEntries:MyEntries;
+		public var teamEntries:TeamEntries;
 
 		public function changeMenu( selectedMenu:String ):void
 		{
@@ -64,7 +64,7 @@ package com.ebillity.core.view.ui.base
 				}
 				case MenuConstants.TEAM_ENTRIES:
 				{
-					state = STATE_MANAGE;
+					state = STATE_TEAMENTRIES;
 					break;
 				}
 				case MenuConstants.TRACK_TIME:

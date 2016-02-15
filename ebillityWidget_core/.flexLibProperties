@@ -32,6 +32,9 @@
     <classEntry path="com.ebillity.core.view.mediator.core.MenuPanelMediator"/>
     <classEntry path="com.ebillity.core.view.ui.core.ApprovePanel"/>
     <classEntry path="com.ebillity.core.view.ui.controls.StatusLabel"/>
+    <classEntry path="com.ebillity.core.view.ui.controls.ExpenseEntryForm"/>
+    <classEntry path="com.ebillity.core.view.ui.controls.EntriesGrid"/>
+    <classEntry path="com.ebillity.core.view.ui.controls.TimeEntryForm"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

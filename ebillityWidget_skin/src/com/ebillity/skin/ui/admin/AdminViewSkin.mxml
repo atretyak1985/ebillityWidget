@@ -10,7 +10,8 @@
 	<s:states>
 		<s:State name="dashboard"/>
 		<s:State name="expense"/>
-		<s:State name="manage"/>
+		<s:State name="myentries"/>
+		<s:State name="teamentries"/>
 		<s:State name="settings"/>
 		<s:State name="time"/>
 	</s:states>
@@ -23,10 +24,14 @@
 							 height="100%"
 							 width="100%"
 							 includeIn="expense"/>
-	<components:ManageEntries id="manageEntries"
-							  height="100%"
-							  width="100%"
-							  includeIn="manage"/>
+	<components:MyEntries id="myEntries"
+						  height="100%"
+						  width="100%"
+						  includeIn="myentries"/>
+	<components:TeamEntries id="teamEntries"
+							height="100%"
+							width="100%"
+							includeIn="teamentries"/>
 	<components:Settings id="settings"
 						 height="100%"
 						 width="100%"

@@ -4,7 +4,6 @@
 		xmlns:mx="library://ns.adobe.com/flex/mx">
 	<!-- host component -->
 	<fx:Metadata>
-		[HostComponent("com.ebillity.core.view.ui.components.ManageEntries")]
+		[HostComponent("com.ebillity.core.view.ui.controls.EntriesGrid")]
 	</fx:Metadata>
-	<s:Label text="ManageEntries"/>
 </s:Skin>

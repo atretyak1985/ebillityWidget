@@ -5,8 +5,7 @@
 		xmlns:controls="com.ebillity.core.view.ui.controls.*">
 	<!-- host component -->
 	<fx:Metadata>
-		[HostComponent("com.ebillity.core.view.ui.components.TimeEntry")]
+		[HostComponent("com.ebillity.core.view.ui.components.TeamEntries")]
 	</fx:Metadata>
-	<s:Label text="TimeEntry"/>
-	<controls:TimeEntryForm/>
+	<controls:EntriesGrid/>
 </s:Skin>

@@ -24,14 +24,9 @@ components|ExpenseEntry
 	skinClass:ClassReference("com.ebillity.skin.ui.components.ExpenseEntrySkin");
 }
 
-components|ManageEntries
+components|TeamEntries
 {
-	skinClass:ClassReference("com.ebillity.skin.ui.components.ManageEntriesSkin");
-}
-
-components|ManageEntries
-{
-	skinClass:ClassReference("com.ebillity.skin.ui.components.ManageEntriesSkin");
+	skinClass:ClassReference("com.ebillity.skin.ui.components.TeamEntriesSkin");
 }
 
 components|MyEntries
@@ -59,7 +54,6 @@ login|LoginView
 	skinClass:ClassReference("com.ebillity.skin.ui.login.LoginViewSkin");
 }
 
-
 main|MainView
 {
 	skinClass:ClassReference("com.ebillity.skin.ui.main.MainViewSkin");
@@ -80,54 +74,34 @@ core|StatusPanel
 	skinClass:ClassReference("com.ebillity.skin.ui.core.StatusPanelSkin");
 }
 
-@font-face { 
-	src: url("fonts/OpenSans-Regular.ttf"); 
-	fontFamily: "OpenSansRegular"; 
-	embedAsCFF: true; 
+core|ApprovePanel
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.core.ApprovePanelSkin");
 }
-@font-face { 
-	src: url("fonts/OpenSans-Bold.ttf"); 
-	fontFamily: "OpenSansBold"; 
-	embedAsCFF: true; 
+
+controls|StatusLabel
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.StatusLabelSkin");
 }
-@font-face { 
-	src: url("fonts/OpenSans-Semibold.ttf"); 
-	fontFamily: "OpenSansSemibold"; 
-	embedAsCFF: true; 
+
+controls|ExpenseEntryForm
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.ExpenseEntryFormSkin");
+}
+
+controls|EntriesGrid
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.EntriesGridSkin");
+}
+
+controls|TimeEntryForm
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.TimeEntryFormSkin");
 }
 
 s|Form
 {
 	skinClass:ClassReference("spark.skins.spark.StackedFormSkin");
-}
-
-s|FormHeading
-{
-	skinClass:ClassReference("spark.skins.spark.StackedFormHeadingSkin");
-}
-s|FormItem
-{
-	skinClass: ClassReference("spark.skins.spark.StackedFormItemSkin");
-	
-}
-s|Form s|FormItem #labelDisplay
-{
-	fontFamily:  "Arial";
-	fontSize: 14;
-}
-
- s|Label 
-{
-	fontFamily:  "OpenSansRegular";
-}
-
-.OpenSansBoldlabel
-{
-	fontFamily: "OpenSansBold";
-}
-s|TextInput
-{
-	fontFamily:  "OpenSansRegular";
 }
 .OpenSans_Semibold
 {
@@ -139,37 +113,12 @@ s|TextInput
 }
 
 
-core|ApprovePanel
+s|FormHeading
 {
-	skinClass:ClassReference("com.ebillity.skin.ui.core.ApprovePanelSkin");
+	skinClass:ClassReference("spark.skins.spark.StackedFormHeadingSkin");
 }
-
-controls|StatusLabel
+s|FormItem
 {
-	skinClass:ClassReference("com.ebillity.skin.ui.controls.StatusLabelSkin");
+	skinClass: ClassReference("spark.skins.spark.StackedFormItemSkin");
+	fontFamily: "OpenSansRegular";
 }
-
-.mainMenu{
-fontSize: 14;
-textAlign: left;
-borderVisible:false;
-color:#BBBBBB;
-backgroundColor:#414042;
-contentBackgroundColor:#414042;
-rollOverColor:#BBBBBB;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

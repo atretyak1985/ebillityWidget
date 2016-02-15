@@ -13,6 +13,7 @@
 	</fx:Declarations>
 
 	<fx:Style source="css/SkinStyle.css"/>
+	<fx:Style source="css/Style.css"/>
 	<fx:Script>
 		<![CDATA[
 			import com.ebillity.core.controler.context.EbillityContext;

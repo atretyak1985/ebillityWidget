@@ -2,7 +2,7 @@ package com.ebillity.core.view.ui.components
 {
 	import spark.components.supportClasses.SkinnableComponent;
 	
-	public class ManageEntries extends SkinnableComponent
+	public class TeamEntries extends SkinnableComponent
 	{
 		override protected function getCurrentSkinState():String
 		{

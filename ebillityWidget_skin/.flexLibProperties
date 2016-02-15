@@ -3,7 +3,7 @@
   <includeClasses>
     <classEntry path="com.ebillity.skin.ui.components.DashboardSkin"/>
     <classEntry path="com.ebillity.skin.ui.components.ExpenseEntrySkin"/>
-    <classEntry path="com.ebillity.skin.ui.components.ManageEntriesSkin"/>
+    <classEntry path="com.ebillity.skin.ui.components.TeamEntriesSkin"/>
     <classEntry path="com.ebillity.skin.ui.components.MyEntriesSkin"/>
     <classEntry path="com.ebillity.skin.ui.components.SettingsSkin"/>
     <classEntry path="com.ebillity.skin.ui.components.TimeEntrySkin"/>
@@ -11,6 +11,9 @@
     <classEntry path="com.ebillity.skin.ui.core.TimePanelSkin"/>
     <classEntry path="com.ebillity.skin.ui.core.StatusPanelSkin"/>
     <classEntry path="com.ebillity.skin.ui.core.ApprovePanelSkin"/>
+    <classEntry path="com.ebillity.skin.ui.controls.ExpenseEntryFormSkin"/>
+    <classEntry path="com.ebillity.skin.ui.controls.EntriesGridSkin"/>
+    <classEntry path="com.ebillity.skin.ui.controls.TimeEntryFormSkin"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>
