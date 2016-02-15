@@ -1,0 +1,158 @@
+/* CSS file */
+
+@namespace admin "com.ebillity.core.view.ui.admin.*";
+@namespace components "com.ebillity.core.view.ui.components.*";
+@namespace employee "com.ebillity.core.view.ui.employee.*";
+@namespace login "com.ebillity.core.view.ui.login.*";
+@namespace main "com.ebillity.core.view.ui.main.*";
+@namespace core "com.ebillity.core.view.ui.core.*";
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace controls "com.ebillity.core.view.ui.controls.*";
+
+admin|AdminView
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.admin.AdminViewSkin");
+}
+
+components|Dashboard
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.components.DashboardSkin");
+}
+
+components|ExpenseEntry
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.components.ExpenseEntrySkin");
+}
+
+components|ManageEntries
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.components.ManageEntriesSkin");
+}
+
+components|TeamEntries
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.components.TeamEntriesSkin");
+}
+
+components|MyEntries
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.components.MyEntriesSkin");
+}
+
+components|Settings
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.components.SettingsSkin");
+}
+
+components|TimeEntry
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.components.TimeEntrySkin");
+}
+
+employee|EmployeeView
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.employee.EmployeeViewSkin");
+}
+
+login|LoginView
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.login.LoginViewSkin");
+}
+
+
+main|MainView
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.main.MainViewSkin");
+}
+
+core|MenuPanel
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.core.MenuPanelSkin");
+}
+
+core|TimePanel
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.core.TimePanelSkin");
+}
+
+core|StatusPanel
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.core.StatusPanelSkin");
+}
+
+core|ApprovePanel
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.core.ApprovePanelSkin");
+}
+
+controls|StatusLabel
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.StatusLabelSkin");
+}
+
+controls|ExpenseEntryForm
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.ExpenseEntryFormSkin");
+}
+
+controls|EntriesGrid
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.EntriesGridSkin");
+}
+
+controls|TimeEntryForm
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.TimeEntryFormSkin");
+}
+
+s|Form
+{
+	skinClass:ClassReference("spark.skins.spark.StackedFormSkin");
+}
+.OpenSans_Semibold
+{
+	fontFamily: "OpenSansSemibold";
+}
+#menuButton 
+{
+	skin: Embed("/images/PopUpButtonMenuModified.png");
+}
+
+
+s|FormHeading
+{
+	skinClass:ClassReference("spark.skins.spark.StackedFormHeadingSkin");
+}
+s|FormItem
+{
+	skinClass: ClassReference("spark.skins.spark.StackedFormItemSkin");
+	fontFamily: "OpenSansRegular";
+}
+<<<<<<< 8169347d8efd4951b3c7e7b200d4a0361395afcc
+
+.mainMenu{
+fontSize: 14;
+textAlign: left;
+borderVisible:false;
+color:#BBBBBB;
+backgroundColor:#414042;
+contentBackgroundColor:#414042;
+rollOverColor:#BBBBBB;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+>>>>>>> 8dcfc2e35c3f9e9a52169cb7dd6cf93f276683e5
