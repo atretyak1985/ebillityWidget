@@ -96,11 +96,11 @@
     
     <!-- layer 2: fill -->
     <!--- @private -->
- <!--   <s:Rect id="fill" left="1" right="1" top="1" bottom="1" radiusX="0">
+   <s:Rect id="fill" left="1" right="1" top="1" bottom="1" radiusX="0">
         <s:fill>
-      			
+      			<s:SolidColor color="#f1f1f2"/>
         </s:fill>
-    </s:Rect>-->
+    </s:Rect>
 
    
     <!-- layer 7: border - put on top of the fill so it doesn't disappear when scale is less than 1 -->
