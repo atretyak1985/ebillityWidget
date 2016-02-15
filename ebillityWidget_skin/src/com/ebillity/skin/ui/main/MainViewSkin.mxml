@@ -23,9 +23,11 @@
 
 	<s:HGroup height="100%"
 			  width="100%"
-			  excludeFrom="login">
+			  excludeFrom="login" 
+			  gap="0">
 		<s:VGroup height="100%"
-				  width="100%">
+				  width="100%"
+				  gap="0">
 			<core:MenuPanel id="menuPanel"
 							height="50"
 							width="100%"/>
