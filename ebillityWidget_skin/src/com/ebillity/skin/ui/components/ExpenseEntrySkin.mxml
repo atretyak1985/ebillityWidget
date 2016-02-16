@@ -8,7 +8,20 @@
 	<fx:Metadata>
 		[HostComponent("com.ebillity.core.view.ui.components.ExpenseEntry")]
 	</fx:Metadata>
-	<core:ApprovePanel width="100%"
-					   height="70"/>
-	<controls:ExpenseEntryForm/>
+	<s:VGroup width="100%"
+			  height="100%">
+
+		<core:ApprovePanel width="100%"
+						   height="70"/>
+
+		<controls:ExpenseEntryForm width="100%"
+								   height="100%"/>
+
+		<core:NavigatePanel id="navigatePanel"
+							width="100%"
+							height="40"
+							label2="Save and Add"
+							label3="Save"/>
+	</s:VGroup>
+
 </s:Skin>

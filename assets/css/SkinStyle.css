@@ -99,26 +99,7 @@ controls|TimeEntryForm
 	skinClass:ClassReference("com.ebillity.skin.ui.controls.TimeEntryFormSkin");
 }
 
-s|Form
+core|NavigatePanel
 {
-	skinClass:ClassReference("spark.skins.spark.StackedFormSkin");
-}
-.OpenSans_Semibold
-{
-	fontFamily: "OpenSansSemibold";
-}
-#menuButton 
-{
-	skin: Embed("/images/PopUpButtonMenuModified.png");
-}
-
-
-s|FormHeading
-{
-	skinClass:ClassReference("spark.skins.spark.StackedFormHeadingSkin");
-}
-s|FormItem
-{
-	skinClass: ClassReference("spark.skins.spark.StackedFormItemSkin");
-	fontFamily: "OpenSansRegular";
+	skinClass: ClassReference("com.ebillity.skin.ui.core.NavigatePanelSkin");
 }

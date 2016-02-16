@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
 		xmlns:s="library://ns.adobe.com/flex/spark"
-		xmlns:mx="library://ns.adobe.com/flex/mx">
+		xmlns:mx="library://ns.adobe.com/flex/mx"
+		xmlns:controls="com.ebillity.core.view.ui.controls.*">
 
 	<!-- host component -->
 	<fx:Metadata>
@@ -10,10 +11,7 @@
 
 	<fx:Script>
 		<![CDATA[
-			/////////	Code for Logo image	////////////////////
-			[Embed( source = "/Images/TimeTrackerLogo.png" )]
-			[Bindable]
-			public var image_logo:Class;
+			import com.ebillity.core.constants.AssetConstants;
 		]]>
 	</fx:Script>
 
@@ -43,7 +41,7 @@
 				  horizontalAlign="center"
 				  verticalAlign="bottom">
 			<s:Image bottom="0"
-					 source="{image_logo}"/>
+					 source="{AssetConstants.TIME_TRACKER_LOGO}"/>
 		</s:HGroup>
 
 
@@ -60,10 +58,7 @@
 						label="Email">
 				<s:TextInput id="email"
 							 width="400"
-							 height="30"
-							 borderColor="#b8b6b6"
-							 borderVisible="true"
-							 skinClass="com.ebillity.skin.ui.login.LoginTextInputSkin"/>
+							 height="30"/>
 			</s:FormItem>
 
 			<s:FormItem top="2"
@@ -72,21 +67,16 @@
 				<s:TextInput id="password"
 							 displayAsPassword="true"
 							 width="400"
-							 height="30"
-							 borderColor="#b8b6b6"
-							 borderVisible="true"
-							 skinClass="com.ebillity.skin.ui.login.LoginTextInputSkin"/>
+							 height="30"/>
 			</s:FormItem>
 
 			<s:FormItem width="168"
 						fontSize="18">
-				<s:Button id="submit"
-						  width="140"
-						  height="40"
-						  label="Login"
-						  color="white"
-						  fontSize="18"
-						  skinClass="com.ebillity.skin.ui.login.LoginButtonSkin"/>
+				<controls:ColorButton id="submit"
+									  width="140"
+									  height="40"
+									  buttonColor="#E6883C"
+									  label="Login"/>
 			</s:FormItem>
 
 		</s:Form>

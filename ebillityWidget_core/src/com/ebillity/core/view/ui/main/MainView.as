@@ -2,7 +2,6 @@ package com.ebillity.core.view.ui.main
 {
 	import com.ebillity.core.view.ui.admin.AdminView;
 	import com.ebillity.core.view.ui.core.MenuPanel;
-	import com.ebillity.core.view.ui.core.StatusPanel;
 	import com.ebillity.core.view.ui.core.TimePanel;
 	import com.ebillity.core.view.ui.employee.EmployeeView;
 
@@ -24,9 +23,6 @@ package com.ebillity.core.view.ui.main
 
 		[SkinPart( required = "true" )]
 		public var employeeView:EmployeeView;
-
-		[SkinPart( required = "true" )]
-		public var statusPanel:StatusPanel;
 
 		[SkinPart( required = "true" )]
 		public var timePanel:TimePanel;

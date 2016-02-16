@@ -2,7 +2,8 @@
 <s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
 		xmlns:s="library://ns.adobe.com/flex/spark"
 		xmlns:mx="library://ns.adobe.com/flex/mx"
-		xmlns:layout="org.osmf.layout.*">
+		xmlns:layout="org.osmf.layout.*"
+		xmlns:core="com.ebillity.core.view.ui.core.*">
 	<!-- host component -->
 	<fx:Metadata>
 		[HostComponent("com.ebillity.core.view.ui.components.Dashboard")]
@@ -10,102 +11,92 @@
 
 	<fx:Script>
 		<![CDATA[
-			/////////	Code for  images	////////////////////
-			[Embed(source="/Images/AddExpenseIcon.png")]
-			[Bindable]
-			public var AddExpenseIcon:Class;
-			
-			[Embed(source="/Images/MyEntriesIcon.png")]
-			[Bindable]
-			public var MyEntriesIcon:Class;
-			
-			[Embed(source="/Images/SettingsIcon.png")]
-			[Bindable]
-			public var SettingsIcon:Class;
-			
-			[Embed(source="/Images/TrackTimeIcon.png")]
-			[Bindable]
-			public var TrackTimeIcon:Class;
-			
-			[Embed(source="/Images/TeamEntries.png")]
-			[Bindable]
-			public var TeamEntries:Class;
+			import com.ebillity.core.constants.AssetConstants;
 		]]>
 	</fx:Script>
-	
-	
-	
 	<s:states>
 		<s:State name="admin"/>
 		<s:State name="employee"/>
 	</s:states>
 
-	
+
 	<!-- background ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	
-	<s:Rect width="100%" height="100%">
+
+	<s:Rect width="100%"
+			height="100%">
 		<s:fill>
 			<s:SolidColor color="#f1f1f2"/>
 		</s:fill>
 	</s:Rect>
-	
+
 	<s:Group>
 		<s:layout>
-			<s:VerticalLayout horizontalAlign="left" verticalAlign="middle"
-			paddingLeft="20" gap="20"
-			paddingRight="20"
-			paddingTop="20"
-			paddingBottom="20"/>
+			<s:VerticalLayout horizontalAlign="left"
+							  verticalAlign="middle"
+							  paddingLeft="20"
+							  gap="20"
+							  paddingRight="20"
+							  paddingTop="20"
+							  paddingBottom="20"/>
 		</s:layout>
-			
-		<s:Label paddingLeft="0" bottom="0" text="Setember 22 2014"
-				 fontSize="18" color="#58585b"/>
+
+		<s:Label paddingLeft="0"
+				 bottom="0"
+				 text="Setember 22 2014"
+				 fontSize="18"
+				 color="#58585b"/>
 		<s:TileGroup id="mainGroup"
 					 width="100%"
 					 height="100%"
-					 paddingBottom="0" paddingLeft="0" 
-					 paddingTop="0" paddingRight="0" 
+					 paddingBottom="0"
+					 paddingLeft="0"
+					 paddingTop="0"
+					 paddingRight="0"
 					 horizontalGap="20"
-					 verticalGap="20"> 
-			
+					 verticalGap="20">
+
 			<s:Button id="trackTimeButton"
 					  label="Track Time"
-					  width="220" height="160"
-					  icon="{TrackTimeIcon}"
+					  width="220"
+					  height="160"
+					  icon="{AssetConstants.TRACK_TIME_ICON}"
 					  iconPlacement="top"
-					  skinClass="com.ebillity.skin.ui.components.DashboardButtonSkin"/>
+					  skinClass="com.ebillity.skin.ui.controls.DashboardButtonSkin"/>
 			<s:Button id="addExpenseButton"
 					  label="Add Expense"
-					  width="220" height="160"
-					  icon="{AddExpenseIcon}"
+					  width="220"
+					  height="160"
+					  icon="{AssetConstants.ADD_EXPENSE_ICON}"
 					  iconPlacement="top"
-					  skinClass="com.ebillity.skin.ui.components.DashboardButtonSkin"
-					  />
+					  skinClass="com.ebillity.skin.ui.controls.DashboardButtonSkin"/>
 			<s:Button id="myEntriesButton"
 					  label="My Entries"
-					  width="220" height="160"
-					  icon="{MyEntriesIcon}"
+					  width="220"
+					  height="160"
+					  icon="{AssetConstants.MY_ENTRIES_ICON}"
 					  iconPlacement="top"
-					  skinClass="com.ebillity.skin.ui.components.DashboardButtonSkin"
-					  />
+					  skinClass="com.ebillity.skin.ui.controls.DashboardButtonSkin"/>
 			<s:Button id="teamEntriesButton"
 					  label="Team Entries"
-					  width="220" height="160"
-					  icon="{TeamEntries}"
+					  width="220"
+					  height="160"
+					  icon="{AssetConstants.TEAM_ENTRIES_ICON}"
 					  iconPlacement="top"
-					  skinClass="com.ebillity.skin.ui.components.DashboardButtonSkin"
+					  skinClass="com.ebillity.skin.ui.controls.DashboardButtonSkin"
 					  includeIn="admin"/>
-			
+
 			<s:Button id="settingsButton"
 					  label="Settings"
-					  width="220" height="160"
-					  icon="{SettingsIcon}"
+					  width="220"
+					  height="160"
+					  icon="{AssetConstants.SETTINGS_ICON}"
 					  iconPlacement="top"
-					  skinClass="com.ebillity.skin.ui.components.DashboardButtonSkin"
-					  />
+					  skinClass="com.ebillity.skin.ui.controls.DashboardButtonSkin"/>
 		</s:TileGroup>
-			
-	
-		
+
+		<core:StatusPanel id="statusPanel"
+						  height="40"
+						  width="100%"/>
+
 	</s:Group>
 </s:Skin>

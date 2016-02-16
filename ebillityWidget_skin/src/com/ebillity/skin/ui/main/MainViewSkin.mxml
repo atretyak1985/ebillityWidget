@@ -23,7 +23,7 @@
 
 	<s:HGroup height="100%"
 			  width="100%"
-			  excludeFrom="login" 
+			  excludeFrom="login"
 			  gap="0">
 		<s:VGroup height="100%"
 				  width="100%"
@@ -39,9 +39,6 @@
 								   includeIn="employee"
 								   height="100%"
 								   width="100%"/>
-			<core:StatusPanel id="statusPanel"
-							  height="40"
-							  width="100%"/>
 		</s:VGroup>
 		<core:TimePanel id="timePanel"
 						height="100%"

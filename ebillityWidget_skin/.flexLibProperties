@@ -14,6 +14,8 @@
     <classEntry path="com.ebillity.skin.ui.controls.ExpenseEntryFormSkin"/>
     <classEntry path="com.ebillity.skin.ui.controls.EntriesGridSkin"/>
     <classEntry path="com.ebillity.skin.ui.controls.TimeEntryFormSkin"/>
+    <classEntry path="com.ebillity.skin.ui.controls.ButtonBarSkin"/>
+    <classEntry path="com.ebillity.skin.ui.core.NavigatePanelSkin"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

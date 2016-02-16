@@ -24,11 +24,6 @@ components|ExpenseEntry
 	skinClass:ClassReference("com.ebillity.skin.ui.components.ExpenseEntrySkin");
 }
 
-components|ManageEntries
-{
-	skinClass:ClassReference("com.ebillity.skin.ui.components.ManageEntriesSkin");
-}
-
 components|TeamEntries
 {
 	skinClass:ClassReference("com.ebillity.skin.ui.components.TeamEntriesSkin");
@@ -58,7 +53,6 @@ login|LoginView
 {
 	skinClass:ClassReference("com.ebillity.skin.ui.login.LoginViewSkin");
 }
-
 
 main|MainView
 {
@@ -105,54 +99,7 @@ controls|TimeEntryForm
 	skinClass:ClassReference("com.ebillity.skin.ui.controls.TimeEntryFormSkin");
 }
 
-s|Form
+core|NavigatePanel
 {
-	skinClass:ClassReference("spark.skins.spark.StackedFormSkin");
+	skinClass: ClassReference("com.ebillity.skin.ui.core.NavigatePanelSkin");
 }
-.OpenSans_Semibold
-{
-	fontFamily: "OpenSansSemibold";
-}
-#menuButton 
-{
-	skin: Embed("/images/PopUpButtonMenuModified.png");
-}
-
-
-s|FormHeading
-{
-	skinClass:ClassReference("spark.skins.spark.StackedFormHeadingSkin");
-}
-s|FormItem
-{
-	skinClass: ClassReference("spark.skins.spark.StackedFormItemSkin");
-	fontFamily: "OpenSansRegular";
-}
-<<<<<<< 8169347d8efd4951b3c7e7b200d4a0361395afcc
-
-.mainMenu{
-fontSize: 14;
-textAlign: left;
-borderVisible:false;
-color:#BBBBBB;
-backgroundColor:#414042;
-contentBackgroundColor:#414042;
-rollOverColor:#BBBBBB;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> 8dcfc2e35c3f9e9a52169cb7dd6cf93f276683e5

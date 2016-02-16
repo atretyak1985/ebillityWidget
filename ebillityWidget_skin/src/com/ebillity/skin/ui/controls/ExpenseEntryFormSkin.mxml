@@ -1,9 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" 
-		xmlns:s="library://ns.adobe.com/flex/spark" 
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
 		xmlns:mx="library://ns.adobe.com/flex/mx">
 	<!-- host component -->
 	<fx:Metadata>
 		[HostComponent("com.ebillity.core.view.ui.controls.ExpenseEntryForm")]
 	</fx:Metadata>
+
+
+	<s:Form width="100%"
+			height="40%">
+
+		<s:layout>
+			<s:FormLayout gap="5"
+						  horizontalAlign="center"
+						  verticalAlign="middle"/>
+		</s:layout>
+
+		<s:FormItem width="100%"
+					label="User">
+			<s:HGroup width="100%">
+				<s:ComboBox id="userComboBox"/>
+				<mx:DateChooser/>
+			</s:HGroup>
+		</s:FormItem>
+
+		<s:FormItem width="100%"
+					label="Client">
+			<s:HGroup width="100%">
+				<s:ComboBox id="clientComboBox"/>
+			</s:HGroup>
+		</s:FormItem>
+
+		<s:FormItem width="100%"
+					label="Project">
+			<s:HGroup width="100%">
+				<s:ComboBox id="projectComboBox"/>
+			</s:HGroup>
+		</s:FormItem>
+
+		<s:FormItem width="100%"
+					label="Expense Type">
+			<s:HGroup width="100%">
+				<s:ComboBox id="expenseComboBox"/>
+			</s:HGroup>
+		</s:FormItem>
+
+		<s:FormItem width="100%"
+					label="Description">
+			<s:HGroup width="100%">
+				<s:TextArea id="descriptionTextArea"
+							width="100%"
+							height="90"/>
+			</s:HGroup>
+		</s:FormItem>
+	</s:Form>
 </s:Skin>

@@ -1,6 +1,7 @@
 /* CSS file */
 @namespace s "library://ns.adobe.com/flex/spark";
 @namespace mx "library://ns.adobe.com/flex/mx";
+@namespace controls "com.ebillity.core.view.ui.controls.*";
 
 @font-face { 
 	src: url("fonts/OpenSans-Regular.ttf"); 
@@ -12,8 +13,11 @@
 	fontFamily: "OpenSansBold"; 
 	embedAsCFF: true; 
 }
-
-
+@font-face { 
+	src: url("fonts/OpenSans-Semibold.ttf"); 
+	fontFamily: "OpenSansSemibold"; 
+	embedAsCFF: true; 
+}
 
 
 s|Label 
@@ -29,4 +33,56 @@ s|Label
 s|TextInput
 {
 	fontFamily:  "OpenSansRegular";
+}
+.OpenSans_Semibold
+{
+	fontFamily:"OpenSansSemibold";
+}
+.mainMenu{
+	fontSize:14;
+	textAlign:left;
+	borderVisible:false;
+	color:#BBBBBB;
+	backgroundColor:#414042;
+	contentBackgroundColor:#414042;
+	rollOverColor:#BBBBBB;
+}
+
+
+s|Form
+{
+	skinClass:ClassReference("spark.skins.spark.StackedFormSkin");
+}
+.OpenSans_Semibold
+{
+	fontFamily: "OpenSansSemibold";
+}
+#menuButton 
+{
+	skin: Embed("/images/PopUpButtonMenuModified.png");
+}
+
+
+s|FormHeading
+{
+	skinClass:ClassReference("spark.skins.spark.StackedFormHeadingSkin");
+}
+s|FormItem
+{
+	skinClass: ClassReference("spark.skins.spark.StackedFormItemSkin");
+	fontFamily: "OpenSansRegular";
+}
+
+s|TextInput
+{
+	skinClass: ClassReference("com.ebillity.skin.ui.controls.TextInputSkin");
+	borderColor: #b8b6b6;
+	borderVisible: "true";
+}
+
+controls|ColorButton
+{
+	color: #ffffff;
+	fontSize: 18;
+	skinClass: ClassReference("com.ebillity.skin.ui.controls.ColorButtonSkin");
 }

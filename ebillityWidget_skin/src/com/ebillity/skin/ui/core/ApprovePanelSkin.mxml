@@ -7,20 +7,69 @@
 	<fx:Metadata>
 		[HostComponent("com.ebillity.core.view.ui.core.ApprovePanel")]
 	</fx:Metadata>
+
+	<s:states>
+		<s:State name="pending"/>
+		<s:State name="approved"/>
+		<s:State name="queue"/>
+		<s:State name="synced"/>
+		<s:State name="prebilled"/>
+		<s:State name="billed"/>
+	</s:states>
+
 	<s:VGroup width="100%"
 			  height="100%">
 		<s:HGroup id="statusGroup"
 				  width="100%"
 				  height="100%"
 				  horizontalAlign="center">
-			<controls:StatusLabel/>
-			<controls:StatusLabel/>
-			<controls:StatusLabel/>
+			<controls:StatusLabel id="approveStatus"
+								  label.pending="Pending"
+								  label="Approved"/>
+			<controls:StatusLabel id="syncStatus"
+								  label.pending="Not in Queue"
+								  label.approved="Not in Queue"
+								  label.queue="Added to Queue"
+								  label.synced="Synced"
+								  label.prebilled="Synced"
+								  label.billed="Synced"/>
+			<controls:StatusLabel id="billStatus"
+								  label="Un_Billed"
+								  label.prebilled="Pre-Billed"
+								  label.billed="Billed"/>
 		</s:HGroup>
 		<s:HGroup id="buttonsGroup"
 				  width="100%"
-				  height="100%">
+				  height="100%"
+				  horizontalAlign="center">
 
+			<controls:ColorButton id="rejectButton"
+								  label="Reject"
+								  buttonColor="#ff0000"
+								  minWidth="105"/>
+
+			<controls:ColorButton id="toPendingButton"
+								  label="Revert to Pending"
+								  buttonColor="#E6883C"
+								  minWidth="105"/>
+
+			<controls:ColorButton id="approveButton"
+								  label="Approve"
+								  buttonColor="#00ff00"
+								  includeIn="pending"
+								  minWidth="105"/>
+
+			<controls:ColorButton id="toQueueButton"
+								  label="Add to Queue"
+								  buttonColor="#0000ff"
+								  includeIn="approved"
+								  minWidth="105"/>
+
+			<controls:ColorButton id="unQueueButton"
+								  label="Un-Queue"
+								  buttonColor="#0000ff"
+								  includeIn="queue"
+								  minWidth="105"/>
 		</s:HGroup>
 	</s:VGroup>
 </s:Skin>
