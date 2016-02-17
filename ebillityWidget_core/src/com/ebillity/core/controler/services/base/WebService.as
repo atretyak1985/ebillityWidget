@@ -97,7 +97,7 @@ package com.ebillity.core.controler.services.base
 
 			if ( params )
 			{
-				_httpService.url += command;
+				_httpService.url = CONNECTION_URL + command;
 
 				var params:Object = com.adobe.serialization.json.JSON.encode( params );
 				_httpService.send( params );
@@ -155,8 +155,12 @@ package com.ebillity.core.controler.services.base
 			var signal:DeluxeSignal = e.signal as DeluxeSignal;
 			signal.removeAll();
 			var promise:IPromise = _promiseMap.unmapValue( responder );
-			promise.dispatchError( e.data );
-			_promisePool.disposeObject( promise );
+
+			if ( promise )
+			{
+				promise.dispatchError( e.data );
+				_promisePool.disposeObject( promise );
+			}
 		}
 
 		/**
@@ -170,8 +174,12 @@ package com.ebillity.core.controler.services.base
 			var signal:DeluxeSignal = e.signal as DeluxeSignal;
 			signal.removeAll();
 			var promise:IPromise = _promiseMap.unmapValue( responder );
-			promise.dispatchResult( e.data );
-			_promisePool.disposeObject( promise );
+
+			if ( promise )
+			{
+				promise.dispatchResult( e.data );
+				_promisePool.disposeObject( promise );
+			}
 		}
 
 		private function toObject( a:Array ):Object

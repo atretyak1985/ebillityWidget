@@ -4,7 +4,7 @@ package com.ebillity.core.events
 
 	public class FaultEvent extends Event
 	{
-		//public static const GET_ROOT_FOR_SELECTED_PLATFORM:String = "getRootForSelectedPlatform.FaultEvent";
+		public static const LOGIN_USER:String = "loginUser.FaultEvent";
 
 		public function FaultEvent( type:String, fault:Object = null, bubbles:Boolean = false, cancelable:Boolean = false )
 		{

@@ -25,7 +25,7 @@
     <classEntry path="com.ebillity.core.view.ui.core.StatusPanel"/>
     <classEntry path="com.ebillity.core.view.ui.core.TimePanel"/>
     <classEntry path="com.ebillity.core.model.modelinfo.BaseInfoModelLocator"/>
-    <classEntry path="com.ebillity.core.model.modelinfo.UserInfoModelLocator"/>
+    <classEntry path="com.ebillity.core.model.modelinfo.DataInfoModelLocator"/>
     <classEntry path="com.ebillity.core.model.modelinfo.MenuInfoModelLocator"/>
     <classEntry path="com.ebillity.core.constants.MenuConstants"/>
     <classEntry path="com.ebillity.core.view.ui.base.BaseView"/>
@@ -37,6 +37,33 @@
     <classEntry path="com.ebillity.core.view.ui.controls.TimeEntryForm"/>
     <classEntry path="com.ebillity.core.view.ui.core.NavigatePanel"/>
     <classEntry path="com.ebillity.core.constants.AssetConstants"/>
+    <classEntry path="com.ebillity.core.model.modelinfo.ErrorsInfoModelLocator"/>
+    <classEntry path="com.ebillity.core.model.dto.ErrorDTO"/>
+    <classEntry path="com.ebillity.core.controler.services.DataService"/>
+    <classEntry path="com.ebillity.core.controler.services.interfaces.IDataService"/>
+    <classEntry path="com.ebillity.core.controler.commands.CommandSyncData"/>
+    <classEntry path="com.ebillity.core.controler.commands.signals.SignalSyncData"/>
+    <classEntry path="com.ebillity.core.model.dto.DataDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.FirmDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.FirmSettingDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.EmployeeDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.ClientProjectDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.ActivityTypeDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.PayrollDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.ClasseDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.LitigationTaskCodeDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.ExpenseTypeDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.ClientActivityRateDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.ActivityRateDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.ProjectRateDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.ClientUserRateDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.ClientRateDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.UserRateDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.AutoTextDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.InvoiceDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.TimeEntryDTO"/>
+    <classEntry path="com.ebillity.core.model.dto.ExpenseEntryDTO"/>
+    <classEntry path="com.ebillity.core.utils.JsonParseUtils"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

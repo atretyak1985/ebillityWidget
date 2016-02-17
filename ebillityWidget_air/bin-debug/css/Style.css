@@ -2,11 +2,17 @@
 @namespace s "library://ns.adobe.com/flex/spark";
 @namespace mx "library://ns.adobe.com/flex/mx";
 @namespace controls "com.ebillity.core.view.ui.controls.*";
+@namespace supportClasses "spark.globalization.supportClasses.*";
 
 @font-face { 
 	src: url("fonts/OpenSans-Regular.ttf"); 
 	fontFamily: "OpenSansRegular"; 
 	embedAsCFF: true; 
+}
+@font-face { 
+	src: url("fonts/OpenSans-Regular.ttf"); 
+	fontFamily: "OpenSansRegularNoCFF"; 
+	embedAsCFF: false; 
 }
 @font-face { 
 	src: url("fonts/OpenSans-Bold.ttf"); 
@@ -49,10 +55,7 @@ s|TextInput
 }
 
 
-s|Form
-{
-	skinClass:ClassReference("spark.skins.spark.StackedFormSkin");
-}
+
 .OpenSans_Semibold
 {
 	fontFamily: "OpenSansSemibold";
@@ -61,7 +64,10 @@ s|Form
 {
 	skin: Embed("/images/PopUpButtonMenuModified.png");
 }
-
+s|Form
+{
+	skinClass:ClassReference("spark.skins.spark.StackedFormSkin");
+}
 
 s|FormHeading
 {
@@ -69,8 +75,9 @@ s|FormHeading
 }
 s|FormItem
 {
-	skinClass: ClassReference("spark.skins.spark.StackedFormItemSkin");
-	fontFamily: "OpenSansRegular";
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.FormItemCustomSkin");
+	fontFamily:"OpenSansRegular";
+	
 }
 
 s|TextInput
@@ -85,4 +92,18 @@ controls|ColorButton
 	color: #ffffff;
 	fontSize: 18;
 	skinClass: ClassReference("com.ebillity.skin.ui.controls.ColorButtonSkin");
+}
+
+s|ComboBox
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.CustomComboBoxSkin");
+}
+
+mx|DateField
+{
+	fontFamily: "OpenSansRegularNoCFF";
+}
+ mx|TextInput, mx|UIComponent
+{
+	fontFamily: "OpenSansRegularNoCFF";
 }

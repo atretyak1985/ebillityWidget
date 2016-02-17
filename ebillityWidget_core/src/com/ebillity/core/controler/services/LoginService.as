@@ -3,7 +3,7 @@ package com.ebillity.core.controler.services
 	import com.ebillity.core.controler.net.async.IPromise;
 	import com.ebillity.core.controler.services.base.WebService;
 	import com.ebillity.core.controler.services.interfaces.ILoginService;
-	
+
 	import mx.rpc.remoting.RemoteObject;
 
 	public class LoginService extends WebService implements ILoginService
@@ -22,7 +22,8 @@ package com.ebillity.core.controler.services
 
 		public function loginUser( userName:String, password:String ):IPromise
 		{
-			return this.callHttpService( "validateuser", { "UserName": userName, "Password": password });
+			var promise:IPromise = this.callHttpService( "validateuser", { "UserName": userName, "Password": password });
+			return promise;
 		}
 	}
 }

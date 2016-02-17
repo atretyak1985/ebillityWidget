@@ -82,10 +82,11 @@
 
 		</s:Form>
 
-		<s:Label text="Forgot your password?"
-				 fontSize="14"
-				 color="#4e93cf"
-				 textDecoration="underline"/>
+		<mx:LinkButton id="forgotPassword"
+					   label="Forgot your password?"
+					   fontSize="14"
+					   color="#4e93cf"
+					   textDecoration="underline"/>
 
 
 	</s:Group>

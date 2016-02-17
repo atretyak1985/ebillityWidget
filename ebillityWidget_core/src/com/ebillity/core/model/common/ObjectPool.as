@@ -1,5 +1,7 @@
 package com.ebillity.core.model.common
 {
+	import com.ebillity.core.controler.net.IDisposable;
+
 	import flash.utils.getDefinitionByName;
 	import flash.utils.getQualifiedClassName;
 
