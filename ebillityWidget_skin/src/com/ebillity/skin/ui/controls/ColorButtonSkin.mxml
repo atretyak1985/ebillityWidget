@@ -55,7 +55,6 @@
 	<s:Label id="labelDisplay"
 			 textAlign="center"
 			 styleName="OpenSansSemiBold"
-			 fontSize="21"
 			 maxDisplayedLines="1"
 			 horizontalCenter="0"
 			 verticalCenter="1"
