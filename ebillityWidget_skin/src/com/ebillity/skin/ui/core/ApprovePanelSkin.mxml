@@ -17,12 +17,28 @@
 		<s:State name="billed"/>
 	</s:states>
 
+	<!-- background ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<s:Rect id="backgroundForAll" width="100%"
+			height="100%">
+		<s:fill>
+			<s:SolidColor color="#f1f1f2"/>
+		</s:fill>
+	</s:Rect>
+	<s:Rect id="backgroundForLabels" width="100%"
+			height="{statusGroup.height}">
+		<s:fill>
+			<s:SolidColor color="#e6e7e8"/>
+		</s:fill>
+	</s:Rect>
+	
+	
 	<s:VGroup width="100%"
 			  height="100%">
 		<s:HGroup id="statusGroup"
 				  width="100%"
 				  height="100%"
-				  horizontalAlign="center">
+				  horizontalAlign="center"
+				  verticalAlign="middle">
 			<controls:StatusLabel id="approveStatus"
 								  label.pending="Pending"
 								  label="Approved"/>
@@ -45,7 +61,7 @@
 
 			<controls:ColorButton id="rejectButton"
 								  label="Reject"
-								  buttonColor="#ff0000"
+								  buttonColor="#f04f25"
 								  minWidth="105"/>
 
 			<controls:ColorButton id="toPendingButton"
@@ -55,7 +71,7 @@
 
 			<controls:ColorButton id="approveButton"
 								  label="Approve"
-								  buttonColor="#00ff00"
+								  buttonColor="#51aa47"
 								  includeIn="pending"
 								  minWidth="105"/>
 
