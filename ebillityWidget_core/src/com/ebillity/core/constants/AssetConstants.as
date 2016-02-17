@@ -21,5 +21,11 @@ package com.ebillity.core.constants
 
 		[Embed( source = "/Images/TimeTrackerLogo.png" )]
 		public static const TIME_TRACKER_LOGO:Class;
+		
+		[Embed( source = "/Images/ComboBoxIcon.png" )]
+		public static const COMBOBOX_ICON:Class;
+		
+		[Embed(source="/Images/recycleBinIcon.png")]
+		public static const RECYCLE_BIN_ICON:Class;
 	}
 }
