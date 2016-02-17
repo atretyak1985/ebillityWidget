@@ -7,52 +7,89 @@
 		[HostComponent("com.ebillity.core.view.ui.controls.ExpenseEntryForm")]
 	</fx:Metadata>
 
-
+	<s:Rect width="100%" height="100" x="0" y="{costGroup.y-5}">
+		<s:fill>
+			<s:SolidColor color="#f1f1f2"/>
+		</s:fill>
+	</s:Rect>
 	<s:Form width="100%"
-			height="40%">
+			height="40%" >
 
 		<s:layout>
-			<s:FormLayout gap="5"
+			<s:FormLayout gap="25"
 						  horizontalAlign="center"
 						  verticalAlign="middle"/>
 		</s:layout>
 
-		<s:FormItem width="100%"
-					label="User">
-			<s:HGroup width="100%">
-				<s:ComboBox id="userComboBox"/>
-				<mx:DateChooser/>
+		<s:VGroup gap="5" width="100%" verticalAlign="middle" horizontalAlign="center">
+				
+			<s:FormItem width="100%"
+						label="User">
+				<s:HGroup width="100%">
+					<s:ComboBox id="userComboBox" width="70%" />
+					<mx:DateField width="30%" height="100%"/>
+				</s:HGroup>
+			</s:FormItem>
+	
+			<s:FormItem width="100%"
+						label="Client">
+				<s:HGroup width="100%">
+					<s:ComboBox id="clientComboBox" width="100%"/>
+				</s:HGroup>
+			</s:FormItem>
+	
+			<s:FormItem width="100%"
+						label="Project">
+				<s:HGroup width="100%">
+					<s:ComboBox id="projectComboBox" width="100%"/>
+				</s:HGroup>
+			</s:FormItem>
+	
+			<s:FormItem width="100%"
+						label="Expense Type">
+				<s:HGroup width="100%">
+					<s:ComboBox id="expenseComboBox" width="100%" />
+				</s:HGroup>
+			</s:FormItem>
+	
+			<s:FormItem width="100%"
+						label="Description">
+				<s:HGroup width="100%">
+					<s:TextArea id="descriptionTextArea"
+								width="100%"
+								height="90"/>
+				</s:HGroup>
+			</s:FormItem>
+			
+			<s:HGroup width="100%" horizontalAlign="right">
+				<s:Label right="10" color="blue" textDecoration="underline" text="spellcheck"/>
 			</s:HGroup>
-		</s:FormItem>
-
-		<s:FormItem width="100%"
-					label="Client">
-			<s:HGroup width="100%">
-				<s:ComboBox id="clientComboBox"/>
-			</s:HGroup>
-		</s:FormItem>
-
-		<s:FormItem width="100%"
-					label="Project">
-			<s:HGroup width="100%">
-				<s:ComboBox id="projectComboBox"/>
-			</s:HGroup>
-		</s:FormItem>
-
-		<s:FormItem width="100%"
-					label="Expense Type">
-			<s:HGroup width="100%">
-				<s:ComboBox id="expenseComboBox"/>
-			</s:HGroup>
-		</s:FormItem>
-
-		<s:FormItem width="100%"
-					label="Description">
-			<s:HGroup width="100%">
-				<s:TextArea id="descriptionTextArea"
-							width="100%"
-							height="90"/>
-			</s:HGroup>
-		</s:FormItem>
+			
+		</s:VGroup>
+			
+		<s:HGroup width="100%" id="costGroup" gap="3">
+			
+			<s:FormItem width="20%"
+						label="Cost" required="true">
+					<s:TextInput id="cost"  width="100%"/>
+			</s:FormItem>
+			
+			<s:FormItem width="30%"
+						label="Quantity" required="true">
+					<s:TextInput id="Quantity"  width="100%"/>
+			</s:FormItem>
+			
+			<s:FormItem width="30%"
+						label="MarkupRatio">
+					<s:TextInput id="MarkupRatio" width="100%"/>
+			</s:FormItem>
+			
+			<s:FormItem width="25%"
+						label="	Total Cost">
+					<s:Label id="resultLabel" width="100%" />
+			</s:FormItem>
+			
+		</s:HGroup>
+		
 	</s:Form>
 </s:Skin>
