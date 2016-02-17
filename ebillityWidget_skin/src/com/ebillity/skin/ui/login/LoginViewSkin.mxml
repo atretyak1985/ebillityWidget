@@ -73,6 +73,7 @@
 			<s:FormItem width="168"
 						fontSize="18">
 				<controls:ColorButton id="submit"
+									  fontSize="21"
 									  width="140"
 									  height="40"
 									  buttonColor="#E6883C"
