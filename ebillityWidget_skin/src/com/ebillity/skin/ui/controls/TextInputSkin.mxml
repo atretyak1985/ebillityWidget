@@ -66,7 +66,7 @@ in accordance with the terms of the license agreement accompanying it.
 	<s:Rect id="background" left="2" right="2" top="2" bottom="2">
 		<s:fill>
 			<!--- @private Defines the background fill color. -->
-			<s:SolidColor id="bgFill" color="#ffffff" />
+			<s:SolidColor id="bgFill" color="#ffffff" color.disabled="#f1f1f2" />
 		</s:fill>
 	</s:Rect>
 	
