@@ -24,32 +24,28 @@
 			
 		]]>
 	</fx:Script>
-<!--	<s:Rect width="100%" height="100%">
-		<s:fill>
-			<s:SolidColor color="green"/>
-		</s:fill>
-	</s:Rect>-->
+
 	<s:Scroller   width="100%" height="100%">
+		
 	
-	
-		<s:VGroup gap="0" width="100%" height="100%" left="0" right="0" paddingTop="0" paddingBottom="0" paddingLeft="0" paddingRight="0">
-				
+		<s:VGroup gap="0" top="0" width="100%" height="100%" left="0" right="0" paddingTop="0" paddingBottom="0" paddingLeft="0" paddingRight="0">
+		
 		
 			<s:Form width="100%" 
-					height="50%" >
-		
+					height="100%" >
+			
 				<s:layout>
-					<s:FormLayout gap="0" paddingLeft="-10" paddingRight="-10"
+					<s:FormLayout gap="25" paddingLeft="-10" paddingRight="-10"
 								  horizontalAlign="center"
 								  verticalAlign="middle"/>
 				</s:layout>
 		
-				<s:VGroup gap="5" width="100%" paddingLeft="10" paddingRight="10" verticalAlign="middle" horizontalAlign="center">
+				<s:VGroup gap="5" width="100%" paddingLeft="10" paddingRight="0" verticalAlign="middle" horizontalAlign="center">
 						
 					<s:FormItem width="100%"
 								label="User">
 						<s:HGroup width="100%">
-							<s:ComboBox id="userComboBox" width="70%" />
+							<s:ComboBox height="30" id="userComboBox" width="70%" />
 							<mx:DateField width="30%" height="100%" />
 						</s:HGroup>
 					</s:FormItem>
@@ -57,21 +53,21 @@
 					<s:FormItem width="100%"
 								label="Client">
 						<s:HGroup width="100%">
-							<s:ComboBox id="clientComboBox" width="100%"/>
+							<s:ComboBox height="30" id="clientComboBox" width="100%"/>
 						</s:HGroup>
 					</s:FormItem>
 			
 					<s:FormItem width="100%"
 								label="Project">
 						<s:HGroup width="100%">
-							<s:ComboBox id="projectComboBox" width="100%"/>
+							<s:ComboBox height="30" id="projectComboBox" width="100%"/>
 						</s:HGroup>
 					</s:FormItem>
 			
 					<s:FormItem width="100%"
 								label="Expense Type">
 						<s:HGroup width="100%">
-							<s:ComboBox id="expenseComboBox" width="100%" />
+							<s:ComboBox height="30" id="expenseComboBox" width="100%" />
 						</s:HGroup>
 					</s:FormItem>
 			
@@ -84,48 +80,48 @@
 						</s:HGroup>
 					</s:FormItem>
 					
-					<s:HGroup width="100%" horizontalAlign="right" paddingRight="20">
+					<s:HGroup width="100%" horizontalAlign="right" paddingRight="25">
 						<s:Label  color="blue" textDecoration="underline" text="spellcheck"/>
 					</s:HGroup>
 					
 				</s:VGroup>
 				
-				<s:BorderContainer backgroundColor="#d1d3d4"   id="costFields" left="0" right="0" width="110%" height="100" verticalCenter="0" >
+				<s:BorderContainer backgroundColor="#d1d3d4"  borderVisible="false" id="costFields" left="0" right="0" width="110%" height="100" verticalCenter="0" >
 						
 					
-					<s:HGroup id="costGroup2" paddingLeft="5" paddingRight="0" left="15" width="100%" height="70%" gap="-15"  verticalAlign="middle" horizontalAlign="left" >
+					<s:HGroup id="costGroup2" paddingBottom="20" paddingRight="0" left="15" width="100%" height="100%" gap="-15"  verticalAlign="bottom" horizontalAlign="left" >
 					
-						<s:Group height="100%" width="2%" left="0" >
-							<s:Label text="$" bottom="15" left="0" textAlign="left"/>
+						<s:Group width="2%" left="0" >
+							<s:Label text="$"  left="0" bottom="12" textAlign="left"/>
 						</s:Group>
 						
 						<s:FormItem width="25%" 
-									label="Cost" required="true">
-								<s:TextInput id="cost"  width="100%"/>
+									label="Cost"  required="true">
+								<s:TextInput id="cost" height="30"  width="100%"/>
 						</s:FormItem>
 						
-						<s:Group height="100%" width="2%" >
-							<s:Label text="x" bottom="15" left="-15" textAlign="left"/>
+						<s:Group width="2%" >
+							<s:Label text="x" left="-15" bottom="12" textAlign="left"/>
 						</s:Group>
 						
 						
-						<s:FormItem width="30%"
+						<s:FormItem width="28%"
 									label="Quantity" required="true">
-								<s:TextInput id="Quantity"  width="100%"/>
+								<s:TextInput id="Quantity" height="30"  width="100%"/>
 						</s:FormItem>
 						
-						<s:Group height="100%" width="2%" >
-						<s:Label text="x" bottom="15" left="-15" textAlign="left"/>
+						<s:Group  width="2%" >
+						<s:Label text="x" left="-15" bottom="12" textAlign="left"/>
 						</s:Group>
 						
 							
-						<s:FormItem width="30%" 
+						<s:FormItem width="32%" 
 									label="Markup Ratio">
-								<s:TextInput id="MarkupRatio" width="100%"/>
+								<s:TextInput id="MarkupRatio" height="30" width="100%"/>
 						</s:FormItem>
 						
-						<s:Group height="100%" width="2%" >
-							<s:Label text="%=" bottom="15" left="-15" textAlign="left"/>
+						<s:Group width="2%" >
+							<s:Label text="%=" left="-15" bottom="12" textAlign="left"/>
 						</s:Group>
 						
 						<s:FormItem width="35%" right="0" 
@@ -137,45 +133,55 @@
 					
 				</s:BorderContainer>
 				
-			</s:Form>
-			
-			<s:HGroup id="taxGroup" width="100%" height="15%" verticalAlign="middle" horizontalAlign="left">
-	
-				<s:Group height="100%"  >
-					<s:HGroup>
-						<s:CheckBox id="reimburce"/>
-						<s:Label text="Reimburce"/>
-					</s:HGroup>
-				</s:Group>
 				
-				<s:Group height="100%" >
-					<s:HGroup>
-					<s:CheckBox id="taxeble"/>
-						<s:Label text="taxeble"/>
-					</s:HGroup>
-				</s:Group>
-				
-				<s:Group height="100%" >
-					<s:HGroup>
-						<s:Label text="Tax"/>
-						<s:TextInput id="tax" />
-						<s:Label text="%"/>
-					</s:HGroup>
-				</s:Group>
-				
-			</s:HGroup>
-			
-			<s:HGroup id="atachmentGroup" width="100" height="30%" verticalAlign="middle" horizontalAlign="left">
-				<s:VGroup>
-					<s:Label text="Atachment"/>
-					<s:HGroup>
-						<controls:ColorButton buttonColor="#939598" fontSize="14" label="Chose File"/>
-						<s:Label id="FileName" text="No File Choosen"/>
-						<s:Label id="sizeInfoLabel" text="(Max size 5MB)" color="#d9dbdc" />
-					</s:HGroup>
 					
-				</s:VGroup>
-			</s:HGroup>
+					
+					<s:HGroup id="taxGroup" 
+							  top="-25"  left="15" width="100%" paddingTop="-25" gap="0" 
+							  verticalAlign="middle" horizontalAlign="left" >
+						
+						
+						<s:FormItem id="reimburce" >
+							<s:CheckBox id="reimburceCheckbox"/>
+						</s:FormItem >
+						
+						<s:Group left="0" >
+							<s:Label text="Reimburce" top="20" left="-40" textAlign="left"/>
+						</s:Group>
+												
+						<s:FormItem id="Taxeble">
+							<s:CheckBox id="TaxebleCheckBox" />
+						</s:FormItem>
+						
+						<s:Group  >
+							<s:Label text="Taxeble" top="20" left="-40" textAlign="left"/>
+						</s:Group>
+						
+						
+						<s:FormItem id="taxRatio">
+							<s:TextInput id="raxRatioTextInput" height="30" />
+						</s:FormItem>
+						
+						<s:Group  >
+							<s:Label text="%" top="20" left="-38" textAlign="left"/>
+						</s:Group>
+						
+					</s:HGroup>
+				
+			
+				
+				<s:HGroup id="atachmentGroup" width="100%" top="-25" paddingTop="-25" left="15" verticalAlign="middle" horizontalAlign="left">
+					<s:FormItem label="Attachment">
+						<controls:ColorButton buttonColor="#939598" fontSize="14" label="Chose File"/>
+					</s:FormItem>
+							
+							<s:Label id="FileName" text="No File Choosen"/>
+							<s:Label id="sizeInfoLabel" text="(Max size 5MB)" color="#d9dbdc" />
+					</s:HGroup>
+						
+				
+					
+			</s:Form>
 			
 		</s:VGroup>
 		
