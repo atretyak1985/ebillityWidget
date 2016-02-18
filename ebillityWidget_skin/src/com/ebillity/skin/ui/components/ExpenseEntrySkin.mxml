@@ -9,7 +9,7 @@
 		[HostComponent("com.ebillity.core.view.ui.components.ExpenseEntry")]
 	</fx:Metadata>
 	<s:VGroup width="100%"
-			  height="100%">
+			  height="100%" gap="0">
 
 		<core:ApprovePanel width="100%"
 						   height="70"/>
