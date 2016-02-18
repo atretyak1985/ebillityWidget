@@ -7,7 +7,7 @@
 		[HostComponent("com.ebillity.core.view.ui.core.MenuPanel")]
 	</fx:Metadata>
 	<fx:Declarations>
-		
+
 	</fx:Declarations>
 
 	<fx:Script>
@@ -18,85 +18,104 @@
 			import mx.controls.Menu;
 			import mx.events.DropdownEvent;
 			import mx.events.FlexEvent;
-					
-	
-			protected function menuButton_openHandler(event:DropdownEvent):void
+
+
+			protected function menuButton_openHandler( event:DropdownEvent ):void
 			{
-					borderContainerformenu.setStyle("backgroundColor","#414042");
+				borderContainerformenu.setStyle( "backgroundColor", "#414042" );
 			}
-			
-			protected function menuButton_closeHandler(event:DropdownEvent):void
+
+			protected function menuButton_closeHandler( event:DropdownEvent ):void
 			{
-				
-				borderContainerformenu.setStyle("backgroundColor","#5d5d5a");
+
+				borderContainerformenu.setStyle( "backgroundColor", "#5d5d5a" );
 			}
-			
-			protected function menuButton_creationCompleteHandler(event:FlexEvent):void
+
+			protected function menuButton_creationCompleteHandler( event:FlexEvent ):void
 			{
-				Menu(menuButton.popUp).width=170;
-				Menu(menuButton.popUp).rowHeight=40;
-				Menu(menuButton.popUp).variableRowHeight=true;
-				
+				Menu( menuButton.popUp ).width = 170;
+				Menu( menuButton.popUp ).rowHeight = 40;
+				Menu( menuButton.popUp ).variableRowHeight = true;
+
 				//dificultis with adding separator 
 				//var mySeparator:Array = [{ "type": "separator" }];
 				//Menu(menuButton.popUp).addChildAt(new Button(),1);
 				//var mySeparator:NativeMenuItem = new NativeMenuItem("",true);
-				Menu(menuButton.popUp).setStyle("separator",MySeparatorskin);
+				Menu( menuButton.popUp ).setStyle( "separator", MySeparatorskin );
 				//Menu(menuButton.popUp).setStyle("menuItem",MySeparatorskin);
 			}
-			
-			protected function menuButton_preinitializeHandler(event:FlexEvent):void
+
+			protected function menuButton_preinitializeHandler( event:FlexEvent ):void
 			{
-			
+
 			}
-			
-			protected function menuButton_initializeHandler(event:FlexEvent):void
+
+			protected function menuButton_initializeHandler( event:FlexEvent ):void
 			{
-				
+
 			}
-			
-	
 		]]>
 	</fx:Script>
-		
+
 	<s:states>
-		<s:State name="normal"/>
-		<s:State name="disable"/>
+		<s:State name="firm"/>
+		<s:State name="menu"/>
 	</s:states>
-	
+
 	<!-- background ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<s:Rect width="100%" height="100%">
+	<s:Rect width="100%"
+			height="100%">
 		<s:fill>
 			<s:SolidColor color="#5d5d5a"/>
 		</s:fill>
 	</s:Rect>
-	
-	<s:Group width="100%" height="100%">
-		
 
+	<s:Group width="100%"
+			 height="100%">
 		<s:layout>
-				<s:HorizontalLayout verticalAlign="middle" horizontalAlign="center" gap="20"/>
+			<s:HorizontalLayout verticalAlign="middle"
+								horizontalAlign="center"
+								gap="20"/>
 		</s:layout>
-		<s:BorderContainer id="borderContainerformenu" backgroundColor="#5d5d5a" left="0"
-						   height="100%" verticalCenter="0" width="50" borderVisible="false">
-			
-			<mx:PopUpMenuButton id="menuButton" enabled="true"  labelField="label"
-								verticalCenter="0" label="" left="0"  openAlways="true"
-								width="35" height="20" popUpGap="15"
+		<s:BorderContainer id="borderContainerformenu"
+						   backgroundColor="#5d5d5a"
+						   left="0"
+						   height="100%"
+						   verticalCenter="0"
+						   width="50"
+						   borderVisible="false"
+						   excludeFrom="firm">
+
+			<mx:PopUpMenuButton id="menuButton"
+								enabled="true"
+								labelField="label"
+								verticalCenter="0"
+								label=""
+								left="0"
+								openAlways="true"
+								width="35"
+								height="20"
+								popUpGap="15"
 								popUpStyleName="mainMenu"
 								open="menuButton_openHandler(event)"
 								close="menuButton_closeHandler(event)"
 								preinitialize="menuButton_preinitializeHandler(event)"
 								creationComplete="menuButton_creationCompleteHandler(event)"
-								initialize="menuButton_initializeHandler(event)" />
+								initialize="menuButton_initializeHandler(event)"/>
 		</s:BorderContainer>
-		
+
 		<s:Group width="100%">
-			<s:Label id="firmNameLabel" text="firmName and userName" textAlign="center" 
-					 fontSize="14" styleName="OpenSans_Semibold" horizontalCenter="-50" 
-				 	color="white" right="10" left="10"/>
+			<s:Label id="firmNameLabel"
+					 text="firmName and userName"
+					 textAlign="center"
+					 fontSize="14"
+					 styleName="OpenSans_Semibold"
+					 horizontalCenter="-50"
+					 color="white"
+					 right="10"
+					 left="10"/>
 		</s:Group>
-		
+
 	</s:Group>
 
 </s:Skin>

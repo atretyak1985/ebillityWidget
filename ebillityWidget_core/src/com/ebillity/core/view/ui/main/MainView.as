@@ -9,6 +9,8 @@ package com.ebillity.core.view.ui.main
 
 	public class MainView extends SkinnableComponent
 	{
+		public static const STATE_FIRM:String = "firm";
+
 		public static const STATE_LOGIN:String = "login";
 
 		public static const STATE_ADMIN:String = "admin";
@@ -53,6 +55,15 @@ package com.ebillity.core.view.ui.main
 		override protected function partAdded( partName:String, instance:Object ):void
 		{
 			super.partAdded( partName, instance );
+
+			switch ( instance )
+			{
+				case menuPanel:
+				{
+
+					break;
+				}
+			}
 		}
 
 		override protected function partRemoved( partName:String, instance:Object ):void

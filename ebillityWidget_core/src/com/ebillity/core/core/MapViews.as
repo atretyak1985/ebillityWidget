@@ -9,17 +9,19 @@ package com.ebillity.core.core
 	import com.ebillity.core.view.mediator.components.TimeEntryMediator;
 	import com.ebillity.core.view.mediator.core.MenuPanelMediator;
 	import com.ebillity.core.view.mediator.employee.EmployeeViewMediator;
+	import com.ebillity.core.view.mediator.login.FirmListMediator;
 	import com.ebillity.core.view.mediator.login.LoginViewMediator;
 	import com.ebillity.core.view.mediator.main.MainViewMediator;
 	import com.ebillity.core.view.ui.admin.AdminView;
 	import com.ebillity.core.view.ui.components.Dashboard;
 	import com.ebillity.core.view.ui.components.ExpenseEntry;
-	import com.ebillity.core.view.ui.components.TeamEntries;
 	import com.ebillity.core.view.ui.components.MyEntries;
 	import com.ebillity.core.view.ui.components.Settings;
+	import com.ebillity.core.view.ui.components.TeamEntries;
 	import com.ebillity.core.view.ui.components.TimeEntry;
 	import com.ebillity.core.view.ui.core.MenuPanel;
 	import com.ebillity.core.view.ui.employee.EmployeeView;
+	import com.ebillity.core.view.ui.login.FirmList;
 	import com.ebillity.core.view.ui.login.LoginView;
 	import com.ebillity.core.view.ui.main.MainView;
 
@@ -46,6 +48,7 @@ package com.ebillity.core.core
 			mediatorMap.mapView( LoginView, LoginViewMediator );
 			mediatorMap.mapView( MainView, MainViewMediator );
 			mediatorMap.mapView( MenuPanel, MenuPanelMediator );
+			mediatorMap.mapView( FirmList, FirmListMediator );
 		}
 
 

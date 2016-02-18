@@ -9,5 +9,10 @@ package com.ebillity.core.model.dto
 		public var user:UserDTO;
 
 		public var firms:ArrayCollection;
+
+		public function get hasFirms():Boolean
+		{
+			return firms && firms.length > 0;
+		}
 	}
 }

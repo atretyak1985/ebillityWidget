@@ -12,15 +12,31 @@ package com.ebillity.core.view.ui.core
 
 	public class MenuPanel extends SkinnableComponent
 	{
+		public static const STATE_FIRM:String = "firm";
+
+		public static const STATE_MENU:String = "menu";
 
 		[SkinPart( required = "true" )]
 		public var menuButton:PopUpMenuButton;
 
 		public var selectMenuSignal:Signal = new Signal( SignalParams );
 
+		private var _state:String = STATE_MENU;
+
+		public function get state():String
+		{
+			return _state;
+		}
+
+		public function set state( value:String ):void
+		{
+			_state = value;
+			this.invalidateSkinState();
+		}
+
 		override protected function getCurrentSkinState():String
 		{
-			return super.getCurrentSkinState();
+			return state;
 		}
 
 		protected function menuButton_itemClickHandler( event:MenuEvent ):void

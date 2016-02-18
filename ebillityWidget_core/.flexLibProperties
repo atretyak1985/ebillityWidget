@@ -64,6 +64,8 @@
     <classEntry path="com.ebillity.core.model.dto.TimeEntryDTO"/>
     <classEntry path="com.ebillity.core.model.dto.ExpenseEntryDTO"/>
     <classEntry path="com.ebillity.core.utils.JsonParseUtils"/>
+    <classEntry path="com.ebillity.core.view.ui.login.FirmList"/>
+    <classEntry path="com.ebillity.core.view.mediator.login.FirmListMediator"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

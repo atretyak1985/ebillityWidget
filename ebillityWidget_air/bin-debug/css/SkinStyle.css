@@ -103,3 +103,11 @@ core|NavigatePanel
 {
 	skinClass: ClassReference("com.ebillity.skin.ui.core.NavigatePanelSkin");
 }
+
+login|FirmList
+{
+	skinClass: ClassReference("com.ebillity.skin.ui.login.FirmListSkin");
+}
+{
+	skinClass: ClassReference("com.ebillity.skin.ui.core.NavigatePanelSkin");
+}
