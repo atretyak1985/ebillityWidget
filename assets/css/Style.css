@@ -36,10 +36,6 @@ s|Label
 	fontFamily: "OpenSansBold";
 }
 
-s|TextInput
-{
-	fontFamily:  "OpenSansRegular";
-}
 .OpenSans_Semibold
 {
 	fontFamily:"OpenSansSemibold";
@@ -83,8 +79,12 @@ s|FormItem
 s|TextInput
 {
 	skinClass: ClassReference("com.ebillity.skin.ui.controls.TextInputSkin");
-	borderColor: #b8b6b6;
-	borderVisible: "true";
+	fontFamily:  "OpenSansRegular";
+}
+s|ComboBox s|TextInput
+{
+	skinClass: ClassReference("com.ebillity.skin.ui.controls.TextInputSkin");
+	fontFamily:  "OpenSansRegular";
 }
 
 controls|ColorButton
@@ -107,3 +107,10 @@ mx|DateField
 {
 	fontFamily: "OpenSansRegularNoCFF";
 }
+
+s|VScrollBar
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.scrollBar.customVScrollBarSkin");
+}
+
+S|DATE
