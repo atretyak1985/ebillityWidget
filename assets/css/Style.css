@@ -80,6 +80,7 @@ s|TextInput
 {
 	skinClass: ClassReference("com.ebillity.skin.ui.controls.TextInputSkin");
 	fontFamily:  "OpenSansRegular";
+	
 }
 s|ComboBox s|TextInput
 {
@@ -96,7 +97,7 @@ controls|ColorButton
 
 s|ComboBox
 {
-	skinClass:ClassReference("com.ebillity.skin.ui.controls.CustomComboBoxSkin");
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.combobox.CustomComboBoxSkin");
 }
 
 mx|DateField
@@ -111,4 +112,13 @@ mx|DateField
 s|VScrollBar
 {
 	skinClass:ClassReference("com.ebillity.skin.ui.controls.scrollBar.customVScrollBarSkin");
+}
+
+s|TextArea
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.CustomTextAreaskin");
+}
+s|CheckBox
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.CustomChekBoxSkin");
 }
