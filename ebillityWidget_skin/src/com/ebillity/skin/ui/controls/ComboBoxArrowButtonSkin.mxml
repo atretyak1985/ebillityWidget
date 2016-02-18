@@ -56,15 +56,15 @@ in accordance with the terms of the license agreement accompanying it.
 	
 	<!-- layer 2: fill -->
 	<!--- @private -->
-	<s:Rect id="fill" left="-2" right="1" top="1" bottom="1" radiusX="0">
+	<s:Rect id="fill" left="0" right="2" top="2" bottom="2" radiusX="0">
 		<s:fill>
 			<s:SolidColor color="#FFFFFF"/>
 		</s:fill>
 	</s:Rect>
 	
-	<s:Rect id="border" left="0" right="0" top="0" bottom="0" radiusX="0">
+	<s:Rect id="border" left="-3" right="0" top="0" bottom="0" radiusX="0">
 		<s:stroke>
-			<s:SolidColorStroke color="#345234" weight="1"/>
+			<s:SolidColorStroke color="#939598" weight="2" alpha="0.8"/>
 		</s:stroke>
 	</s:Rect>
 	
