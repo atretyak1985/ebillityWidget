@@ -47,6 +47,11 @@ package com.ebillity.core.view.ui.base
 		{
 			switch ( selectedMenu )
 			{
+				case MenuConstants.DASHBOARD:
+				{
+					state = STATE_DASHBOARD;
+					break;
+				}
 				case MenuConstants.ADD_EXPENSE:
 				{
 					state = STATE_EXPENSE;

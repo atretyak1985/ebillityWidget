@@ -2,7 +2,7 @@
 package com.ebillity.core.view.mediator.components
 {
 	import com.ebillity.core.controler.commands.base.signal.SignalParams;
-	import com.ebillity.core.model.modelinfo.MenuInfoModelLocator;
+	import com.ebillity.core.model.modelinfo.BaseInfoModelLocator;
 	import com.ebillity.core.view.ui.components.Dashboard;
 
 	import org.robotlegs.mvcs.Mediator;
@@ -14,7 +14,7 @@ package com.ebillity.core.view.mediator.components
 		public var view:Dashboard;
 
 		[Inject]
-		public var menuInfo:MenuInfoModelLocator;
+		public var baseModel:BaseInfoModelLocator;
 
 		override public function onRegister():void
 		{
@@ -24,7 +24,7 @@ package com.ebillity.core.view.mediator.components
 
 		private function selectMenuSignal_viewHandler( params:SignalParams ):void
 		{
-			menuInfo.selectedMenu = params.paramsHolder[ "selectManu" ];
+			baseModel.selectedMenu = params.paramsHolder[ "selectManu" ];
 		}
 
 		override public function onRemove():void

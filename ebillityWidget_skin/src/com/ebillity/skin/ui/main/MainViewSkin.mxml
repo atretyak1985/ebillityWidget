@@ -12,7 +12,7 @@
 	</fx:Metadata>
 
 	<s:states>
-		<s:State name="firm"/>
+		<s:State name="firms"/>
 		<s:State name="login"/>
 		<s:State name="admin"/>
 		<s:State name="employee"/>
@@ -34,7 +34,7 @@
 							width="100%"/>
 			<login:FirmList width="100%"
 							height="100%"
-							includeIn="firm"/>
+							includeIn="firms"/>
 			<admin:AdminView id="adminView"
 							 includeIn="admin"
 							 height="100%"

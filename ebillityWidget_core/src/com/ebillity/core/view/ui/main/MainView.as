@@ -9,7 +9,7 @@ package com.ebillity.core.view.ui.main
 
 	public class MainView extends SkinnableComponent
 	{
-		public static const STATE_FIRM:String = "firm";
+		public static const STATE_FIRM:String = "firms";
 
 		public static const STATE_LOGIN:String = "login";
 

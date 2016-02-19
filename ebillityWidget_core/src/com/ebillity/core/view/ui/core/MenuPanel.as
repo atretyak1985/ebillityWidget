@@ -6,22 +6,59 @@ package com.ebillity.core.view.ui.core
 	import mx.controls.PopUpMenuButton;
 	import mx.events.MenuEvent;
 
+	import spark.components.Label;
 	import spark.components.supportClasses.SkinnableComponent;
 
 	import org.osflash.signals.Signal;
 
 	public class MenuPanel extends SkinnableComponent
 	{
-		public static const STATE_FIRM:String = "firm";
+		public static const STATE_FIRM:String = "firms";
 
 		public static const STATE_MENU:String = "menu";
 
 		[SkinPart( required = "true" )]
-		public var menuButton:PopUpMenuButton;
+		public var header:Label;
+
+		[SkinPart( required = "true" )]
+		public var menu:PopUpMenuButton;
+
+		[Bindable]
+		public var headerText:String;
 
 		public var selectMenuSignal:Signal = new Signal( SignalParams );
 
+		private var _firmName:String;
+
+		private var _isFirmName:Boolean;
+
 		private var _state:String = STATE_MENU;
+
+		[Bindable]
+		public function get firmName():String
+		{
+			return _firmName;
+		}
+
+		public function set firmName( value:String ):void
+		{
+			if ( _firmName != value )
+			{
+				_firmName = value;
+				_isFirmName = true;
+				this.invalidateProperties();
+			}
+		}
+
+		public function selectMenu( selectedMenu:String ):void
+		{
+			if ( !menu )
+				return;
+
+			if ( selectedMenu != menu.selectedField )
+				menu.selectedField = selectedMenu;
+
+		}
 
 		public function get state():String
 		{
@@ -34,6 +71,17 @@ package com.ebillity.core.view.ui.core
 			this.invalidateSkinState();
 		}
 
+		override protected function commitProperties():void
+		{
+			if ( _isFirmName )
+			{
+				_isFirmName = false;
+				this.headerText = _firmName;
+			}
+
+			super.commitProperties();
+		}
+
 		override protected function getCurrentSkinState():String
 		{
 			return state;
@@ -43,6 +91,36 @@ package com.ebillity.core.view.ui.core
 		{
 			var selectedMenu:String = event.item && event.item.hasOwnProperty( "id" ) ? event.item.id : "";
 			selectMenuSignal.dispatch( new SignalParams( "selectManu", selectedMenu ));
+
+			//change header name
+			switch ( selectedMenu )
+			{
+				case MenuConstants.ADD_EXPENSE:
+				{
+					this.headerText = "Expense Entry";
+					break;
+				}
+				case MenuConstants.TRACK_TIME:
+				{
+					this.headerText = "Time Entry";
+					break;
+				}
+				case MenuConstants.TEAM_ENTRIES:
+				{
+					this.headerText = "Manage Team Entries";
+					break;
+				}
+				case MenuConstants.MY_ENTRIES:
+				{
+					this.headerText = "Manage My Entries";
+					break;
+				}
+				case MenuConstants.MY_ENTRIES:
+				{
+					this.headerText = "Settings";
+					break;
+				}
+			}
 		}
 
 		override protected function partAdded( partName:String, instance:Object ):void
@@ -51,10 +129,10 @@ package com.ebillity.core.view.ui.core
 
 			switch ( instance )
 			{
-				case menuButton:
+				case menu:
 				{
-					menuButton.dataProvider = MenuConstants.ALL_ADMIN_MENU;
-					menuButton.addEventListener( MenuEvent.ITEM_CLICK, menuButton_itemClickHandler );
+					menu.dataProvider = MenuConstants.ALL_ADMIN_MENU;
+					menu.addEventListener( MenuEvent.ITEM_CLICK, menuButton_itemClickHandler );
 					break;
 				}
 			}
@@ -66,22 +144,12 @@ package com.ebillity.core.view.ui.core
 
 			switch ( instance )
 			{
-				case menuButton:
+				case menu:
 				{
-					menuButton.removeEventListener( MenuEvent.ITEM_CLICK, menuButton_itemClickHandler );
+					menu.removeEventListener( MenuEvent.ITEM_CLICK, menuButton_itemClickHandler );
 					break;
 				}
 			}
-		}
-
-		public function selectMenu( selectedMenu:String ):void
-		{
-			if ( !menuButton )
-				return;
-
-			if ( selectedMenu != menuButton.selectedField )
-				menuButton.selectedField = selectedMenu;
-
 		}
 	}
 }

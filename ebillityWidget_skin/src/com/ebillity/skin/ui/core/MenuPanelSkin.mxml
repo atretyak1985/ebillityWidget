@@ -12,9 +12,6 @@
 
 	<fx:Script>
 		<![CDATA[
-			import mx.controls.Alert;
-			import mx.controls.Button;
-			import mx.controls.Label;
 			import mx.controls.Menu;
 			import mx.events.DropdownEvent;
 			import mx.events.FlexEvent;
@@ -33,32 +30,17 @@
 
 			protected function menuButton_creationCompleteHandler( event:FlexEvent ):void
 			{
-				Menu( menuButton.popUp ).width = 170;
-				Menu( menuButton.popUp ).rowHeight = 40;
-				Menu( menuButton.popUp ).variableRowHeight = true;
+				Menu( menu.popUp ).width = 170;
+				Menu( menu.popUp ).rowHeight = 40;
+				Menu( menu.popUp ).variableRowHeight = true;
 
-				//dificultis with adding separator 
-				//var mySeparator:Array = [{ "type": "separator" }];
-				//Menu(menuButton.popUp).addChildAt(new Button(),1);
-				//var mySeparator:NativeMenuItem = new NativeMenuItem("",true);
-				Menu( menuButton.popUp ).setStyle( "separator", MySeparatorskin );
-				//Menu(menuButton.popUp).setStyle("menuItem",MySeparatorskin);
-			}
-
-			protected function menuButton_preinitializeHandler( event:FlexEvent ):void
-			{
-
-			}
-
-			protected function menuButton_initializeHandler( event:FlexEvent ):void
-			{
-
+				Menu( menu.popUp ).setStyle( "separator", MySeparatorskin );
 			}
 		]]>
 	</fx:Script>
 
 	<s:states>
-		<s:State name="firm"/>
+		<s:State name="firms"/>
 		<s:State name="menu"/>
 	</s:states>
 
@@ -84,9 +66,9 @@
 						   verticalCenter="0"
 						   width="50"
 						   borderVisible="false"
-						   excludeFrom="firm">
+						   excludeFrom="firms">
 
-			<mx:PopUpMenuButton id="menuButton"
+			<mx:PopUpMenuButton id="menu"
 								enabled="true"
 								labelField="label"
 								verticalCenter="0"
@@ -99,14 +81,13 @@
 								popUpStyleName="mainMenu"
 								open="menuButton_openHandler(event)"
 								close="menuButton_closeHandler(event)"
-								preinitialize="menuButton_preinitializeHandler(event)"
-								creationComplete="menuButton_creationCompleteHandler(event)"
-								initialize="menuButton_initializeHandler(event)"/>
+								creationComplete="menuButton_creationCompleteHandler(event)"/>
 		</s:BorderContainer>
 
 		<s:Group width="100%">
-			<s:Label id="firmNameLabel"
-					 text="firmName and userName"
+			<s:Label id="header"
+					 text="{hostComponent.headerText}"
+					 text.firms="Firms"
 					 textAlign="center"
 					 fontSize="14"
 					 styleName="OpenSans_Semibold"

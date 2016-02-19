@@ -12,6 +12,20 @@ package com.ebillity.core.model.modelinfo
 
 			loggedInSignal = new VOSignalProperty();
 			showFirmSignal = new VOSignalProperty();
+			selectedMenuSignal = new VOSignalProperty();
+			selectedMenuSignal.stopNextPropagation();
+		}
+
+		public var selectedMenuSignal:IBroadcastable;
+
+		public function get selectedMenu():String
+		{
+			return selectedMenuSignal.value as String;
+		}
+
+		public function set selectedMenu( value:String ):void
+		{
+			selectedMenuSignal.value = value;
 		}
 
 		public var loggedInSignal:IBroadcastable;

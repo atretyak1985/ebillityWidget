@@ -7,9 +7,8 @@ package com.ebillity.core.controler.commands
 	import com.ebillity.core.controler.services.interfaces.IDataService;
 	import com.ebillity.core.model.dto.DataDTO;
 	import com.ebillity.core.model.dto.UserDTO;
-	import com.ebillity.core.model.modelinfo.BaseInfoModelLocator;
-	import com.ebillity.core.model.modelinfo.ErrorsInfoModelLocator;
 	import com.ebillity.core.model.modelinfo.DataInfoModelLocator;
+	import com.ebillity.core.model.modelinfo.ErrorsInfoModelLocator;
 	import com.ebillity.core.utils.JsonParseUtils;
 
 	public class CommandSyncData extends CommandWebServiceBase

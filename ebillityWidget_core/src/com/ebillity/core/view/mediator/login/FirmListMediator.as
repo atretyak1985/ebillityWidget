@@ -1,6 +1,7 @@
 package com.ebillity.core.view.mediator.login
 {
 	import com.ebillity.core.model.dto.DataDTO;
+	import com.ebillity.core.model.dto.FirmDTO;
 	import com.ebillity.core.model.modelinfo.DataInfoModelLocator;
 	import com.ebillity.core.view.ui.login.FirmList;
 
@@ -18,9 +19,16 @@ package com.ebillity.core.view.mediator.login
 		override public function onRegister():void
 		{
 			super.onRegister();
+
 			dataInfo.syncDataSignal.add( syncData_signalHandler );
 
+			view.selectFirmSignal.add( selectFirm_viewHandler );
 			this.init();
+		}
+
+		private function selectFirm_viewHandler( firm:FirmDTO ):void
+		{
+			dataInfo.selectedFirm = firm;
 		}
 
 		private function init():void
@@ -38,6 +46,8 @@ package com.ebillity.core.view.mediator.login
 		{
 			super.onRemove();
 			dataInfo.syncDataSignal.remove( syncData_signalHandler );
+
+			view.selectFirmSignal.remove( selectFirm_viewHandler );
 		}
 	}
 }

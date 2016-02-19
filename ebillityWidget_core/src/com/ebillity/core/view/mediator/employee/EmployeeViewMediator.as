@@ -1,6 +1,6 @@
 package com.ebillity.core.view.mediator.employee
 {
-	import com.ebillity.core.model.modelinfo.MenuInfoModelLocator;
+	import com.ebillity.core.model.modelinfo.BaseInfoModelLocator;
 	import com.ebillity.core.view.ui.employee.EmployeeView;
 
 	import org.robotlegs.mvcs.Mediator;
@@ -12,12 +12,12 @@ package com.ebillity.core.view.mediator.employee
 		public var view:EmployeeView;
 
 		[Inject]
-		public var menuInfo:MenuInfoModelLocator;
+		public var baseModel:BaseInfoModelLocator;
 
 		override public function onRegister():void
 		{
 			super.onRegister();
-			menuInfo.selectedMenuSignal.add( menuInfo_selectedMenuHandler );
+			baseModel.selectedMenuSignal.add( menuInfo_selectedMenuHandler );
 		}
 
 		private function menuInfo_selectedMenuHandler( selectedMenu:String ):void
@@ -28,7 +28,7 @@ package com.ebillity.core.view.mediator.employee
 		override public function onRemove():void
 		{
 			super.onRemove();
-			menuInfo.selectedMenuSignal.remove( menuInfo_selectedMenuHandler );
+			baseModel.selectedMenuSignal.remove( menuInfo_selectedMenuHandler );
 		}
 	}
 }
