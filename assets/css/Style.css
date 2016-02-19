@@ -62,16 +62,16 @@ s|Label
 }
 s|Form
 {
-	skinClass:ClassReference("spark.skins.spark.StackedFormSkin");
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.Form.FormCustomSkin");
 }
 
 s|FormHeading
 {
-	skinClass:ClassReference("spark.skins.spark.StackedFormHeadingSkin");
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.Form.CustomFormHeadingSkin");
 }
 s|FormItem
 {
-	skinClass:ClassReference("com.ebillity.skin.ui.controls.FormItemCustomSkin");
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.Form.FormItemCustomSkin");
 	fontFamily:"OpenSansRegular";
 	
 }
@@ -122,3 +122,4 @@ s|CheckBox
 {
 	skinClass:ClassReference("com.ebillity.skin.ui.controls.CustomChekBoxSkin");
 }
+
