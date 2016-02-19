@@ -33,8 +33,8 @@ package com.ebillity.core.controler.commands
 		{
 			super.execute();
 
-			//var promise:IPromise = service.loginUser( signalParams.paramsHolder[ "mail" ], signalParams.paramsHolder[ "password" ]);
-			var promise:IPromise = service.loginUser( "ajsri77@gmail.com", "Sriram0304" );
+			var promise:IPromise = service.loginUser( signalParams.paramsHolder[ "mail" ], signalParams.paramsHolder[ "password" ]);
+			//var promise:IPromise = service.loginUser( "ajsri77@gmail.com", "Sriram0304" );
 			//var promise:IPromise = service.loginUser( "QBO19@mailinator.com", "Test123" );
 			promise.completed.add( handleResult );
 			promise.failed.add( handleError );
