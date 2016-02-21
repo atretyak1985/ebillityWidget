@@ -12,9 +12,13 @@
 
 	<fx:Script>
 		<![CDATA[
+			import com.ebillity.core.constants.AssetConstants;
+			
 			import mx.controls.Menu;
 			import mx.events.DropdownEvent;
 			import mx.events.FlexEvent;
+			
+			import spark.components.supportClasses.ItemRenderer;
 
 
 			protected function menuButton_openHandler( event:DropdownEvent ):void
@@ -32,9 +36,10 @@
 			{
 				Menu( menu.popUp ).width = 170;
 				Menu( menu.popUp ).rowHeight = 40;
-				Menu( menu.popUp ).variableRowHeight = true;
-
-				Menu( menu.popUp ).setStyle( "separator", MySeparatorskin );
+				//Menu( menu.popUp ).variableRowHeight = true;
+				
+				//Menu(menu.popUp).itemRenderer
+				//Menu( menu.popUp ).setStyle( "separator", MySeparatorskin );
 			}
 		]]>
 	</fx:Script>
@@ -51,6 +56,7 @@
 			<s:SolidColor color="#5d5d5a"/>
 		</s:fill>
 	</s:Rect>
+
 
 	<s:Group width="100%"
 			 height="100%">
@@ -84,8 +90,9 @@
 								creationComplete="menuButton_creationCompleteHandler(event)"/>
 		</s:BorderContainer>
 
-		<s:Group width="100%">
-			<s:Label id="header"
+		<s:HGroup width="100%" verticalAlign="middle" horizontalAlign="center" >
+			<s:Button id="backButton" icon="{AssetConstants.BACK_ICON}"  width="45" height="45" skinClass="com.ebillity.skin.ui.controls.Buttons.backButton"/>
+			<s:Label id="header" verticalAlign="middle"
 					 text="{hostComponent.headerText}"
 					 text.firms="Firms"
 					 textAlign="center"
@@ -95,7 +102,7 @@
 					 color="white"
 					 right="10"
 					 left="10"/>
-		</s:Group>
+		</s:HGroup>
 
 	</s:Group>
 
