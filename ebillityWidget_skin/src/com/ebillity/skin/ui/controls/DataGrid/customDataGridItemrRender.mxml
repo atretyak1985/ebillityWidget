@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:GridItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					xmlns:s="library://ns.adobe.com/flex/spark" 
+					xmlns:mx="library://ns.adobe.com/flex/mx" clipAndEnableScrolling="true"
+					xmlns:controls="com.ebillity.core.view.ui.controls.*"
+					width="20" height="20">
+	<fx:Script>
+		<![CDATA[
+			import com.ebillity.core.constants.AssetConstants;
+		]]>
+	</fx:Script>
+	<s:layout>
+		<s:HorizontalLayout verticalAlign="middle" horizontalAlign="center"/>
+	</s:layout>
+	<s:Button icon="{AssetConstants.NEXT_ICON}" height="46" width="40" color="#f1f2f1" skinClass="com.ebillity.skin.ui.controls.Buttons.nextButton" /> <!--skinClass="com.ebillity.skin.ui.controls.colorButtonwithIcon"-->
+	
+</s:GridItemRenderer>
