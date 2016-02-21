@@ -46,7 +46,7 @@
 								label="User">
 						<s:HGroup width="100%">
 							<s:ComboBox height="30" id="userComboBox" width="70%" />
-							<mx:DateField width="30%" height="100%" />
+							<controls:customDateField width="30%" height="30" horizontalCenter="5" dateChooserStyleName="customDateChooser"/>
 						</s:HGroup>
 					</s:FormItem>
 			
@@ -107,7 +107,7 @@
 						
 						<s:FormItem width="28%"
 									label="Quantity" required="true">
-								<s:TextInput id="Quantity" height="30"  width="100%"/>
+								<s:TextInput  id="Quantity" height="30"  width="100%"/>
 						</s:FormItem>
 						
 						<s:Group  width="2%" >
