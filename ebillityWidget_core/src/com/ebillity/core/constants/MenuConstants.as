@@ -20,19 +20,19 @@ package com.ebillity.core.constants
 		public static const LOGOUT:String = "logout";
 
 		public static const ALL_ADMIN_MENU:Array = [{ "id": DASHBOARD, "label": "Dashboard" },  
-			{"type":"separator"},
+		
 			{ "id": TRACK_TIME, "label": "Track Time" },
-			{"type":"separator"},
+			
 			{ "id": ADD_EXPENSE, "label": "Add Expense" }, 
-			{"type":"separator"},
+			
 			{ "id": MY_ENTRIES, "label": "My Entries" },
-			{"type":"separator"},
+		
 			{ "id": TEAM_ENTRIES, "label": "Team Entries" }, 
-			{"type":"separator"},
+			
 			{ "id": SETTINGS, "label": "Settings" },
-			{"type":"separator"},
+		
 			{ "id": SWITCH_FIRMS, "label": "Switch Firms" },
-			{"type":"separator"},
+		
 			{ "id": LOGOUT, "label": "Logout" }];
 
 		public static const ALL_EMPLOYEE_MENU:Array = [{ "id": TRACK_TIME, "label": "Track Time" }, 
