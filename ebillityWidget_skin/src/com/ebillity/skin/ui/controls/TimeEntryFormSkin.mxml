@@ -1,19 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" 
 		xmlns:s="library://ns.adobe.com/flex/spark" 
-		xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:core="com.ebillity.core.view.ui.core.*" xmlns:controls="com.ebillity.core.view.ui.controls.*">
+		xmlns:mx="library://ns.adobe.com/flex/mx"
+		xmlns:core="com.ebillity.core.view.ui.core.*"
+		xmlns:controls="com.ebillity.core.view.ui.controls.*"
+		creationComplete="skin1_creationCompleteHandler(event)">
 	<!-- host component -->
 	<fx:Metadata>
 		[HostComponent("com.ebillity.core.view.ui.controls.TimeEntryForm")]
 	</fx:Metadata>
-	
-	<s:Form width="100%" height="100%">
-		<s:layout>
-			<s:FormLayout/>
-		</s:layout>
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			[Bindable]
+			private var currencyAmount:Number=1233.45;
+			protected function skin1_creationCompleteHandler(event:FlexEvent):void
+			{
+				currencyFormater.useCurrencySymbol=true;
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<s:CurrencyFormatter id="currencyFormater"/>
+	</fx:Declarations>
+<s:Scroller width="100%" height="100%" verticalScrollPolicy="on">
 		
-		<mx:FormItem/>
-		
-	</s:Form>
+		<s:VGroup gap="0" top="0" width="100%" height="100%" left="0" right="0" paddingTop="0" paddingBottom="0" paddingLeft="0" paddingRight="0">
+
 	
+			<s:Form width="100%" height="100%"
+					skinClass="com.ebillity.skin.ui.controls.Form.customFormSkinModified">
+				
+				<s:layout >
+					<s:FormLayout id="formlayout" verticalAlign="middle" horizontalAlign="justify"
+								  paddingTop="0"  paddingBottom="0" paddingLeft="0" paddingRight="0" gap="0" />
+				</s:layout>
+				
+				<s:HGroup  width="100%" left="0" right="0" bottom="0" top="0" verticalAlign="middle" horizontalAlign="left"
+						   paddingLeft="0" paddingBottom="0" paddingRight="10" gap="0" paddingTop="0">
+					
+					<s:FormItem width="70%" label="User" required="true" top="0"  left="0"
+								 >
+						<s:ComboBox id="userComboBox" width="100%" height="30"/>
+					</s:FormItem>
+					
+					<s:FormItem width="40%" label="Date" required="true" top="0" right="0" > 
+						<controls:customDateField width="100%" height="30" dateChooserStyleName="customDateChooser"/>
+					</s:FormItem>
+					
+				</s:HGroup>
+				
+				<s:FormItem label="User_Project" id="userProjectFormItem" width="100%" required="true" right="15">
+					<s:ComboBox id="userProjectComboBox" width="100%" height="30"/>
+				</s:FormItem>
+				
+				<s:FormItem label="BillableServiceItem" id="billableServiceItemFormItem" width="100%" required="true" right="15">
+					<s:ComboBox id="billableServiceItemComboBox" width="100%" height="30"/>
+				</s:FormItem>
+				
+				<s:FormItem label="Task Code" id="taskCodeFormItem" width="100%" required="true" right="15">
+					<s:ComboBox id="taskCodeComboBox" width="100%" height="30"/>
+				</s:FormItem>
+				
+
+				<s:HGroup  width="100%" left="0" right="0" bottom="0" top="0" verticalAlign="bottom" 
+						   paddingLeft="15" paddingBottom="-20" paddingRight="15" gap="0" paddingTop="10">
+					
+					<s:HGroup horizontalAlign="left" paddingLeft="0" left="0" verticalAlign="bottom" width="50%">
+						<s:Label text="Description" textAlign="left" left="0"/>
+					</s:HGroup>
+					
+					<s:HGroup width="50%"  verticalAlign="bottom" paddingRight="0" horizontalAlign="right" gap="0">
+						<s:Label text="Auto format text on" right="0" textAlign="right"/>
+						<s:Label text="|" right="0" textAlign="right"/>
+						<mx:LinkButton label="Off" bottom="-1" textAlign="right" right="0" id="autoFormatTextOffButton"
+								   fontSize="14"
+								   color="#4e93cf"
+								   textDecoration="underline"/>
+					</s:HGroup>
+					
+				
+				</s:HGroup>
+				
+				<s:FormItem width="100%" id="DescriptionFormItem" top="0" right="15">
+					 <s:TextArea id="descriptiontextArea" width="100%" height="82" />
+				</s:FormItem>
+						
+				<s:HGroup width="100%" horizontalAlign="right" verticalAlign="top">
+					<mx:LinkButton label="+ internal Description" right="15" id="addInternalDesctription"
+								   fontSize="14"
+								   color="#4e93cf"
+								   textDecoration="underline"/>
+				</s:HGroup>
+				
+				<s:FormItem width="100%" id="locationFormItem" label="location" right="15">
+					<s:ComboBox height="30" width="100%" id="locationcomboBox"/>
+				</s:FormItem>
+				
+				
+				<s:BorderContainer height="222" width="100%" borderVisible="false" backgroundColor="#f1f1f2" >
+					<s:VGroup height="100%" width="100%" paddingLeft="0" paddingRight="15" paddingTop="0" paddingBottom="0"
+								  gap="0">
+						<s:HGroup height="33%" width="100%" gap="0" paddingBottom="0"
+							  paddingTop="0" paddingLeft="0" paddingRight="0" horizontalAlign="left">
+							
+							<s:FormItem id="BillableTypeFormItem" label="BillableType" width="40%">
+								<s:ButtonBar id="BillabeTypeState"  height="30"
+											  requireSelection="true"
+											 dataProvider="{typeViewStack}"
+											 skinClass="com.ebillity.skin.ui.controls.buttonBar.CustomButtonBarSkin">
+									<s:layout>
+										<s:HorizontalLayout gap="-1"
+															columnWidth="80"
+															verticalAlign="justify"
+															variableColumnWidth="false"/>
+									</s:layout>
+								</s:ButtonBar>
+							</s:FormItem>
+							
+							<mx:ViewStack id="typeViewStack" width="45%">
+								<s:NavigatorContent width="100%" id="HourlyTypeContent" label="Hourly">
+									<s:FormItem id="standartOvertimeTypeFormItem" label="Type" width="100%">
+										<s:ButtonBar id="standartOvertymeButtonBar" height="30" requireSelection="true"
+													 skinClass="com.ebillity.skin.ui.controls.buttonBar.CustomButtonBarSkin"
+													 dataProvider="{standartOvertymeViewStack}">
+											<s:layout >
+												<s:HorizontalLayout verticalAlign="justify" gap="-1" columnWidth="80" variableColumnWidth="false"/>
+											</s:layout>
+										</s:ButtonBar>
+										<mx:ViewStack id="standartOvertymeViewStack" height="0" borderStyle="none" width="100%">
+											<s:NavigatorContent id="StandartContent" label="Standart" height="0">
+												
+											</s:NavigatorContent>
+											<s:NavigatorContent id="overtimeContent" label="Overtime" height="0">
+												
+											</s:NavigatorContent>
+										</mx:ViewStack>
+										
+									</s:FormItem>
+						
+								</s:NavigatorContent>
+								
+								<s:NavigatorContent width="100%" id="FlatFeeType" label="FlatFee">
+									<s:FormItem id="flatFeeFormItem" label="FlatFeeAmount" width="100%">
+										<s:TextInput id="FlatFeeAmount" height="30"/>
+									</s:FormItem>
+								</s:NavigatorContent>
+							</mx:ViewStack>
+							
+							
+							
+						</s:HGroup>
+						
+						<s:HGroup width="100%" height="30%" paddingBottom="0"
+								  paddingTop="0" paddingLeft="0" paddingRight="0" horizontalAlign="left" >
+							<s:HGroup width="75%" horizontalAlign="left" paddingBottom="0"
+									  paddingTop="0" gap="-30" paddingLeft="0" paddingRight="0" >
+								<s:HGroup width="60%" horizontalAlign="left" paddingBottom="0"
+										  paddingTop="0" gap="-27" paddingLeft="0" paddingRight="0" >
+										<s:FormItem label="From" id="FromLabel" width="45%" >
+											<s:TextInput height="30" id="FromTimeTextInput" width="100%"/>
+										</s:FormItem>
+										<s:FormItem label="To" left="0" id="ToFormItem" width="55%" >
+											<s:TextInput height="30" id="ToTimeTextInput" width="100%"/>
+										</s:FormItem>
+								</s:HGroup>
+								<s:HGroup width="40%" horizontalAlign="left" paddingBottom="0"
+										  paddingTop="0" gap="-5" paddingLeft="0" paddingRight="0" >
+									<s:FormItem width="20%" >
+										<s:Label text="=" top="10"/>
+									</s:FormItem>
+									<s:FormItem id="TotalTime" width="80%" label="Total time" textAlign="right" >
+										<s:TextInput height="30" id="TotalTimeTextInput" width="100%" textAlign="right"/>
+									</s:FormItem>
+									</s:HGroup>
+							</s:HGroup>
+							
+							<s:HGroup width="25%" horizontalAlign="right" paddingBottom="0"
+									  paddingTop="0" paddingLeft="0" paddingRight="0">
+								<s:FormItem id="AmountFormItem" label="Amount" width="100%" right="0" textAlign="right" >
+									<s:Label right="0" fontSize="18" color="#f2b27c" styleName="OpenSans_Semibold" text="{currencyFormater.format(currencyAmount)}" id="amountLabel" width="100%" />
+								</s:FormItem>
+							</s:HGroup>
+						</s:HGroup>
+						
+						<s:HGroup width="100%" height="30%" paddingBottom="0"
+								  paddingTop="0" paddingLeft="0" paddingRight="0" verticalAlign="bottom" horizontalAlign="left" >
+							<s:HGroup width="50%" horizontalAlign="left" verticalAlign="bottom">
+								<s:FormItem id="overriderate"  >
+									<s:HGroup gap="3" verticalAlign="bottom">
+										<s:CheckBox id="overriderateCheckbox" />
+										<s:Label text="Billable" />
+									</s:HGroup>
+								</s:FormItem>
+								
+							</s:HGroup>
+							<s:HGroup  horizontalAlign="right" right="15" verticalAlign="bottom">
+								<s:FormItem id="amountWithOverride" right="0">
+									<s:HGroup verticalAlign="bottom">
+										
+										<s:Label text="$" bottom="5" />
+										<s:TextInput id="amountWithOverrideTextInput" editable="false" height="30"/>
+									</s:HGroup>
+								</s:FormItem>
+								
+							</s:HGroup>
+						</s:HGroup>
+						
+					</s:VGroup>
+				</s:BorderContainer>
+				
+					<s:HGroup width="100%" paddingBottom="0" gap="15"
+							  paddingTop="0" paddingLeft="0" paddingRight="0" verticalAlign="bottom" horizontalAlign="left">
+						<s:FormItem id="isBillableFormItem"  >
+							<s:HGroup gap="3" verticalAlign="bottom">
+								<s:CheckBox id="isBillableCheckBox"/>
+								<s:Label text="Billable" bottom="0"/>
+							</s:HGroup>
+						</s:FormItem>
+						<s:FormItem id="includeInInvoiceFormItem"  >
+							<s:HGroup gap="3" verticalAlign="bottom">
+								<s:CheckBox id="includeInInvoicecheckBox"/>
+								<s:Label text="include In Invoice" bottom="0"/>
+							</s:HGroup>
+						</s:FormItem>
+					</s:HGroup>
+				
+			</s:Form>
+			
+			
+		</s:VGroup>
+	
+	</s:Scroller>
 </s:Skin>
