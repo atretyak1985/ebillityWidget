@@ -15,6 +15,7 @@ package com.ebillity.core.view.ui.login
 	import org.osflash.signals.Signal;
 	
 	import spark.components.Button;
+	import spark.components.FormItem;
 	import spark.components.Label;
 	import spark.components.TextInput;
 	import spark.components.supportClasses.SkinnableComponent;
@@ -44,17 +45,28 @@ package com.ebillity.core.view.ui.login
 		[SkinPart (required="true")]
 		public var passwordValidator:Validator;
 		
+		[SkinPart (required="true")]
+		public var emailFormItem:FormItem;
+		
+		[SkinPart (required="true")]
+		public var passwordFormItem:FormItem;
+		
 		public var submitSignal:Signal = new Signal( SignalParams );
 
 		public function loginUser_faultHandler( errorMessage:String ):void
 		{
 			//Alert.show( errorMessage );
 			failCredential.visible=true;
+			
 			password.text="";
 			email.text="";
 			var event:ValidationResultEvent = new ValidationResultEvent(ValidationResultEvent.INVALID);
 			emailValidattor.dispatchEvent(event);
 			passwordValidator.dispatchEvent(event);
+			emailFormItem.setStyle("color","red");
+			passwordFormItem.setStyle("color","red");
+			password.setStyle("color","black");
+			email.setStyle("color","black");
 			//emailValidattor.validate();
 			//passwordValidator.validate();
 		}
@@ -113,6 +125,10 @@ package com.ebillity.core.view.ui.login
 			if(validationArray.length>0)
 			{
 				failCredential.visible=true;
+				emailFormItem.setStyle("color","red");
+				passwordFormItem.setStyle("color","red");
+				password.setStyle("color","black");
+				email.setStyle("color","black");
 				password.text="";
 				email.text="";
 				
