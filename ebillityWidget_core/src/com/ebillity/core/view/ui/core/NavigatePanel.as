@@ -1,11 +1,13 @@
 package com.ebillity.core.view.ui.core
 {
-	import flash.events.MouseEvent;
-
-	import spark.components.supportClasses.SkinnableComponent;
-
-	import org.osflash.signals.Signal;
 	import com.ebillity.core.view.ui.controls.ColorButton;
+	
+	import flash.events.MouseEvent;
+	
+	import org.osflash.signals.Signal;
+	
+	import spark.components.Button;
+	import spark.components.supportClasses.SkinnableComponent;
 
 	public class NavigatePanel extends SkinnableComponent
 	{
@@ -32,7 +34,7 @@ package com.ebillity.core.view.ui.core
 		public var button3ClickSignal:Signal = new Signal( String );
 
 		[SkinPart( required = "true" )]
-		public var recycleBin:ColorButton;
+		public var recycleBin:Button;
 
 		private var _isLabel1Changed:Boolean;
 
