@@ -29,7 +29,7 @@
 		</s:fill>
 	</s:Rect>
 
-	<s:Group>
+	<s:Group height="100%">
 		<s:layout>
 			<s:VerticalLayout horizontalAlign="left"
 							  verticalAlign="middle"
@@ -96,7 +96,7 @@
 
 		<core:StatusPanel id="statusPanel"
 						  height="40"
-						  width="100%"/>
+						  width="100%" bottom="0"/>
 
 	</s:Group>
 </s:Skin>
