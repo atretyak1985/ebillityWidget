@@ -6,20 +6,81 @@
 	<fx:Metadata>
 		[HostComponent("com.ebillity.core.view.ui.login.FirmList")]
 	</fx:Metadata>
-	<s:DataGrid id="firmGrid"
-				doubleClickEnabled="true"
-				width="100%"
-				height="100%">
+	<fx:Script>
+		<![CDATA[
+			
+		
+		]]>
+	</fx:Script>
+	<s:Rect width="100%" height="100%">
+		<s:fill>
+			<s:SolidColor color="#f1f1f2"/>
+		</s:fill>
+	</s:Rect>
+	<s:DataGrid id="firmGrid" 
+				doubleClickEnabled="true" 
+				width="100%" height="100%" maxHeight="750" rowHeight="50"
+				 skinClass="com.ebillity.skin.ui.controls.DataGrid.DataGridCustomSkin"
+				 textAlign="left">
+		<s:typicalItem>
+			<s:DataItem firmName="qwertyuipwao][asdfgh@jk;l" firmStatus="t365 days remain"
+						userType="Typical Userfe " userStatus=" stander" />
+		</s:typicalItem>
 		<s:columns>
-			<s:ArrayList>
+			<s:ArrayList >
+				
 				<s:GridColumn dataField="firmName"
-							  headerText="Firm"/>
+							  headerText="Firm" >
+					<s:itemRenderer>
+						<fx:Component>
+							<s:GridItemRenderer>
+								<s:Label text="{data.firmName}"
+										 verticalAlign="middle" height="100%" paddingLeft="10" width="100%"/>
+							</s:GridItemRenderer>
+						</fx:Component>
+					</s:itemRenderer>
+				</s:GridColumn>
+				
 				<s:GridColumn dataField="firmStatus"
-							  headerText="Firm Status"/>
+							  headerText="Firm Status" >
+					<s:itemRenderer>
+						<fx:Component>
+							<s:GridItemRenderer>
+								<s:Label text="{data.firmStatus}"
+										 verticalAlign="middle" height="100%" paddingLeft="10" width="100%"/>
+							</s:GridItemRenderer>
+						</fx:Component>
+					</s:itemRenderer>
+				</s:GridColumn>
+							 			
 				<s:GridColumn dataField="userType"
-							  headerText="User Type"/>
+							  headerText="User Type"  >
+					<s:itemRenderer>
+						<fx:Component>
+							<s:GridItemRenderer>
+								<s:Label text="{data.userType}"
+										 verticalAlign="middle" height="100%" paddingLeft="10" width="100%"/>
+							</s:GridItemRenderer>
+						</fx:Component>
+					</s:itemRenderer>
+				</s:GridColumn>
+				
 				<s:GridColumn dataField="firmStatus"
-							  headerText="User Status"/>
+							  headerText="User Status"  >
+					<s:itemRenderer>
+						<fx:Component>
+							<s:GridItemRenderer>
+								<s:Label text="{data.firmStatus}"
+										 verticalAlign="middle" height="100%" paddingLeft="10" width="100%" />
+							</s:GridItemRenderer>
+						</fx:Component>
+					</s:itemRenderer>
+				</s:GridColumn>
+				
+				<s:GridColumn headerText="" 
+							  itemRenderer="com.ebillity.skin.ui.controls.DataGrid.customDataGridItemrRender"
+							  />
+				
 			</s:ArrayList>
 		</s:columns>
 	</s:DataGrid>
