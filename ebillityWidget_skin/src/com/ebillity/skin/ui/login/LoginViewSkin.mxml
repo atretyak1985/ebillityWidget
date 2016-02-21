@@ -72,7 +72,7 @@
 			</s:layout>
 
 			<s:FormItem width="428"
-						label="Email">
+						label="Email" id="emailFormItem">
 				<s:TextInput id="email" 							 
 							 width="400"
 							 height="30"/>
@@ -80,7 +80,7 @@
 
 			<s:FormItem top="2"
 						width="428"
-						label="Password">
+						label="Password" id="passwordFormItem">
 				<s:TextInput id="password" 
 							 displayAsPassword="true"
 							 width="400"
