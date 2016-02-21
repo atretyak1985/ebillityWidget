@@ -27,5 +27,10 @@ package com.ebillity.core.constants
 		
 		[Embed(source="/Images/recycleBinIcon.png")]
 		public static const RECYCLE_BIN_ICON:Class;
+		
+		[Embed(source="/Images/nextIcon.png")]
+		public static const NEXT_ICON:Class;
+		[Embed(source="/Images/backIcon.png")]
+		public static const BACK_ICON:Class;
 	}
 }
