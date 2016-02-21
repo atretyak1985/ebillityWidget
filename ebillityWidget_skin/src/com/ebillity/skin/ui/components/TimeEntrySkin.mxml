@@ -14,7 +14,7 @@
 		
 		<controls:TimeEntryForm width="100%" height="100%"/>
 		<core:NavigatePanel id="navigatePanel" 
-							width="100%" height="100%"
+							width="100%" height="40"
 							label2="Save and Add"
 							label3="Save"/>
 	</s:VGroup>
