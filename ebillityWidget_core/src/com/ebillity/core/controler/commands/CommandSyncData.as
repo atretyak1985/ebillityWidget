@@ -33,8 +33,8 @@ package com.ebillity.core.controler.commands
 			var userDTO:UserDTO = dataModel.userDTO;
 			var sessionId:String = userDTO ? userDTO.sessionId : "";
 
-			//var promise:IPromise = service.syncData( signalParams.paramsHolder[ "UserId" ], sessionId, signalParams.paramsHolder[ "LastSyncedOn" ], signalParams.paramsHolder[ "resetSync" ]);
-			var promise:IPromise = service.syncData( 1108, sessionId, "0", null );
+			var promise:IPromise = service.syncData( signalParams.paramsHolder[ "UserId" ], sessionId, signalParams.paramsHolder[ "LastSyncedOn" ], signalParams.paramsHolder[ "resetSync" ]);
+			//var promise:IPromise = service.syncData( 1108, sessionId, "0", null );
 
 			promise.completed.add( handleResult );
 			promise.failed.add( handleError );

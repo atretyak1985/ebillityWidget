@@ -56,7 +56,10 @@ package com.ebillity.core.view.ui.core
 				return;
 
 			if ( selectedMenu != menu.selectedField )
+			{
 				menu.selectedField = selectedMenu;
+				changeHeader( selectedMenu );
+			}
 
 		}
 
@@ -87,14 +90,16 @@ package com.ebillity.core.view.ui.core
 			return state;
 		}
 
-		protected function menuButton_itemClickHandler( event:MenuEvent ):void
+		private function changeHeader( value:String ):void
 		{
-			var selectedMenu:String = event.item && event.item.hasOwnProperty( "id" ) ? event.item.id : "";
-			selectMenuSignal.dispatch( new SignalParams( "selectManu", selectedMenu ));
-
 			//change header name
-			switch ( selectedMenu )
+			switch ( value )
 			{
+				case MenuConstants.DASHBOARD:
+				{
+					this.headerText = _firmName;
+					break;
+				}
 				case MenuConstants.ADD_EXPENSE:
 				{
 					this.headerText = "Expense Entry";
@@ -121,6 +126,14 @@ package com.ebillity.core.view.ui.core
 					break;
 				}
 			}
+		}
+
+		protected function menuButton_itemClickHandler( event:MenuEvent ):void
+		{
+			var selectedMenu:String = event.item && event.item.hasOwnProperty( "id" ) ? event.item.id : "";
+			selectMenuSignal.dispatch( new SignalParams( "selectManu", selectedMenu ));
+
+			changeHeader( selectedMenu );
 		}
 
 		override protected function partAdded( partName:String, instance:Object ):void
