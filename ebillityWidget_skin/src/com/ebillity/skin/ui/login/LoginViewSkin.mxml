@@ -6,9 +6,15 @@
 
 	<fx:Declarations>
 
-		<mx:EmailValidator id="emailValidattor" source="{email}" property="text" />
-		<mx:Validator id="passwordValidator" source="{password}" property="text"/>
-		
+		<mx:EmailValidator id="emailValidattor"
+						   source="{email}"
+						   requiredFieldError="email field is required."
+						   property="text"/>
+		<mx:Validator id="passwordValidator"
+					  source="{password}"
+					  requiredFieldError="password field is required."
+					  property="text"/>
+
 	</fx:Declarations>
 	<!-- host component -->
 	<fx:Metadata>
@@ -18,8 +24,6 @@
 	<fx:Script>
 		<![CDATA[
 			import com.ebillity.core.constants.AssetConstants;
-
-			
 		]]>
 	</fx:Script>
 
@@ -55,8 +59,9 @@
 				  height="5%"
 				  horizontalAlign="center"
 				  verticalAlign="middle">
-			<s:Label id="failCredential" styleName="OpenSansSemibold"
-					 text="Your Email and password combination is incorect."
+			<s:Label id="failCredential"
+					 text="{hostComponent.errorMessage}"
+					 styleName="OpenSansSemibold"
 					 color="red"
 					 visible="false"/>
 		</s:HGroup>
@@ -72,16 +77,18 @@
 			</s:layout>
 
 			<s:FormItem width="428"
-						label="Email" id="emailFormItem">
-				<s:TextInput id="email" 							 
+						label="Email"
+						id="emailFormItem">
+				<s:TextInput id="email"
 							 width="400"
 							 height="30"/>
 			</s:FormItem>
 
 			<s:FormItem top="2"
 						width="428"
-						label="Password" id="passwordFormItem">
-				<s:TextInput id="password" 
+						label="Password"
+						id="passwordFormItem">
+				<s:TextInput id="password"
 							 displayAsPassword="true"
 							 width="400"
 							 height="30"/>
@@ -98,15 +105,17 @@
 			</s:FormItem>
 
 		</s:Form>
-	
-		<s:HGroup width="100%" height="35%" horizontalAlign="center">
+
+		<s:HGroup width="100%"
+				  height="35%"
+				  horizontalAlign="center">
 			<mx:LinkButton id="forgotPassword"
-					   label="Forgot your password?"
-					   fontSize="14"
-					   color="#4e93cf"
-					   textDecoration="underline"/>
+						   label="Forgot your password?"
+						   fontSize="14"
+						   color="#4e93cf"
+						   textDecoration="underline"/>
 		</s:HGroup>
-		
+
 
 
 	</s:Group>

@@ -3,6 +3,7 @@
 @namespace mx "library://ns.adobe.com/flex/mx";
 @namespace controls "com.ebillity.core.view.ui.controls.*";
 @namespace supportClasses "spark.globalization.supportClasses.*";
+@namespace controls1 "com.ebillity.skin.ui.controls.*";
 
 @font-face { 
 	src: url("fonts/OpenSans-Regular.ttf"); 
@@ -50,7 +51,10 @@ s|Label
 	rollOverColor:#BBBBBB;
 }
 
-
+.OpenSansRegular
+{
+	fontFamily:  "OpenSansRegular";
+}
 
 .OpenSans_Semibold
 {
@@ -62,16 +66,16 @@ s|Label
 }
 s|Form
 {
-	skinClass:ClassReference("spark.skins.spark.StackedFormSkin");
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.Form.FormCustomSkin");
 }
 
 s|FormHeading
 {
-	skinClass:ClassReference("spark.skins.spark.StackedFormHeadingSkin");
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.Form.CustomFormHeadingSkin");
 }
 s|FormItem
-{
-	skinClass:ClassReference("com.ebillity.skin.ui.controls.FormItemCustomSkin");
+{	
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.Form.FormItemCustomSkin");
 	fontFamily:"OpenSansRegular";
 	
 }
@@ -102,7 +106,33 @@ s|ComboBox
 
 mx|DateField
 {
+	skin:Embed("/images/calendarIconModified.png");
+	upSkin:ClassReference("null");
+	overSkin:ClassReference("null");
+	downSkin:ClassReference("null");
+	disabledSkin:ClassReference("null");
+}
+mx|DateField mx|TextInput
+{
 	fontFamily: "OpenSansRegularNoCFF";
+	borderColor: #c1c3c5;
+/*	borderAlpha:0.5;
+	*/
+	borderSkin:ClassReference("mx.skins.halo.HaloBorder");
+	borderStyle:solid;
+	borderThickness:2;
+	dropShadowEnabled:false;
+	
+	
+	
+	
+}
+.customDateChooser
+{
+	borderColor: #939598;
+	borderAlpha:0.8;
+	borderThickness: 2;
+	fontFamily: "OpenSansRegularNoCFF"
 }
  mx|TextInput, mx|UIComponent
 {
@@ -122,3 +152,14 @@ s|CheckBox
 {
 	skinClass:ClassReference("com.ebillity.skin.ui.controls.CustomChekBoxSkin");
 }
+
+controls1|TimeEntryFormSkin s|Form
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.Form.CustomFormItemSkinModified");
+}
+controls1|TimeEntryFormSkin s|FormItem
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.Form.CustomFormItemSkinModified")
+}
+
+
