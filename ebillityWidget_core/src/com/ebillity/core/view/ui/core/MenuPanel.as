@@ -2,14 +2,15 @@ package com.ebillity.core.view.ui.core
 {
 	import com.ebillity.core.constants.MenuConstants;
 	import com.ebillity.core.controler.commands.base.signal.SignalParams;
-
+	
 	import mx.controls.PopUpMenuButton;
 	import mx.events.MenuEvent;
-
+	
+	import org.osflash.signals.Signal;
+	
+	import spark.components.Button;
 	import spark.components.Label;
 	import spark.components.supportClasses.SkinnableComponent;
-
-	import org.osflash.signals.Signal;
 
 	public class MenuPanel extends SkinnableComponent
 	{
@@ -25,6 +26,10 @@ package com.ebillity.core.view.ui.core
 
 		[Bindable]
 		public var headerText:String;
+		
+		[SkinPart( required = "true" )]
+		public var backButton:Button;
+		
 
 		public var selectMenuSignal:Signal = new Signal( SignalParams );
 
@@ -97,31 +102,38 @@ package com.ebillity.core.view.ui.core
 			{
 				case MenuConstants.DASHBOARD:
 				{
+				
+					backButton.visible=false;
 					this.headerText = _firmName;
 					break;
 				}
 				case MenuConstants.ADD_EXPENSE:
 				{
+					backButton.visible=true;
 					this.headerText = "Expense Entry";
 					break;
 				}
 				case MenuConstants.TRACK_TIME:
 				{
+					backButton.visible=true;
 					this.headerText = "Time Entry";
 					break;
 				}
 				case MenuConstants.TEAM_ENTRIES:
 				{
+					backButton.visible=true;
 					this.headerText = "Manage Team Entries";
 					break;
 				}
 				case MenuConstants.MY_ENTRIES:
 				{
+					backButton.visible=true;
 					this.headerText = "Manage My Entries";
 					break;
 				}
 				case MenuConstants.MY_ENTRIES:
 				{
+					backButton.visible=true;
 					this.headerText = "Settings";
 					break;
 				}
@@ -143,7 +155,7 @@ package com.ebillity.core.view.ui.core
 			switch ( instance )
 			{
 				case menu:
-				{
+				{	
 					menu.dataProvider = MenuConstants.ALL_ADMIN_MENU;
 					menu.addEventListener( MenuEvent.ITEM_CLICK, menuButton_itemClickHandler );
 					break;
