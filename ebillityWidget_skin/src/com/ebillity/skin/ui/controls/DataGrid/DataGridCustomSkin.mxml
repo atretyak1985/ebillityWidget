@@ -1,41 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--
-
-ADOBE SYSTEMS INCORPORATED
-Copyright 2008 Adobe Systems Incorporated
-All Rights Reserved.
-
-NOTICE: Adobe permits you to use, modify, and distribute this file
-in accordance with the terms of the license agreement accompanying it.
-
--->
-
-<!--- 
-The default skin class for a Spark DataGrid component.  
-
-<p>This skin defines all of the optional DataGrid skin parts except for rowBackground
-(by default, no per-row background visual element is displayed).
-It defines the default value for the grid's itemRenderer property as 
-spark.skins.spark.DefaultGridItemRenderer, and the default value of the 
-columnHeaderGroup's headerRenderer property as 
-<code>spark.skins.spark.DefaultGridHeaderRenderer</code>.</p>
-
-<p>The values of the following DataGrid skin parts are defined by declarations
-and can be overridden by subclasses of this class: <code>alternatingRowColors</code>,
-<code>caretIndicator</code>, <code>columnSeparator</code>, <code>editorIndicator</code>, 
-<code>headerColumnSeparator</code>, <code>hoverIndicator</code>, 
-<code>rowSeparator</code>, <code>selectionIndicator</code>.  All of these 
-declarations define DataGrid skin parts except <code>headerColumnSeparator</code> and
-<code>headerRenderer</code> which are used for the values of the columnHeaderGroup's 
-<code>columnSeparator</code> and <code>headerRenderer</code> properties.</p>
-
-@see spark.components.DataGrid
-@langversion 3.0
-@playerversion Flash 10
-@playerversion AIR 2.5
-@productversion Flex 4.5
--->
 
 <s:SparkSkin 
 	xmlns:fx="http://ns.adobe.com/mxml/2009" 
