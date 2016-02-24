@@ -6,9 +6,9 @@
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
 	
-	<s:Rect left="0" right="0" top="1" height="1" >
+	<s:Rect  left="-2" right="-1" top="1" height="2" >
 		<s:fill>
-			<s:SolidColor color="#FFFFFF" alpha="0.8" />
+			<s:SolidColor color="#4d4d4f"  />
 		</s:fill>
 	</s:Rect>
 </s:Skin>
