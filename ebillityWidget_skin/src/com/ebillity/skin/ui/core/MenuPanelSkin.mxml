@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
 		xmlns:s="library://ns.adobe.com/flex/spark"
-		xmlns:mx="library://ns.adobe.com/flex/mx">
+		xmlns:mx="library://ns.adobe.com/flex/mx" >
 	<!-- host component -->
 	<fx:Metadata>
 		[HostComponent("com.ebillity.core.view.ui.core.MenuPanel")]
@@ -19,7 +19,9 @@
 			import mx.events.FlexEvent;
 			
 			import spark.components.supportClasses.ItemRenderer;
-
+	
+			[Embed(source="/images/widthIcon.png")]
+			private var WIDTH_ICON:Class;
 
 			protected function menuButton_openHandler( event:DropdownEvent ):void
 			{
@@ -35,18 +37,20 @@
 			protected function menuButton_creationCompleteHandler( event:FlexEvent ):void
 			{
 				Menu( menu.popUp ).width = 170;
-				Menu( menu.popUp ).rowHeight = 40;
-				//Menu( menu.popUp ).variableRowHeight = true;
-				
-				//Menu(menu.popUp).itemRenderer
-				//Menu( menu.popUp ).setStyle( "separator", MySeparatorskin );
+				Menu( menu.popUp ).variableRowHeight = true;
 			}
+			private function mycustomIconFunction(item:Object):Class
+			{
+				return WIDTH_ICON;
+			}
+			
 		]]>
 	</fx:Script>
 
 	<s:states>
 		<s:State name="firms"/>
 		<s:State name="menu"/>
+	
 	</s:states>
 
 	<!-- background ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -59,24 +63,28 @@
 
 
 	<s:Group width="100%"
-			 height="100%">
+			 height="100%" >
 		<s:layout>
-			<s:HorizontalLayout verticalAlign="middle"
-								horizontalAlign="center"
-								gap="20"/>
+			<s:HorizontalLayout verticalAlign="middle" horizontalAlign="left"
+								
+								gap="5"/>
 		</s:layout>
-		<s:BorderContainer id="borderContainerformenu"
+		
+			<s:BorderContainer width="50"  id="borderContainerformenu"
 						   backgroundColor="#5d5d5a"
 						   left="0"
+						   
 						   height="100%"
 						   verticalCenter="0"
-						   width="50"
+						  
 						   borderVisible="false"
 						   excludeFrom="firms">
 
-			<mx:PopUpMenuButton id="menu"
+			
+				<mx:PopUpMenuButton id="menu"
 								enabled="true"
 								labelField="label"
+								iconFunction="mycustomIconFunction"
 								verticalCenter="0"
 								label=""
 								left="0"
@@ -88,22 +96,28 @@
 								open="menuButton_openHandler(event)"
 								close="menuButton_closeHandler(event)"
 								creationComplete="menuButton_creationCompleteHandler(event)"/>
-		</s:BorderContainer>
-
-		<s:HGroup width="100%" verticalAlign="middle" horizontalAlign="center" >
-			<s:Button id="backButton" icon="{AssetConstants.BACK_ICON}"  width="45" height="45" skinClass="com.ebillity.skin.ui.controls.Buttons.backButton"/>
-			<s:Label id="header" verticalAlign="middle"
+			</s:BorderContainer>
+			
+			
+			
+			<s:HGroup gap.firms="{hostComponent.width/2.5}" width.firms="90%" width.menu="90%" paddingRight="100" verticalAlign="middle"   horizontalAlign.menu="center">
+			
+				<s:Button  id="backButton" icon="{AssetConstants.BACK_ICON}"   visible.firms="true" 
+						   visible.menu="false" width="45" x.firms="0"
+					   height="45" skinClass="com.ebillity.skin.ui.controls.Buttons.backButton"/>
+				
+			
+					<s:Label id="header" verticalAlign="middle" 
 					 text="{hostComponent.headerText}"
 					 text.firms="Firms"
-					 textAlign="center"
+					 textAlign="center" 
 					 fontSize="14"
 					 styleName="OpenSans_Semibold"
-					 horizontalCenter="-50"
-					 color="white"
-					 right="10"
-					 left="10"/>
-		</s:HGroup>
-
+					 color="white"/>
+				
+			</s:HGroup>
+			
+		
 	</s:Group>
 
 </s:Skin>
