@@ -25,13 +25,27 @@
 	fontFamily: "OpenSansSemibold"; 
 	embedAsCFF: true; 
 }
-
+@font-face{
+	src: url("fonts/OpenSans-Light.ttf");
+	fontFamily:"OpenSansLight";
+	embedAsCFF: true;
+}
 
 s|Label 
 {
 	fontFamily:  "OpenSansRegular";
 }
 
+controls|ColorButton s|Label
+{
+	
+	fontFamily: "OpenSansRegular";
+}
+
+.OpenSanssLightLabel
+{
+	fontFamily: "OpenSansLight";
+}
 .OpenSansBoldlabel
 {
 	fontFamily: "OpenSansBold";
@@ -39,31 +53,44 @@ s|Label
 
 .OpenSans_Semibold
 {
-	fontFamily:"OpenSansSemibold";
+	fontFamily: "OpenSansSemibold";
 }
-.mainMenu{
+
+.mainMenu , .TimerMenu{
 	fontSize:14;
 	textAlign:left;
 	borderVisible:false;
-	color:#BBBBBB;
+	color:#f1f1f2;
 	backgroundColor:#414042;
 	contentBackgroundColor:#414042;
 	rollOverColor:#BBBBBB;
+	separatorColor:#ffffff;
+	separatorSkin:ClassReference("com.ebillity.skin.ui.core.MySeparatorskin");
+	
+
+}
+.TimerMenu{
+	
+	textAlign:left;
+	backgroundColor:#353435;
+	contentBackgroundColor:#353435;
+	horizontalGap:20;
+	separatorSkin:ClassReference("com.ebillity.skin.ui.core.MySeparatorskin");
+	
+	
 }
 
-.OpenSansRegular
+#timerMenu
 {
-	fontFamily:  "OpenSansRegular";
+	skin:Embed("/images/threePointIcon.png");
+
 }
 
-.OpenSans_Semibold
-{
-	fontFamily: "OpenSansSemibold";
-}
 #menu
 {
 	skin: Embed("/images/PopUpButtonMenuModified.png");
 }
+
 s|Form
 {
 	skinClass:ClassReference("com.ebillity.skin.ui.controls.Form.FormCustomSkin");
@@ -98,7 +125,10 @@ controls|ColorButton
 	fontSize: 18;
 	skinClass: ClassReference("com.ebillity.skin.ui.controls.ColorButtonSkin");
 }
-
+controls|ColorIconButton
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.Buttons.colorIconButton")
+}
 s|ComboBox
 {
 	skinClass:ClassReference("com.ebillity.skin.ui.controls.combobox.CustomComboBoxSkin");
@@ -160,6 +190,17 @@ controls1|TimeEntryFormSkin s|Form
 controls1|TimeEntryFormSkin s|FormItem
 {
 	skinClass:ClassReference("com.ebillity.skin.ui.controls.Form.CustomFormItemSkinModified")
+}
+
+mx|ToolTip
+{
+	cornerRadius:0;
+	
+	backgroundColor:#808285;
+	color:white;
+	dropShadowVisible:false;
+	fontSize:14;
+	borderSkin:ClassReference("com.ebillity.skin.ui.controls.ToolTipCustomSkin");
 }
 
 
