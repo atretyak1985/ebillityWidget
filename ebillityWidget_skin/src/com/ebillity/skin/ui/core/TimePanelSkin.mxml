@@ -1,13 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
 		xmlns:s="library://ns.adobe.com/flex/spark"
-		xmlns:mx="library://ns.adobe.com/flex/mx">
+		xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:controls="com.ebillity.core.view.ui.controls.*">
 	<!-- host component -->
 	<fx:Metadata>
 		[HostComponent("com.ebillity.core.view.ui.core.TimePanel")]
 	</fx:Metadata>
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.controls.Menu;
+			import mx.events.FlexEvent;
+			[Embed(source="/images/widthIcon.png")]
+			private var WIDTH_ICON:Class;	
+			
+			import com.ebillity.core.constants.MenuConstants;
+			private function myIconFunction(item:Object):Class
+			{
+				
+				if(item.id == MenuConstants.STOP_ALL)
+					return AssetConstants.STOP_ICON;
+				if(item.id == MenuConstants.PAUSE_ALL)
+					return AssetConstants.PAUSE_ICON;
+				return null;
+			}
+			
+			protected function timerMenu_creationCompleteHandler(event:FlexEvent):void
+			{
+				
+				Menu(timerMenu.popUp).width = 140;
+				Menu(timerMenu.popUp).variableRowHeight = true;
+				
+				//Menu(timerMenu.popUp).setStyle("separator",MySeparatorskin);
+			}
+		 	
+			private function setColor(dateTime:String):String
+			{
+				Alert.show("awef");
+				if(Number(dateTime.charAt(0))<8)
+					return "white";
+				else
+					return "green";
+			} 
+				
+		
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<s:ArrayList id="myEntries"> 
+			<fx:Object> 
+				<fx:Customer>IBM</fx:Customer> 
+				<fx:DateTime>3:33</fx:DateTime> 
+				<fx:ServiceTitle>Research</fx:ServiceTitle> 
+			</fx:Object> 
+			<fx:Object> 
+				<fx:DateTime>9:34</fx:DateTime> 
+				<fx:Customer>Mcdonalds</fx:Customer> 
+				<fx:ServiceTitle>Construction</fx:ServiceTitle> 
+			</fx:Object> 
+		</s:ArrayList> 
+	</fx:Declarations>
 	<s:BorderContainer color="0xff0000"
-					   backgroundColor="#414142"
+					   backgroundColor="#414142" borderVisible="false" borderWeight="0"
 					   width="100%"
-					   height="100%"/>
+					   height="100%" >
+		
+		<s:VGroup width="100%" height="100%" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0" gap="0" horizontalAlign="left">
+			<s:Button  id="addTimeButton" width="100%" height="50" label="awef" icon="{AssetConstants.ADD_TIME_ICON}" />
+			
+			<s:VGroup width="100%" height="100%" gap="0" paddingLeft="0" paddingTop="0" paddingBottom="0" paddingRight="0" horizontalAlign="left">
+				<s:VGroup left="0" width="100%" top="0" bottom="0" right="0" paddingLeft="-1" paddingRight="-1" paddingTop="0" paddingBottom="0">
+					<s:DataGrid width="100%"  id="timeEntryGrid" left="0"
+						dataProvider="{myEntries}" 
+						doubleClickEnabled="true" rowHeight="80" textAlign="left"
+						skinClass="com.ebillity.skin.ui.controls.DataGrid.customTimeEntriesDataGridSkin" >
+				<s:columns>
+					<s:ArrayList>
+						<s:GridColumn headerText=""  dataField="DateTime"  >
+							<s:itemRenderer>
+								<fx:Component>
+									<s:GridItemRenderer >
+										<fx:Script>
+											<![CDATA[
+												import mx.events.FlexEvent;
+												
+												protected function timeLabel_creationCompleteHandler(event:FlexEvent):void
+												{
+													if(Number(event.currentTarget.text.charAt(0))<8)
+														event.currentTarget.setStyle("color","#51aa47")
+													else
+														event.currentTarget.setStyle("color","#949698")
+													
+												}
+												
+											]]>
+										</fx:Script>
+									
+										<s:VGroup paddingLeft="10" paddingTop="10" horizontalAlign="left" width="100%" height="100%"  left="0" gap="0"  >	
+										
+										<s:Label left="0" id="timeLabel" text="{data.DateTime}" styleName="OpenSans_Semibold" fontSize="18" creationComplete="timeLabel_creationCompleteHandler(event)" color="#435445" />
+										<s:Label text="{data.Customer}" fontSize="12" color="#FFFFFF"/>
+										<s:Label text="{data.ServiceTitle}" fontSize="12" color="#FFFFFF"/>
+											
+										</s:VGroup>
+									</s:GridItemRenderer>
+								</fx:Component>
+							</s:itemRenderer>
+						</s:GridColumn>
+					</s:ArrayList>
+				</s:columns>
+				
+				
+			</s:DataGrid>
+				</s:VGroup>
+				
+			</s:VGroup>
+			
+			<mx:PopUpMenuButton id="timerMenu" 
+								enabled="true" 
+								width="100%" height="40"
+								verticalCenter="0" 
+								label="" icon="{WIDTH_ICON}" openAlways="true" 
+								showRoot="false" labelField="label"
+								iconFunction="myIconFunction"
+								
+								popUpStyleName="TimerMenu" creationComplete="timerMenu_creationCompleteHandler(event)"
+								/>
+		</s:VGroup>
+		
+	</s:BorderContainer>
+	<fx:Script>
+		<![CDATA[
+			import com.ebillity.core.constants.AssetConstants;
+		]]>
+	</fx:Script>
 </s:Skin>
