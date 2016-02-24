@@ -9,6 +9,10 @@
 	
 	<fx:Script>
 		<![CDATA[
+			import mx.controls.ToolTip;
+			import mx.core.IUIComponent;
+			import mx.events.ToolTipEvent;
+			import mx.managers.ToolTipManager;
 			////////////////code for image/////////
 			[Embed(source="/Images/wifiIconOn.png")]
 			[Bindable]
@@ -30,6 +34,29 @@
 			[Bindable]
 			public var quickBooksIcon:Class;
 			
+			var myToolTip:ToolTip
+			var s:String;
+			protected function Image_mouseOverHandler(event:MouseEvent):void
+			{
+			s=event.currentTarget.name.toString();
+			var pt:Point = new Point(0,0);
+			
+			/* Call this method to convert the object's
+			coordinates inside its container to the stage's 
+			global coordinates. */
+			pt = event.currentTarget.contentToGlobal(pt);
+				// Position the ToolTip to the right of the current target.
+				myToolTip = ToolTipManager.createToolTip(s, 
+					pt.x+15, 
+					pt.y-15, null,IUIComponent(event.currentTarget)) 
+					as ToolTip;
+				
+			}
+			private function destroyTip(event:Object):void {
+				ToolTipManager.destroyToolTip(myToolTip);               
+			}      
+			
+			
 		]]>
 	</fx:Script>
 	
@@ -48,13 +75,17 @@
 		
 
 		<s:layout>
-			<s:HorizontalLayout gap="10" paddingLeft="20" verticalAlign="top"/>
+			<s:HorizontalLayout gap="10" paddingLeft="0" verticalAlign="bottom"/>
 		</s:layout>
 		
-		<s:Image id="wifiImage" source="{wifiIconOn}"/>
-		<s:Image id="quickBooksImage" source="{quickBooksIcon}"/>
-		<s:Image id="gustoImage" source="{gustoIcon}"/>
-		<s:Image id="concurImage" source="{concurIcon}"/>
+		<s:Image id="wifiImage" name="wifi Indicator" source="{wifiIconOn}"  
+				 mouseOver="Image_mouseOverHandler(event)" mouseOut=" destroyTip(event)"/>
+		<s:Image id="quickBooksImage" source="{quickBooksIcon}"  name="QuickBooks"
+				 mouseOver="Image_mouseOverHandler(event)" mouseOut=" destroyTip(event)"/>
+		<s:Image id="gustoImage" source="{gustoIcon}" name="Gusto"
+				 mouseOver="Image_mouseOverHandler(event)" mouseOut=" destroyTip(event)"/>
+		<s:Image id="concurImage" source="{concurIcon}" name="Concur" 
+				 mouseOver="Image_mouseOverHandler(event)" mouseOut=" destroyTip(event)"/>
 	
 	</s:Group>
 </s:Skin>
