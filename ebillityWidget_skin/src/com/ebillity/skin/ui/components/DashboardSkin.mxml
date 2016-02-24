@@ -9,6 +9,11 @@
 		[HostComponent("com.ebillity.core.view.ui.components.Dashboard")]
 	</fx:Metadata>
 
+	<fx:Declarations>
+		<fx:Date id="dateInfo"/>
+		<s:DateTimeFormatter  id="dateformater" dateTimePattern="EEEE, MMM dd, yyyy" />
+	</fx:Declarations>
+	
 	<fx:Script>
 		<![CDATA[
 			import com.ebillity.core.constants.AssetConstants;
@@ -41,8 +46,9 @@
 		</s:layout>
 
 		<s:Label paddingLeft="0"
+				 id="todayDate"
 				 bottom="0"
-				 text="Setember 22 2014"
+				 text="{dateformater.format(dateInfo)}"
 				 fontSize="18"
 				 color="#58585b"/>
 		<s:TileGroup id="mainGroup"
