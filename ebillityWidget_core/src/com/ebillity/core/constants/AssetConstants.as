@@ -30,7 +30,26 @@ package com.ebillity.core.constants
 		
 		[Embed(source="/Images/nextIcon.png")]
 		public static const NEXT_ICON:Class;
+		
 		[Embed(source="/Images/backIcon.png")]
 		public static const BACK_ICON:Class;
+		
+		[Embed(source="/images/TimerDownIcon.png")]
+		public static const TIMER_DOWN_ICON:Class;
+		
+		[Embed(source="/images/TimerUpIcon.png")]
+		public static const Timer_UP_ICON:Class;
+		
+		[Embed(source="/images/restartIcon.png")]
+		public static const RESTART_ICON:Class;
+		
+		[Embed(source="/images/AddTimeIcon.png")]
+		public static const ADD_TIME_ICON:Class;
+		
+		[Embed(source="/images/PauseIconModified.png")]
+		public static const PAUSE_ICON:Class;
+		
+		[Embed(source="/images/StopIconModified.png")]
+		public static const STOP_ICON:Class;
 	}
 }
