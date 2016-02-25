@@ -65,7 +65,7 @@
         <s:State name="disabledAndSelected" stateGroups="disabledStates, selectedStates" />
     </s:states>
     
-    <s:Group verticalCenter="0" width="13" height="13" layoutDirection="ltr">
+    <s:Group verticalCenter="0" width="20" height="20" layoutDirection="ltr">
         <!-- drop shadow -->
    
         
@@ -78,15 +78,22 @@
 
         
         <!-- border - put on top of the fill so it doesn't disappear when scale is less than 1 -->
-        <s:Rect left="0" top="0" right="0" bottom="0">
+        <s:Rect left="1" top="1" right="1" bottom="1">
             <s:stroke>
-               <s:SolidColorStroke color="#939393" weight="2" alpha="0.8"/>
+               <s:SolidColorStroke color="#939393" weight="1" alpha="0.8"/>
             </s:stroke>
         </s:Rect>
     
+		<!-- border - put on top of the fill so it doesn't disappear when scale is less than 1 -->
+		<s:Rect left="0" top="0" right="0" bottom="0">
+			<s:stroke>
+				<s:SolidColorStroke color="#939393" weight="2" alpha="0.8"/>
+			</s:stroke>
+		</s:Rect>
+		
         <!-- checkmark -->
         <!--- The checkmark in the box for this skin. To create a custom check mark, create a custom skin class. -->
-        <s:Path left="2" top="0" includeIn="selectedStates" id="check" itemCreationPolicy="immediate"
+        <s:Path left="1" top="1" right="1" includeIn="selectedStates" id="check" itemCreationPolicy="immediate"
                 data="M 9.2 0.1 L 4.05 6.55 L 3.15 5.0 L 0.05 5.0 L 4.6 9.7 L 12.05 0.1 L 9.2 0.1">        
             <s:fill>
                 <!--- 
@@ -104,6 +111,6 @@
              textAlign="start"
              verticalAlign="middle"
              maxDisplayedLines="1"
-             left="18" right="0" top="3" bottom="3" verticalCenter="2" />
+             left="20" right="0" top="5" bottom="2" verticalCenter="0" />
 
 </s:SparkSkin>
