@@ -10,6 +10,6 @@
 
 	<s:HGroup>
 		<s:Image id="iconStatus"/>
-		<s:Label id="labelStatus"/>
+		<s:Label id="labelStatus" fontSize="12"/>
 	</s:HGroup>
 </s:Skin>
