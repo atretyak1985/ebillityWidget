@@ -33,10 +33,10 @@
 	
 	
 	<s:VGroup width="100%"
-			  height="100%">
+			  height="100%" verticalAlign="middle">
 		<s:HGroup id="statusGroup"
 				  width="100%"
-				  height="100%"
+				  height="35%"
 				  horizontalAlign="center"
 				  verticalAlign="middle">
 			<controls:StatusLabel id="approveStatus"
@@ -56,35 +56,45 @@
 		</s:HGroup>
 		<s:HGroup id="buttonsGroup"
 				  width="100%"
-				  height="100%"
-				  horizontalAlign="center">
+				  height="65%"
+				  horizontalAlign="center" verticalAlign="middle">
 
 			<controls:ColorButton id="rejectButton"
 								  label="Reject"
+								  fontSize="14"
+								  height="30"
 								  buttonColor="#f04f25"
 								  minWidth="105"/>
 
 			<controls:ColorButton id="toPendingButton"
 								  label="Revert to Pending"
 								  buttonColor="#E6883C"
+								  fontSize="14"
+								  height="30"
 								  minWidth="105"/>
 
 			<controls:ColorButton id="approveButton"
 								  label="Approve"
+								  fontSize="14"
 								  buttonColor="#51aa47"
 								  includeIn="pending"
+								  height="30"
 								  minWidth="105"/>
 
 			<controls:ColorButton id="toQueueButton"
 								  label="Add to Queue"
 								  buttonColor="#0000ff"
 								  includeIn="approved"
+								  fontSize="14"
+								  height="30"
 								  minWidth="105"/>
 
 			<controls:ColorButton id="unQueueButton"
 								  label="Un-Queue"
 								  buttonColor="#0000ff"
 								  includeIn="queue"
+								  fontSize="14"
+								  height="30"
 								  minWidth="105"/>
 		</s:HGroup>
 	</s:VGroup>
