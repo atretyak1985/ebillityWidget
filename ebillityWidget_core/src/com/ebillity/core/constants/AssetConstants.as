@@ -51,5 +51,8 @@ package com.ebillity.core.constants
 		
 		[Embed(source="/images/StopIconModified.png")]
 		public static const STOP_ICON:Class;
+		
+		[Embed(source="/images/requiredAsterisk.png")]
+		public static const REQUIRED_ICON:Class;
 	}
 }
