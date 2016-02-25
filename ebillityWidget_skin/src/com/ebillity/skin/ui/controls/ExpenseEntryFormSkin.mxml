@@ -24,166 +24,179 @@
 			
 		]]>
 	</fx:Script>
-
-	<s:Scroller   width="100%" height="100%">
-		
 	
-		<s:VGroup gap="0" top="0" width="100%" height="100%" left="0" right="0" paddingTop="0" paddingBottom="0" paddingLeft="0" paddingRight="0">
+	
+	
+	<s:Scroller width="100%" height="100%" verticalScrollPolicy="auto" >
 		
-		
-			<s:Form width="100%" 
-					height="100%" >
+		<s:VGroup gap="0" top="0" width="100%" height="100%" left="0" right="0" paddingTop="14" paddingBottom="0" paddingLeft="0" paddingRight="0">
 			
-				<s:layout>
-					<s:FormLayout gap="25" paddingLeft="-10" paddingRight="-10"
-								  horizontalAlign="center"
-								  verticalAlign="middle"/>
+			
+			<s:Form width="100%" height="100%"
+					skinClass="com.ebillity.skin.ui.controls.Form.customFormSkinModified">
+				
+				<s:layout >
+					<s:FormLayout id="formlayout" verticalAlign="middle" horizontalAlign="justify"
+								  paddingTop="0"  paddingBottom="0" paddingLeft="0" paddingRight="0" gap="10" />
 				</s:layout>
-		
-				<s:VGroup gap="5" width="100%" paddingLeft="10" paddingRight="0" verticalAlign="middle" horizontalAlign="center">
+				
+				<s:VGroup verticalAlign="middle" horizontalAlign="justify"
+						  paddingTop="0"  paddingBottom="0" paddingLeft="5" paddingRight="8" gap="10" >
+					
+					
+					
+					<s:HGroup  width="100%" left="0" right="16" bottom="0" top="0" verticalAlign="middle" horizontalAlign="left"
+							   paddingLeft="0" paddingBottom="0" paddingRight="0" gap="0" paddingTop="0">
 						
-					<s:FormItem width="100%"
-								label="User">
-						<s:HGroup width="100%">
-							<s:ComboBox height="30" id="userComboBox" width="70%" />
-							<controls:customDateField width="30%" height="30" horizontalCenter="5" dateChooserStyleName="customDateChooser"/>
-						</s:HGroup>
-					</s:FormItem>
-			
-					<s:FormItem width="100%"
-								label="Client">
-						<s:HGroup width="100%">
-							<s:ComboBox height="30" id="clientComboBox" width="100%"/>
-						</s:HGroup>
-					</s:FormItem>
-			
-					<s:FormItem width="100%"
-								label="Project">
-						<s:HGroup width="100%">
-							<s:ComboBox height="30" id="projectComboBox" width="100%"/>
-						</s:HGroup>
-					</s:FormItem>
-			
-					<s:FormItem width="100%"
-								label="Expense Type">
-						<s:HGroup width="100%">
-							<s:ComboBox height="30" id="expenseComboBox" width="100%" />
-						</s:HGroup>
-					</s:FormItem>
-			
-					<s:FormItem width="100%"
-								label="Description">
-						<s:HGroup width="100%">
-							<s:TextArea id="descriptionTextArea"
-										width="100%"
-										height="90"/>
-						</s:HGroup>
+						<s:FormItem width="70%" label="User" required="true" top="0"  left="0"
+									>
+							<s:ComboBox id="userComboBox" width="100%" height="30"/>
+						</s:FormItem>
+						
+						<s:FormItem width="40%" label="Date" required="true" top="0" right="0" > 
+							<controls:customDateField width="100%" height="30" dateChooserStyleName="customDateChooser"/>
+						</s:FormItem>
+						
+					</s:HGroup>
+					
+					<s:FormItem label="Client" id="ClientFormItem" width="100%" required="true" right="0">
+						<s:ComboBox id="ClientComboBox" width="100%" height="30"/>
 					</s:FormItem>
 					
-					<s:HGroup width="100%" horizontalAlign="right" paddingRight="25">
-						<s:Label  color="blue" textDecoration="underline" text="spellcheck"/>
+					<s:FormItem label="Project" id="ProjectFormItem" width="100%"  required="true" right="0">
+						<s:ComboBox id="ProjectFormItemComboBox" width="100%" height="30"/>
+					</s:FormItem>
+					
+					<s:FormItem label="Expense Type" id="ExpenseTypeFormItem" width="100%" required="true" right="0">
+						<s:ComboBox id="ExpenseComboBox" width="100%" height="30"/>
+					</s:FormItem>
+					
+					<s:FormItem label="Description" width="100%" id="DescriptionFormItem"  top="0" right="0">
+						<s:layout>
+							<s:VerticalLayout paddingBottom="-10"/>
+						</s:layout>
+						<s:TextArea id="descriptiontextArea" width="100%" height="82" />
+					</s:FormItem>
+					
+					<s:HGroup width="100%" horizontalAlign="right" paddingTop="-10" paddingRight="0" verticalAlign="top">
+						<mx:LinkButton label="Spell Check" right="0" id="addInternalDesctription"
+									   fontSize="14"
+									   color="#4e93cf"
+									   textDecoration="underline"/>
 					</s:HGroup>
 					
 				</s:VGroup>
-				
-				<s:BorderContainer backgroundColor="#d1d3d4"  borderVisible="false" id="costFields" left="0" right="0" width="110%" height="100" verticalCenter="0" >
-						
+				<s:HGroup width="100%" height="1"/>
+				<s:BorderContainer height="100" width="100%"  borderVisible="false" backgroundColor="#f1f1f2" >
 					
-					<s:HGroup id="costGroup2" paddingBottom="20" paddingRight="0" left="15" width="100%" height="100%" gap="-15"  verticalAlign="bottom" horizontalAlign="left" >
-					
-						<s:Group width="2%" left="0" >
-							<s:Label text="$"  left="0" bottom="12" textAlign="left"/>
-						</s:Group>
-						
-						<s:FormItem width="25%" 
-									label="Cost"  required="true">
-								<s:TextInput id="cost" height="30"  width="100%"/>
-						</s:FormItem>
-						
-						<s:Group width="2%" >
-							<s:Label text="x" left="-15" bottom="12" textAlign="left"/>
-						</s:Group>
-						
-						
-						<s:FormItem width="28%"
-									label="Quantity" required="true">
-								<s:TextInput  id="Quantity" height="30"  width="100%"/>
-						</s:FormItem>
-						
-						<s:Group  width="2%" >
-						<s:Label text="x" left="-15" bottom="12" textAlign="left"/>
-						</s:Group>
-						
+						<s:HGroup width="100%" height="100%" paddingBottom="0" gap="-20" verticalAlign="middle"
+								  paddingTop="0" paddingLeft="15" paddingRight="5" horizontalAlign="left" >
 							
-						<s:FormItem width="32%" 
-									label="Markup Ratio">
-								<s:TextInput id="MarkupRatio" height="30" width="100%"/>
-						</s:FormItem>
+							<s:HGroup width="85%" horizontalAlign="left" paddingBottom="0"
+									  paddingTop="0" gap="-12" paddingLeft="0" paddingRight="-15" >
+								
+								<s:HGroup width="30%" horizontalAlign="left" paddingBottom="0"
+										  paddingTop="0" gap="-10" paddingLeft="0" paddingRight="0" >
+									
+									<s:VGroup height="100%" verticalAlign="bottom" paddingBottom="20">
+										
+										<s:Label  verticalAlign="middle"  text="$"/>
+									</s:VGroup>
+									
+									
+									<s:FormItem id="CostFormItem" width="80%" required="true" label="Cost" textAlign="left" >
+										<s:TextInput height="30" id="CostTextInput" width="80" textAlign="left"/>
+									</s:FormItem>
+									
+								</s:HGroup>
+								
+								
+								<s:HGroup width="30%" horizontalAlign="left" paddingBottom="0"
+										  paddingTop="0" gap="-3" paddingLeft="0" paddingRight="0" >
+									
+									<s:VGroup height="100%" verticalAlign="bottom" paddingBottom="20">
+										
+										<s:Label  verticalAlign="middle"  text="x"/>
+									</s:VGroup>
+									
+									
+									<s:FormItem id="Cost" width="80%" label="Quantity" required="true" textAlign="left" >
+										<s:TextInput height="30" id="QuantityInput" width="80" textAlign="left"/>
+									</s:FormItem>
+									
+								</s:HGroup>
+								
+								
+								<s:HGroup width="40%" horizontalAlign="left" paddingBottom="0"
+										  paddingTop="0" gap="-3" paddingLeft="0" paddingRight="0" >
+									
+									<s:VGroup height="100%" verticalAlign="bottom" paddingBottom="20">
+										
+										<s:Label  verticalAlign="middle"  text=" x"/>
+									</s:VGroup>
+									
+									
+									<s:FormItem id="MarkupRatioFormItem" width="80%" label="Markup Ratio" textAlign="left" >
+										<s:TextInput height="30" id="MarkUpRatioTextInput" width="90" textAlign="right"/>
+									</s:FormItem>
+									
+								</s:HGroup>
+								
 						
-						<s:Group width="2%" >
-							<s:Label text="%=" left="-15" bottom="12" textAlign="left"/>
-						</s:Group>
+							</s:HGroup>
+							
+							<s:HGroup width="15%" horizontalAlign="right" paddingBottom="0"
+									  paddingTop="0" paddingLeft="-15" paddingRight="0">
+							
+								<s:VGroup width="100%" height="100%" horizontalAlign="right" gap="10" verticalAlign="top" paddingTop="0">
+									<s:Label height="50%" textAlign="right" verticalAlign="top" text="Amount"/>
+									<s:Label height="50%" textAlign="right" verticalAlign="top" id="amountLabel" width="100%" right="0" fontSize="18" color="#f58220" styleName="OpenSans_Semibold" text="{currencyFormater.format(currencyAmount)}"  />
+								</s:VGroup>
+							</s:HGroup>
+						</s:HGroup>
 						
-						<s:FormItem width="35%" right="0" 
-									label="	Total Cost" textAlign="right">
-								<s:Label right="0" fontSize="18" color="#f2b27c" styleName="OpenSans_Semibold" text="{currencyFormater.format(currencyAmount)}" id="resultLabel" width="100%" />
-						</s:FormItem>
-						
-					</s:HGroup>
-					
 				</s:BorderContainer>
 				
-				
-					
-					
-					<s:HGroup id="taxGroup" 
-							  top="-25"  left="15" width="100%" paddingTop="-25" gap="0" 
-							  verticalAlign="middle" horizontalAlign="left" >
-						
-						
-						<s:FormItem id="reimburce" >
-							<s:CheckBox id="reimburceCheckbox"/>
-						</s:FormItem >
-						
-						<s:Group left="0" >
-							<s:Label text="Reimburce" top="20" left="-40" textAlign="left"/>
-						</s:Group>
-												
-						<s:FormItem id="Taxeble">
-							<s:CheckBox id="TaxebleCheckBox" />
-						</s:FormItem>
-						
-						<s:Group  >
-							<s:Label text="Taxeble" top="20" left="-40" textAlign="left"/>
-						</s:Group>
-						
-						
-						<s:FormItem id="taxRatio">
-							<s:TextInput id="raxRatioTextInput" height="30" />
-						</s:FormItem>
-						
-						<s:Group  >
-							<s:Label text="%" top="20" left="-38" textAlign="left"/>
-						</s:Group>
-						
-					</s:HGroup>
-				
-			
-				
-				<s:HGroup id="atachmentGroup" width="100%" top="-25" paddingTop="-25" left="15" verticalAlign="middle" horizontalAlign="left">
-					<s:FormItem label="Attachment">
-						<controls:ColorButton buttonColor="#939598" fontSize="14" label="Chose File"/>
+				<s:HGroup width="100%" paddingBottom="0" gap="35"
+						  paddingTop="-5" paddingLeft="5" paddingRight="0" verticalAlign="middle" horizontalAlign="left">
+					<s:FormItem id="isReimburceFormItem"  >
+						<s:HGroup gap="0" verticalAlign="middle">
+							<s:CheckBox width="20" height="20" id="isReimburceCheckBox"/>
+							<s:Label text="Reimburce" bottom="0"/>
+						</s:HGroup>
 					</s:FormItem>
-							
-							<s:Label id="FileName" text="No File Choosen"/>
-							<s:Label id="sizeInfoLabel" text="(Max size 5MB)" color="#d9dbdc" />
-					</s:HGroup>
-						
+					<s:FormItem id="isTaxebleFormItem"  >
+						<s:HGroup gap="0" verticalAlign="middle">
+							<s:CheckBox width="20" height="20" id="isTaxebleCheckBox"/>
+							<s:Label text="Taxeble" bottom="0"/>
+						</s:HGroup>
+					</s:FormItem>
+					<s:FormItem id="isTaxFormItem"  >
+						<s:HGroup gap="0" verticalAlign="middle">
+							<s:Label text="Tax" bottom="0"/>
+							<s:TextInput width="80" height="30" id="TaxTextInput"/>
+							<s:Label text="%" bottom="0"/>
+						</s:HGroup>
+					</s:FormItem>
+				</s:HGroup>
 				
+				<s:FormItem label="Attachment" id="AttachmentFormItem">
 					
+					<s:HGroup verticalAlign="middle" gap="0">
+						<controls:ColorButton buttonColor="#939598" width="100" height="30" color="#FFFFFF"
+											  label="Choose File" id="AttachFileButton" fontSize="14"/>
+						<s:Label text="No File Choosen (Max Size 5MB)" id="fileNameLabel"/>
+											  
+					</s:HGroup>
+					
+				</s:FormItem>
+				
 			</s:Form>
+			
 			
 		</s:VGroup>
 		
-	</s:Scroller>
+	</s:Scroller>	
+	
+
 </s:Skin>
