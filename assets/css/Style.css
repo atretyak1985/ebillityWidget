@@ -31,6 +31,15 @@
 	embedAsCFF: true;
 }
 
+/*global
+{
+	fontFamily:  "OpenSansRegular";
+}*/
+mx|LinkButton
+{
+	fontFamily: "OpenSansRegularNoCFF";
+}
+
 s|Label 
 {
 	fontFamily:  "OpenSansRegular";
@@ -39,6 +48,10 @@ s|Label
 controls|ColorButton s|Label
 {
 	
+	fontFamily: "OpenSansRegular";
+}
+.OpenSanssRegular
+{
 	fontFamily: "OpenSansRegular";
 }
 
@@ -57,6 +70,7 @@ controls|ColorButton s|Label
 }
 
 .mainMenu , .TimerMenu{
+	fontFamily: "OpenSansRegularNoCFF";
 	fontSize:14;
 	textAlign:left;
 	borderVisible:false;
@@ -70,7 +84,8 @@ controls|ColorButton s|Label
 
 }
 .TimerMenu{
-	
+	fontFamily: "OpenSansRegularNoCFF";
+	fontSize:14;
 	textAlign:left;
 	backgroundColor:#353435;
 	contentBackgroundColor:#353435;
@@ -104,7 +119,7 @@ s|FormItem
 {	
 	skinClass:ClassReference("com.ebillity.skin.ui.controls.Form.FormItemCustomSkin");
 	fontFamily:"OpenSansRegular";
-	
+	color:#000000;
 }
 
 s|TextInput
@@ -190,6 +205,16 @@ controls1|TimeEntryFormSkin s|Form
 controls1|TimeEntryFormSkin s|FormItem
 {
 	skinClass:ClassReference("com.ebillity.skin.ui.controls.Form.CustomFormItemSkinModified")
+}
+
+controls1|ExpenseEntryFormSkin s|Form
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.Form.CustomFormItemSkinModified");
+}
+
+controls1|ExpenseEntryFormSkin s|FormItem
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.Form.CustomFormItemSkinModified");
 }
 
 mx|ToolTip
