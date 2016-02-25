@@ -120,7 +120,8 @@
 		<!--- Defines the value of the headerRenderer property for the columnHeaderGroup. 
 		The default is spark.skins.spark.DefaultGridHeaderRenderer -->
 		<fx:Component id="headerRenderer">
-			<DataGrid:CustomGridHeaderItemRenderer />
+			<s:DefaultGridHeaderRenderer/>
+			<!--<DataGrid:CustomGridHeaderItemRenderer />-->
 		</fx:Component>
 		
 		<!--- @private -->
@@ -157,7 +158,7 @@
 		<fx:Component id="rowSeparator">
 			<s:Line>
 				<s:stroke>
-					<s:SolidColorStroke color="#4d4d4f" weight="2" alpha="0.8" caps="square"/>
+					<s:SolidColorStroke color="#4d4d4f" weight="2" alpha="1" caps="square"/>
 				</s:stroke>
 			</s:Line>
 		</fx:Component>
@@ -259,7 +260,7 @@
 		<s:Group height="100%" >
 			
 			<!--- @private -->
-			<s:Rect id="background" left="1" right="1" top="1" bottom="1" >
+			<s:Rect id="background" left="1" right="1" top="0" bottom="1" >
 				<s:fill>
 					<!--- Defines the color of the background. The default color is 0xFFFFFF. -->
 					<s:SolidColor id="bgFill" color="#414142" />
@@ -269,9 +270,9 @@
 			<!-- header separator, scroller and grid -->
 			<s:VGroup verticalAlign="middle" horizontalAlign="justify" height="100%" width="100%" gap="0">
 				<!--- @private -->
-				<s:Line id="headerSeparator" width="90%" left="3">
+				<s:Line id="headerSeparator" >
 					<s:stroke>
-						<s:SolidColorStroke color="#4d4d4f" weight="2" alpha="1" caps="square"/>
+						<s:SolidColorStroke color="green" weight="2" alpha="1" caps="square"/>
 					</s:stroke>
 				</s:Line>          
 				
@@ -294,7 +295,7 @@
 	
 	<!-- border -->
 	
-	<s:Rect left="1" right="0" bottom="1" top="bottom" id="border">
+	<s:Rect left="0" right="0" bottom="0" top="0" id="border">
 		<s:stroke>
 			
 			<s:SolidColorStroke id="borderStroke" color="#4d4d4f" weight="2" alpha="1" />
