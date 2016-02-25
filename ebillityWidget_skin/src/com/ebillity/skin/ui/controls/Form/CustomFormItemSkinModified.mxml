@@ -1,29 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-
-ADOBE SYSTEMS INCORPORATED
-Copyright 2010 Adobe Systems Incorporated
-All Rights Reserved.
-
-NOTICE: Adobe permits you to use, modify, and distribute this file
-in accordance with the terms of the license agreement accompanying it.
-
--->
-
-<!-- TODO
-Move the indicator tooltip string to a resource bundle
--->
-
-<!--- An alternate skin class for the Spark FormItem component 
-which positions the label above the content.
-
-@see spark.components.FormItem
-
-@langversion 3.0
-@playerversion Flash 10
-@playerversion AIR 1.5
-@productversion Flex 4.5
--->
 <s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" 
 		xmlns:s="library://ns.adobe.com/flex/spark" 
 		xmlns:fb="http://ns.adobe.com/flashbuilder/2009"
@@ -41,6 +16,7 @@ which positions the label above the content.
 	
 	<fx:Script fb:purpose="styling">
 		<![CDATA[         
+			import com.ebillity.core.constants.AssetConstants;
 			/**
 			 *  @private
 			 */
@@ -61,9 +37,9 @@ which positions the label above the content.
 				
 				var indicatorSource:Object; 
 				if (currentState == "error" || currentState == "requiredAndError")
-					indicatorSource = getStyle("errorIndicatorSource");
+					indicatorSource = AssetConstants.REQUIRED_ICON;
 				else if (currentState == "required" || "requiredAndDisabled")
-					indicatorSource = getStyle("requiredIndicatorSource");
+					indicatorSource = AssetConstants.REQUIRED_ICON;;
 				
 				if (indicatorSource && indicatorDisplay)
 				{
@@ -129,8 +105,12 @@ which positions the label above the content.
 	<!--- @copy spark.components.FormItem#labelDisplay -->
 	<s:Label id="labelDisplay"
 			 fontWeight="normal"
+			 left="contentCol:0" left.requiredStates="contentCol:9" right="helpCol:12"
+			 bottom="row1:0" baseline="row1:0"/>
+<!--	<s:Label id="labelDisplay"
+			 fontWeight="normal"
 			 left="contentCol:0" right="contentCol:5"
-			 bottom="row1:5" baseline="row1:0"/>
+			 bottom="row1:5" baseline="row1:0"/>-->
 	<!--- @copy spark.components.SkinnableContainer#contentGroup -->
 	<s:Group id="contentGroup" 
 			 showErrorTip="false" showErrorSkin="true"
@@ -140,7 +120,7 @@ which positions the label above the content.
 			<s:VerticalLayout/>
 		</s:layout>
 	</s:Group>
-	<s:Group x="{labelDisplay.x-4}" y="{labelDisplay.y-4}"
+	<s:Group x="{labelDisplay.x-7}" y="{labelDisplay.y}"
 			 includeInLayout="false">
 		<!--- @private -->
 		<s:Image id="indicatorDisplay" verticalCenter="0"
