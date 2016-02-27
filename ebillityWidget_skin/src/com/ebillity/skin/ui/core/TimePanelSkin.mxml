@@ -11,6 +11,7 @@
 			import mx.controls.Alert;
 			import mx.controls.Menu;
 			import mx.events.FlexEvent;
+			import com.ebillity.core.constants.AssetConstants;
 			[Embed(source="/images/widthIcon.png")]
 			private var WIDTH_ICON:Class;	
 			
@@ -36,7 +37,7 @@
 		 	
 			private function setColor(dateTime:String):String
 			{
-				Alert.show("awef");
+			
 				if(Number(dateTime.charAt(0))<8)
 					return "white";
 				else
@@ -140,9 +141,5 @@
 		</s:VGroup>
 		
 	</s:BorderContainer>
-	<fx:Script>
-		<![CDATA[
-			import com.ebillity.core.constants.AssetConstants;
-		]]>
-	</fx:Script>
+
 </s:Skin>
