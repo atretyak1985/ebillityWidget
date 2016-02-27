@@ -111,3 +111,7 @@ login|FirmList
 {
 	skinClass: ClassReference("com.ebillity.skin.ui.core.NavigatePanelSkin");
 }
+controls|CustomPopUpWindow
+{
+	skinClass:ClassReference("com.ebillity.skin.ui.controls.CustomPopUpWindowSkin");
+}
