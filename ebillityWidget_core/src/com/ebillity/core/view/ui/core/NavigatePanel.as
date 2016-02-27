@@ -1,8 +1,15 @@
 package com.ebillity.core.view.ui.core
 {
+	import com.ebillity.core.constants.AssetConstants;
 	import com.ebillity.core.view.ui.controls.ColorButton;
+	import com.ebillity.core.view.ui.controls.CustomPopUpWindow;
 	
+	import flash.display.DisplayObject;
 	import flash.events.MouseEvent;
+	
+	import mx.controls.Alert;
+	import mx.core.FlexGlobals;
+	import mx.managers.PopUpManager;
 	
 	import org.osflash.signals.Signal;
 	
@@ -97,6 +104,20 @@ package com.ebillity.core.view.ui.core
 					button3ClickSignal.dispatch( BUTTON_3 );
 					break;
 				}
+				case recycleBin:
+				{
+					// `````````````````````````show popup window```````````````````````
+					
+					var alert:CustomPopUpWindow = new CustomPopUpWindow();
+					alert.titleStr = "Your're aboute to delete this Entry";
+					alert.mainMessage="Whould you like to delete this entry?";
+					alert.confirmButtonColor=0xed1e24; alert.confirmButtonLabel="Delete";
+					alert.cancelButtonColor = 0x939598; alert.cancelButtonLabel="Dont Delete";
+					
+					PopUpManager.addPopUp(alert,FlexGlobals.topLevelApplication as DisplayObject,true);
+					PopUpManager.centerPopUp(alert);
+					break;
+				}
 			}
 		}
 
@@ -150,6 +171,11 @@ package com.ebillity.core.view.ui.core
 				case button3:
 				{
 					button3.addEventListener( MouseEvent.CLICK, button_clickEventHandler );
+					break;
+				}
+				case recycleBin:
+				{
+					recycleBin.addEventListener( MouseEvent.CLICK, button_clickEventHandler );
 					break;
 				}
 			}
