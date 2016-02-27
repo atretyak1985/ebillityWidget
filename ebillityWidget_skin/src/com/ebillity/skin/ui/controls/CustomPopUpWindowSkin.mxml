@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		xmlns:mx="library://ns.adobe.com/flex/mx"
+		xmlns:controls="com.ebillity.core.view.ui.controls.*"
+		width="420" height="170">
+	<fx:Script>
+		<![CDATA[
+			import com.ebillity.core.constants.AssetConstants;
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Metadata>
+		[HostComponent("com.ebillity.core.view.ui.controls.CustomPopUpWindow")]
+	</fx:Metadata>
+	
+	<s:Rect width="100%" height="100%">
+		<s:fill>
+			
+			<s:SolidColor color="#ffffff"/>
+		</s:fill>
+	</s:Rect>
+
+
+	<s:VGroup width="100%" paddingLeft="0" paddingRight="0" gap="20" height="100%" verticalAlign="middle" horizontalAlign="center">
+		
+		<s:HGroup width="100%" height="80%" paddingRight="10" verticalAlign="middle" paddingLeft="20" >
+
+			<s:VGroup width="80%" height="100%" verticalAlign="middle" paddingTop="20">
+				<s:HGroup width="100%" height="50%" >
+			
+					<s:HGroup height="100%" width="100%" verticalAlign="middle" horizontalAlign="left">
+						<s:Image source="{AssetConstants.INFORMATION_ICON}"/>
+						<s:Label fontSize="16" text="{hostComponent.titleStr}"/>
+					</s:HGroup>
+				
+				</s:HGroup>
+			
+				<s:HGroup width="100%" height="50%" verticalAlign="middle">
+					<s:Label text="{hostComponent.mainMessage}"/>
+				</s:HGroup>
+			
+			</s:VGroup>
+			
+			<s:VGroup width="20%" height="100%" verticalAlign="top" horizontalAlign="right" paddingTop="5" paddingRight="5">
+				<controls:ColorIconButton id="closeButton" buttonColor="#FFFFFF" buttonIcon="{AssetConstants.CLOSE_ICON}"/>
+			</s:VGroup>
+		
+		</s:HGroup>
+		
+		
+		<s:HGroup width="100%" height="30%" horizontalAlign="center" verticalAlign="top" paddingBottom="30">
+			
+			<controls:ColorButton fontSize="14" minWidth="100" height="30" id = "cancelButton" buttonColor="{hostComponent.cancelButtonColor}" label="{hostComponent.cancelButtonLabel}"/>
+			<controls:ColorButton height="30" minWidth="100" fontSize="14" id = "confirmButton" buttonColor="{hostComponent.confirmButtonColor}" label="{hostComponent.confirmButtonLabel}"/>
+		</s:HGroup>
+		
+</s:VGroup>
+
+
+
+
+</s:Skin>
